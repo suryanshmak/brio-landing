@@ -23,22 +23,6 @@ export default function Page() {
     >
       <div id="grain"></div>
 
-      {/* scroll progress */}
-      <div
-        id="prog"
-        data-sig
-        style={{
-          position: "fixed",
-          top: "0",
-          left: "0",
-          right: "0",
-          height: "3px",
-          zIndex: "60",
-          background: "linear-gradient(90deg,#7c3aed,#0ea5e9,#5f9c0b)",
-          transform: "scaleX(0)",
-        }}
-      ></div>
-
       <Nav />
       <Hero />
       <Forge />

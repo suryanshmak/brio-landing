@@ -15,6 +15,8 @@ export default function Nav() {
         background:
           "linear-gradient(180deg,rgba(245,244,251,.85),rgba(245,244,251,.4))",
         borderBottom: "1px solid rgba(124,58,237,.08)",
+        willChange: "transform",
+        transition: "transform .35s cubic-bezier(.2,.7,.2,1)",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -24,10 +24,42 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const DESCRIPTION =
+  "Brio runs real spoken interviews, scores the substance of your answers, and turns it into a portable, verifiable readiness credential.";
+
 export const metadata: Metadata = {
-  title: "Brio — Prove you're ready, out loud.",
-  description:
-    "Brio runs real spoken interviews, scores the substance of your answers, and turns it into a portable, verifiable readiness credential.",
+  metadataBase: new URL("https://brio.so"),
+  applicationName: "Brio",
+  title: "Brio",
+  description: DESCRIPTION,
+  keywords: [
+    "Brio",
+    "voice-first interview",
+    "readiness credential",
+    "interview practice",
+    "hiring",
+    "verified ability",
+  ],
+  openGraph: {
+    title: "Brio",
+    description: DESCRIPTION,
+    url: "/",
+    siteName: "Brio",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brio",
+    description: DESCRIPTION,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f4fb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0814" },
+  ],
 };
 
 export default function RootLayout({

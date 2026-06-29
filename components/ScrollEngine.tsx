@@ -21,6 +21,7 @@ export default function ScrollEngine() {
 
     // ---- element cache ----
     const prog = q("#prog");
+    const nav = q("nav");
     const credCard = q('[data-cred="card"]');
     const closeWord = q('[data-close="word"]');
     const scanSec = q(".scanwrap");
@@ -86,6 +87,7 @@ export default function ScrollEngine() {
       return y;
     };
     let vh = window.innerHeight;
+    let lastY = window.scrollY || 0;
     let docSpan = 1;
     let credTop = 0;
     let closeTop = 0;
@@ -216,6 +218,13 @@ export default function ScrollEngine() {
     const cl = (v: number) => (v < 0 ? 0 : v > 1 ? 1 : v);
     const onScroll = () => {
       const y = window.scrollY || document.scrollingElement!.scrollTop || 0;
+      // hide-on-scroll-down, reveal-on-scroll-up header
+      if (nav) {
+        if (y <= 4) nav.style.transform = "translateY(0)";
+        else if (y > lastY + 2 && y > 80) nav.style.transform = "translateY(-100%)";
+        else if (y < lastY - 2) nav.style.transform = "translateY(0)";
+        lastY = y;
+      }
       if (prog) prog.style.transform = "scaleX(" + cl(y / docSpan) + ")";
       if (scanFill) {
         const top = scanTop - y;
