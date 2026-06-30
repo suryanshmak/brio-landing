@@ -22,7 +22,6 @@ export default function ScrollEngine() {
     // ---- element cache ----
     const prog = q("#prog");
     const nav = q("nav");
-    const credCard = q('[data-cred="card"]');
     const closeWord = q('[data-close="word"]');
     const scanSec = q(".scanwrap");
     const scanFill = q(".scanfill");
@@ -89,7 +88,6 @@ export default function ScrollEngine() {
     let vh = window.innerHeight;
     let lastY = window.scrollY || 0;
     let docSpan = 1;
-    let credTop = 0;
     let closeTop = 0;
     let scanTop = 0;
     let forgeTop = 0;
@@ -102,7 +100,6 @@ export default function ScrollEngine() {
         1,
         document.scrollingElement!.scrollHeight - vh
       );
-      if (credCard) credTop = off(credCard);
       if (closeWord) closeTop = off(closeWord);
       if (scanSec) scanTop = off(scanSec);
       if (forgePin && F && F.sec) {
@@ -235,20 +232,6 @@ export default function ScrollEngine() {
           scanLine.style.opacity = p > 0.002 && p < 0.998 ? "1" : "0";
         }
       }
-      if (credCard) {
-        const top = credTop - y;
-        const e = cl((vh * 0.92 - top) / (vh * 0.55));
-        credCard.style.transform =
-          "rotateY(" +
-          (30 - 36 * e) +
-          "deg) rotateX(" +
-          (9 - 7 * e) +
-          "deg) scale(" +
-          (0.82 + 0.18 * e) +
-          ") translateX(" +
-          70 * (1 - e) +
-          "px)";
-      }
       if (closeWord) {
         const top = closeTop - y;
         const e = cl((vh - top) / (vh * 0.72));
@@ -351,7 +334,7 @@ export default function ScrollEngine() {
           if (F.eyebrow) F.eyebrow.textContent = F.eyes[idx];
           F.steps.forEach((s, i) => {
             s.style.color =
-              i === idx ? "#c9f24d" : i < idx ? "#9b7bf8" : "#6f6790";
+              i === idx ? "#c4b5fd" : i < idx ? "#9b7bf8" : "#6f6790";
           });
         }
       }

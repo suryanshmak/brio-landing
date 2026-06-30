@@ -11,9 +11,9 @@ type Props = {
 };
 
 /**
- * Brio WebGL particle field — a faithful React port of the prototype's
- * <particle-field> web component (particles.js). Three.js point cloud,
- * mouse-reactive. Hero uses mode="wave" theme="light".
+ * Brio hero field — a Three.js point cloud on a gentle wave, with light
+ * mouse-driven parallax drift. Light theme: violet → cyan → lime points on a
+ * near-white field.
  */
 function glowSprite() {
   const c = document.createElement("canvas");

@@ -76,10 +76,10 @@ export default function Forge() {
         {/* stepper */}
         <div style={{ position: 'absolute', bottom: '5.5vh', left: '50%', transform: 'translateX(-50%)', width: 'min(540px,82vw)', zIndex: '9' }}>
           <div style={{ position: 'relative', height: '2px', background: 'rgba(255,255,255,.12)', margin: '0 6px' }}>
-            <div data-forge="stepfill" style={{ position: 'absolute', left: '0', top: '0', height: '100%', width: '0', background: 'linear-gradient(90deg,#7c3aed,#2ad4ee,#c9f24d)' }}></div>
+            <div data-forge="stepfill" style={{ position: 'absolute', left: '0', top: '0', height: '100%', width: '0', background: 'linear-gradient(90deg,#7c3aed,#9b7bf8,#c4b5fd)' }}></div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '12px' }}>
-            <span data-forge="step" className="mono" style={{ fontSize: '10px', letterSpacing: '.14em', color: '#c9f24d', transition: 'color .3s' }}>SPEAK</span>
+            <span data-forge="step" className="mono" style={{ fontSize: '10px', letterSpacing: '.14em', color: '#c4b5fd', transition: 'color .3s' }}>SPEAK</span>
             <span data-forge="step" className="mono" style={{ fontSize: '10px', letterSpacing: '.14em', color: '#6f6790', transition: 'color .3s' }}>MEASURE</span>
             <span data-forge="step" className="mono" style={{ fontSize: '10px', letterSpacing: '.14em', color: '#6f6790', transition: 'color .3s' }}>RESOLVE</span>
             <span data-forge="step" className="mono" style={{ fontSize: '10px', letterSpacing: '.14em', color: '#6f6790', transition: 'color .3s' }}>PROVE</span>

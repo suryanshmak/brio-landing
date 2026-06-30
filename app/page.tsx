@@ -1,4 +1,5 @@
 import ScrollEngine from "@/components/ScrollEngine";
+import SmoothScroll from "@/components/SmoothScroll";
 import Nav from "@/components/sections/Nav";
 import Hero from "@/components/sections/Hero";
 import Forge from "@/components/sections/Forge";
@@ -38,6 +39,7 @@ export default function Page() {
       <Footer />
 
       <ScrollEngine />
+      <SmoothScroll />
     </div>
   );
 }
