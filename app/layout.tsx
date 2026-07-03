@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Archivo, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-inter",
+  axes: ["wdth"],
+  variable: "--font-archivo",
   display: "swap",
 });
 
@@ -19,7 +19,7 @@ const instrumentSerif = Instrument_Serif({
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "700"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f4fb" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0814" },
+    { media: "(prefers-color-scheme: light)", color: "#04070f" },
+    { media: "(prefers-color-scheme: dark)", color: "#04070f" },
   ],
 };
 
@@ -70,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
+      className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
     >
       <body>{children}</body>
     </html>

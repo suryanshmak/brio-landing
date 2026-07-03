@@ -16,9 +16,9 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          backgroundColor: "#0b0814",
+          backgroundColor: "#04070f",
           backgroundImage:
-            "radial-gradient(circle at 82% -8%, rgba(124,58,237,0.55), transparent 55%), radial-gradient(circle at -8% 118%, rgba(201,242,77,0.16), transparent 55%)",
+            "radial-gradient(circle at 82% -8%, rgba(43,98,232,0.55), transparent 55%), radial-gradient(circle at -8% 118%, rgba(94,225,255,0.14), transparent 55%)",
           color: "#f3efff",
           fontFamily: "sans-serif",
         }}
@@ -34,7 +34,7 @@ export default function OpengraphImage() {
               height: 76,
               borderRadius: 22,
               backgroundImage:
-                "radial-gradient(circle at 33% 27%, #e6ddff, #7c3aed 60%, #3f1d80)",
+                "radial-gradient(circle at 32% 28%, #dff4ff, #2f80ff 62%, #0f3d8f)",
               color: "#ffffff",
               fontSize: 46,
               fontWeight: 800,
@@ -56,7 +56,7 @@ export default function OpengraphImage() {
               gap: 12,
               fontSize: 22,
               letterSpacing: 5,
-              color: "#c9f24d",
+              color: "#5ee1ff",
             }}
           >
             <div
@@ -64,11 +64,11 @@ export default function OpengraphImage() {
                 width: 12,
                 height: 12,
                 borderRadius: 12,
-                backgroundColor: "#c9f24d",
+                backgroundColor: "#5ee1ff",
                 display: "flex",
               }}
             />
-            VOICE-FIRST · VERIFIED
+            VOICE-FIRST · VERIFIED · LIVE
           </div>
           <div
             style={{
@@ -81,7 +81,7 @@ export default function OpengraphImage() {
             }}
           >
             <span>Prove you&#39;re ready,&nbsp;</span>
-            <span style={{ color: "#9b7bf8" }}>out loud.</span>
+            <span style={{ color: "#5ee1ff" }}>out loud.</span>
           </div>
           <div style={{ display: "flex", fontSize: 30, color: "#b6b0cf", maxWidth: 860 }}>
             Real spoken interviews, scored on substance — a portable, verifiable

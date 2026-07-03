@@ -15,7 +15,7 @@ export default function AppleIcon() {
           alignItems: "center",
           justifyContent: "center",
           backgroundImage:
-            "radial-gradient(circle at 33% 27%, #e6ddff, #7c3aed 60%, #3f1d80)",
+            "radial-gradient(circle at 32% 28%, #dff4ff, #2f80ff 62%, #0f3d8f)",
           color: "#ffffff",
           fontSize: 120,
           fontWeight: 800,
