@@ -85,7 +85,7 @@ export default function SceneAppWorld() {
       </div>
 
       <div data-z="cue" style={{ position: 'absolute', bottom: 'max(8vh,62px)', left: '50%', transform: 'translateX(-50%)', zIndex: '6', fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.3em', color: 'var(--ink3)', display: 'flex', alignItems: 'center', gap: '10px', background: 'var(--glass)', backdropFilter: 'blur(10px)', border: '1px solid var(--line)', borderRadius: '999px', padding: '9px 18px' }}>
-        <span data-loop="dotp" data-dur="1.8" style={{ display: 'inline-block' }}>▼</span> SCROLL — ENTER THE INTERVIEW
+        <span data-loop="dotp" data-dur="1.8" style={{ display: 'inline-block' }}>▼</span> SCROLL · ENTER THE INTERVIEW
       </div>
     </>
   )

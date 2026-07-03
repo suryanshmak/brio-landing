@@ -28,7 +28,7 @@ export default function SceneNoise() {
             <div data-noise="beam" aria-hidden="true" style={{ position: 'absolute', top: '-4%', bottom: '-4%', left: '0', width: '2px', background: 'linear-gradient(180deg,transparent,var(--acc),transparent)', boxShadow: '0 0 22px 3px var(--acc)', opacity: '0' }}></div>
           </div>
         </div>
-        <div style={{ position: 'absolute', bottom: '6vh', right: '6vw', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.24em', color: 'var(--ink4)' }}>SIGNAL EXTRACTION — SCRUB ▸</div>
+        <div style={{ position: 'absolute', bottom: '6vh', right: '6vw', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.24em', color: 'var(--ink4)' }}>SIGNAL EXTRACTION · SCRUB ▸</div>
       </div>
     </section>
   );

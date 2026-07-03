@@ -49,7 +49,7 @@ export default function SceneDisc() {
                 </div>
               </div>
               <svg viewBox="0 0 600 60" preserveAspectRatio="none" style={{ width: '100%', height: '40px', overflow: 'hidden', WebkitMaskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)', maskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)' }}><g data-loop="flowx" data-dur="3.4"><path d="M0,30 C75,10 150,50 225,30 S375,2 450,30 S600,50 675,30 825,30" fill="none" stroke="#f5a524" strokeWidth="2.5" strokeLinecap="round" /></g></svg>
-              <p style={{ fontSize: '13.5px', color: 'var(--ink2)', margin: '0', lineHeight: '1.55' }}>Strongest Composure in the pool — recovered cleanly on every curveball, never froze.</p>
+              <p style={{ fontSize: '13.5px', color: 'var(--ink2)', margin: '0', lineHeight: '1.55' }}>Strongest Composure in the pool, recovered cleanly on every curveball, never froze.</p>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: 'var(--acc-dim)', background: 'var(--acc-bg)', border: '1px solid var(--acc-brd)', borderRadius: '7px', padding: '4px 10px', fontWeight: '700' }}>A</span>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: 'var(--ink2)', border: '1px solid var(--line2)', borderRadius: '7px', padding: '4px 10px' }}>BEHAVIORAL 86</span>
@@ -68,7 +68,7 @@ export default function SceneDisc() {
                 </div>
               </div>
               <svg viewBox="0 0 600 60" preserveAspectRatio="none" style={{ width: '100%', height: '40px', overflow: 'hidden', WebkitMaskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)', maskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)' }}><g data-loop="flowx" data-dur="4.6"><path d="M0,30 C75,16 150,44 225,30 S375,12 450,30 S600,44 675,30 825,30" fill="none" style={{ stroke: 'var(--cyn)' }} strokeWidth="2.5" strokeLinecap="round" /></g></svg>
-              <p style={{ fontSize: '13.5px', color: 'var(--ink2)', margin: '0', lineHeight: '1.55' }}>Cleanest Clarity score on record — premise to payoff with zero backtracking.</p>
+              <p style={{ fontSize: '13.5px', color: 'var(--ink2)', margin: '0', lineHeight: '1.55' }}>Cleanest Clarity score on record, premise to payoff with zero backtracking.</p>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: 'var(--acc-dim)', background: 'var(--acc-bg)', border: '1px solid var(--acc-brd)', borderRadius: '7px', padding: '4px 10px', fontWeight: '700' }}>A</span>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: 'var(--ink2)', border: '1px solid var(--line2)', borderRadius: '7px', padding: '4px 10px' }}>REASONING 83</span>
@@ -81,7 +81,7 @@ export default function SceneDisc() {
             </a>
           </div>
         </div>
-        <div style={{ position: 'absolute', bottom: '6vh', left: '0', right: '0', textAlign: 'center', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.26em', color: 'var(--ink4)' }}>SCROLL — THE SHORTLIST TRACKS SIDEWAYS ▸</div>
+        <div style={{ position: 'absolute', bottom: '6vh', left: '0', right: '0', textAlign: 'center', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.26em', color: 'var(--ink4)' }}>SCROLL · THE SHORTLIST TRACKS SIDEWAYS ▸</div>
       </div>
     </section>
   );

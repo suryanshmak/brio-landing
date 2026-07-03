@@ -7,23 +7,8 @@ export default function Chrome() {
 
       <button data-snd="" type="button" className="hv-ink-acc" style={{ position: 'fixed', right: '18px', bottom: '18px', zIndex: '90', display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.18em', color: 'var(--ink2)', background: 'var(--glass)', backdropFilter: 'blur(10px)', border: '1px solid var(--line2)', borderRadius: '999px', padding: '9px 14px', cursor: 'pointer' }}>
         <span style={{ display: 'inline-flex', alignItems: 'flex-end', gap: '2px', height: '10px' }}><span style={{ width: '2px', height: '40%', background: 'currentColor', borderRadius: '2px' }}></span><span style={{ width: '2px', height: '100%', background: 'currentColor', borderRadius: '2px' }}></span><span style={{ width: '2px', height: '65%', background: 'currentColor', borderRadius: '2px' }}></span></span>
-        <span data-snd-tx="">SOUND — OFF</span>
+        <span data-snd-tx="">SOUND · OFF</span>
       </button>
-
-      {/* LEFT RAIL HUD */}
-      <div id="railhud" style={{ position: 'fixed', left: '24px', top: '50%', transform: 'translateY(-50%)', zIndex: '70', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px' }}>
-        <div data-hud="label" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.32em', color: 'var(--ink3)' }}>THE APP</div>
-        <div style={{ position: 'relative', width: '2px', height: '150px', background: 'var(--wash2)' }}>
-          <div data-hud="fill" style={{ position: 'absolute', inset: '0', background: 'var(--acc)', transform: 'scaleY(0)', transformOrigin: 'top' }}></div>
-          <button data-hud-dot="" data-target="s-app" title="The app" style={{ position: 'absolute', left: '50%', top: '0%', transform: 'translate(-50%,-50%)', width: '7px', height: '7px', borderRadius: '50%', border: '1px solid var(--line2)', background: 'var(--bgA)', cursor: 'pointer', padding: '0' }}></button>
-          <button data-hud-dot="" data-target="s-noise" title="Signal" style={{ position: 'absolute', left: '50%', top: '20%', transform: 'translate(-50%,-50%)', width: '7px', height: '7px', borderRadius: '50%', border: '1px solid var(--line2)', background: 'var(--bgA)', cursor: 'pointer', padding: '0' }}></button>
-          <button data-hud-dot="" data-target="s-cred" title="Credential" style={{ position: 'absolute', left: '50%', top: '40%', transform: 'translate(-50%,-50%)', width: '7px', height: '7px', borderRadius: '50%', border: '1px solid var(--line2)', background: 'var(--bgA)', cursor: 'pointer', padding: '0' }}></button>
-          <button data-hud-dot="" data-target="s-disc" title="Shortlist" style={{ position: 'absolute', left: '50%', top: '60%', transform: 'translate(-50%,-50%)', width: '7px', height: '7px', borderRadius: '50%', border: '1px solid var(--line2)', background: 'var(--bgA)', cursor: 'pointer', padding: '0' }}></button>
-          <button data-hud-dot="" data-target="s-valid" title="Validity" style={{ position: 'absolute', left: '50%', top: '80%', transform: 'translate(-50%,-50%)', width: '7px', height: '7px', borderRadius: '50%', border: '1px solid var(--line2)', background: 'var(--bgA)', cursor: 'pointer', padding: '0' }}></button>
-          <button data-hud-dot="" data-target="s-end" title="Begin" style={{ position: 'absolute', left: '50%', top: '100%', transform: 'translate(-50%,-50%)', width: '7px', height: '7px', borderRadius: '50%', border: '1px solid var(--line2)', background: 'var(--bgA)', cursor: 'pointer', padding: '0' }}></button>
-        </div>
-        <div data-hud="pct" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'var(--ink3)', fontVariantNumeric: 'tabular-nums' }}>000</div>
-      </div>
 
       {/* NAV */}
       <nav data-nav="" style={{ position: 'fixed', top: '0', left: '0', right: '0', zIndex: '80', display: 'flex', alignItems: 'center', gap: '20px', padding: '16px 5vw', backdropFilter: 'blur(14px)', background: 'var(--nav0)', borderBottom: '1px solid var(--line)' }}>

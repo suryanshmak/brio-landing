@@ -49,20 +49,21 @@ export default function SceneAppCrisp() {
         </div>
         <div style={{ position: 'absolute', left: '0', right: '0', bottom: '6vh', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '13px', padding: '0 6vw', textAlign: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#93a5d6', border: '1px solid rgba(255,255,255,.14)', borderRadius: '999px', padding: '3px 10px' }}>SESSION 7</span>
             <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#93a5d6', border: '1px solid rgba(255,255,255,.14)', borderRadius: '999px', padding: '3px 10px' }}>Q1 / 3</span>
             <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.3em', color: 'var(--zacc)' }}>BRIO ASKS</span>
           </div>
-          <div id="zq" data-z="q" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '730', fontStretch: '109%', fontSize: 'clamp(20px,2.6vw,34px)', lineHeight: '1.2', letterSpacing: '-.02em', color: '#f2f5ff', maxWidth: '34ch', minHeight: '2.4em', textWrap: 'balance' }}>“Walk me through a system you broke — and what you did in the next hour.”</div>
+          <div id="zq" data-z="q" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '730', fontStretch: '109%', fontSize: 'clamp(20px,2.6vw,34px)', lineHeight: '1.2', letterSpacing: '-.02em', color: '#f2f5ff', maxWidth: '34ch', minHeight: '2.4em', textWrap: 'balance' }}>“Walk me through a system you broke, and what you did in the next hour.”</div>
           <div data-z="hint" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.24em', color: '#7d8bb8' }}>
             <span style={{ display: 'inline-flex', alignItems: 'flex-end', gap: '2px', height: '12px' }}><span data-loop="eq" data-dur="1.3" data-ph="0" style={{ width: '2px', height: '40%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span><span data-loop="eq" data-dur="1.3" data-ph=".2" style={{ width: '2px', height: '90%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span><span data-loop="eq" data-dur="1.3" data-ph=".4" style={{ width: '2px', height: '60%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span></span>
-            SCROLL — ANSWER OUT LOUD
+            SCROLL · ANSWER OUT LOUD
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', minHeight: '26px', flexWrap: 'wrap' }}>
             <span data-ztag="0" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#f5a524', border: '1px solid rgba(245,165,36,.4)', background: 'rgba(245,165,36,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ OWNERSHIP</span>
             <span data-ztag="1" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#8b5cf6', border: '1px solid rgba(139,92,246,.4)', background: 'rgba(139,92,246,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ METHOD</span>
             <span data-ztag="2" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#2ad4ee', border: '1px solid rgba(42,212,238,.4)', background: 'rgba(42,212,238,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ ACCOUNTABILITY</span>
           </div>
-          <div data-z="tr" style={{ fontFamily: 'var(--f-mono)', fontSize: 'clamp(11px,1.2vw,13.5px)', letterSpacing: '.04em', color: '#9fb0da', maxWidth: '74ch', minHeight: '1.5em', opacity: '0' }}>YOU · “I’d cap the blast radius first — freeze writes, bisect the deploy, then own the postmortem.”</div>
+          <div data-z="tr" style={{ fontFamily: 'var(--f-mono)', fontSize: 'clamp(11px,1.2vw,13.5px)', letterSpacing: '.04em', color: '#9fb0da', maxWidth: '74ch', minHeight: '1.5em', opacity: '0' }}>YOU · “I’d cap the blast radius first: freeze writes, bisect the deploy, then own the postmortem.”</div>
         </div>
       </div>
 
@@ -123,7 +124,7 @@ export default function SceneAppCrisp() {
               <div data-fgnum="" data-t="88" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: '#fff', fontVariantNumeric: 'tabular-nums' }}>0</div>
             </div>
             <div data-fg="gap" style={{ marginTop: '6px', border: '1px solid var(--acc-brd)', background: 'var(--acc-bg)', borderRadius: '14px', padding: '13px 16px', opacity: '0' }}>
-              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.2em', color: 'var(--zacc)', marginBottom: '8px' }}>↳ WHAT IT HEARD — PINNED FROM YOUR ANSWER</div>
+              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.2em', color: 'var(--zacc)', marginBottom: '8px' }}>↳ WHAT IT HEARD · PINNED FROM YOUR ANSWER</div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                 <span style={{ flexShrink: '0', marginTop: '6px', width: '6px', height: '6px', borderRadius: '50%', background: '#f5a524' }}></span>
                 <span style={{ fontSize: '12.5px', color: '#dfe6ff', lineHeight: '1.5' }}>“cap the blast radius first” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: '#f5a524' }}>OWNERSHIP · 00:08:04</span></span>
@@ -132,9 +133,13 @@ export default function SceneAppCrisp() {
                 <span style={{ flexShrink: '0', marginTop: '6px', width: '6px', height: '6px', borderRadius: '50%', background: '#8b5cf6' }}></span>
                 <span style={{ fontSize: '12.5px', color: '#dfe6ff', lineHeight: '1.5' }}>“bisect the deploy” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: '#8b5cf6' }}>METHOD · 00:08:11</span></span>
               </div>
-              <div style={{ marginTop: '9px', borderTop: '1px solid rgba(255,255,255,.1)', paddingTop: '8px', fontSize: '12px', color: '#9fb0da', lineHeight: '1.5' }}><b style={{ color: '#f2f5ff' }}>Fix next:</b> state your constraints before the plan — you led with action twice.</div>
+              <div style={{ marginTop: '9px', borderTop: '1px solid rgba(255,255,255,.1)', paddingTop: '8px', fontSize: '12px', color: '#9fb0da', lineHeight: '1.5' }}><b style={{ color: '#f2f5ff' }}>Fix next:</b> state your constraints before the plan. You led with action twice.</div>
+              <div style={{ marginTop: '9px', borderTop: '1px solid rgba(255,255,255,.1)', paddingTop: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
+                <span style={{ fontSize: '12px', color: '#9fb0da', lineHeight: '1.5' }}><b style={{ color: '#f2f5ff' }}>Brio remembers.</b> Session 8 opens right here, on your weak spot.</span>
+                <span style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.14em', color: 'var(--zacc)', border: '1px solid var(--acc-brd)', background: 'var(--acc-bg)', borderRadius: '999px', padding: '3px 8px', flexShrink: '0' }}>CROSS-SESSION MEMORY</span>
+              </div>
             </div>
-            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#5d6a92' }}>— CALIBRATED BAND MARKERS · SCORED ON SUBSTANCE, NEVER DELIVERY</div>
+            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#5d6a92' }}>CALIBRATED BAND MARKERS · SCORED ON SUBSTANCE, NEVER DELIVERY</div>
           </div>
         </div>
       </div>
@@ -143,7 +148,7 @@ export default function SceneAppCrisp() {
       <div data-st="2" style={{ position: 'absolute', inset: '0', willChange: 'transform,opacity', opacity: '0' }}>
         <div style={{ position: 'absolute', left: '50%', top: '54%', transform: 'translate(-50%,-50%)', width: 'min(760px,92vw)' }}>
           <div data-pr="0" style={{ textAlign: 'center', marginBottom: '22px' }}>
-            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.3em', color: 'var(--zacc)' }}>YOUR PROOF — READY TO SHARE</div>
+            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.3em', color: 'var(--zacc)' }}>YOUR PROOF · READY TO SHARE</div>
           </div>
           <div data-pr="1" style={{ borderRadius: '20px', overflow: 'hidden', background: 'linear-gradient(180deg,#0d1530,#070c1d)', border: '1px solid rgba(96,158,255,.28)', boxShadow: '0 60px 120px -50px rgba(34,110,230,.5)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '9px', padding: '10px 16px', background: 'rgba(255,255,255,.03)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
@@ -226,7 +231,7 @@ export default function SceneAppCrisp() {
             <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7d8bb8' }}>ONE LINK · THE WHOLE SIGNAL</span>
           </div>
           <div data-pr="3" style={{ textAlign: 'center', marginTop: '16px' }}>
-            <a href="#s-end" className="hv-white" style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: '#9fb0da', textDecoration: 'none', borderBottom: '1px solid rgba(159,176,218,.35)', paddingBottom: '3px' }}>THIS COULD BE YOU IN 10 MINUTES — START FREE ↓</a>
+            <a href="#s-end" className="hv-white" style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: '#9fb0da', textDecoration: 'none', borderBottom: '1px solid rgba(159,176,218,.35)', paddingBottom: '3px' }}>THIS COULD BE YOU IN 10 MINUTES · START FREE ↓</a>
           </div>
         </div>
       </div>
@@ -243,7 +248,7 @@ export default function SceneAppCrisp() {
               <span style={{ width: '30px', height: '30px', borderRadius: '9px', background: 'linear-gradient(135deg,#d97706,#92400e)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '12px' }}>L</span>
               <div>
                 <div style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: '#dfe6ff' }}>LATTICE · ENG RECRUITING</div>
-                <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#7d8bb8', marginTop: '3px' }}>TALENT QUEUE — RANKED BY VERIFIED SIGNAL</div>
+                <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#7d8bb8', marginTop: '3px' }}>TALENT QUEUE · RANKED BY VERIFIED SIGNAL</div>
               </div>
             </div>
             <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.16em', color: '#7d8bb8', border: '1px solid rgba(255,255,255,.12)', borderRadius: '999px', padding: '4px 10px' }}>BACKEND · L4</span>

@@ -20,7 +20,7 @@ export default function SceneEnd() {
         </div>
       </div>
       <div style={{ position: 'absolute', bottom: '0', left: '0', right: '0', borderTop: '1px solid var(--line)', padding: '18px 6vw', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap', fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.16em', color: 'var(--ink3)' }}>
-        <span>© 2026 BRIO — PROOF, OUT LOUD</span>
+        <span>© 2026 BRIO · PROOF, OUT LOUD</span>
         <span style={{ display: 'flex', gap: '22px' }}><a href="#s-app" className="hv-ink" style={{ color: 'var(--ink3)', textDecoration: 'none' }}>BRIO.SO</a><a href="#s-app" className="hv-ink" style={{ color: 'var(--ink3)', textDecoration: 'none' }}>PRIVACY</a><a href="#s-app" className="hv-ink" style={{ color: 'var(--ink3)', textDecoration: 'none' }}>SECURITY</a><a href="#s-app" className="hv-ink" style={{ color: 'var(--ink3)', textDecoration: 'none' }}>@BRIO</a></span>
       </div>
     </section>

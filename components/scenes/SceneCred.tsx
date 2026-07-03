@@ -5,7 +5,7 @@ export default function SceneCred() {
         <div>
           <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)' }}>03 · THE CREDENTIAL</div>
           <h2 data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '790', fontStretch: '111%', fontSize: 'clamp(42px,5.6vw,90px)', lineHeight: '.96', letterSpacing: '-.033em', margin: '16px 0 0', textWrap: 'balance' }}>Pass once. <span data-ital="" style={{ color: 'var(--acc-hl)' }}>Carry the proof</span> anywhere.</h2>
-          <p style={{ fontSize: 'clamp(15px,1.5vw,18px)', lineHeight: '1.55', color: 'var(--ink2)', margin: '24px 0 0', maxWidth: '46ch' }}>One un-assisted, on-camera assessment becomes a shareable, verifiable credential — the same signal recruiters discover you by. No grind, no gaming.</p>
+          <p style={{ fontSize: 'clamp(15px,1.5vw,18px)', lineHeight: '1.55', color: 'var(--ink2)', margin: '24px 0 0', maxWidth: '46ch' }}>One un-assisted, on-camera assessment becomes a shareable, verifiable credential, the same signal recruiters discover you by. No grind, no gaming.</p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginTop: '32px', flexWrap: 'wrap' }}>
             <a href="#s-end" data-mag="" className="hv-glow-3" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'var(--acc)', color: 'var(--acc-ink)', borderRadius: '999px', padding: '15px 26px', fontWeight: '700', fontSize: '14.5px', textDecoration: 'none', boxShadow: '0 0 40px -12px var(--acc)' }}>Earn your credential →</a>
             <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.2em', color: 'var(--ink3)' }}>UN-ASSISTED · ON CAMERA · ONE SITTING</span>
@@ -44,7 +44,7 @@ export default function SceneCred() {
               </div>
             </div>
           </div>
-          <div style={{ textAlign: 'center', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.26em', color: 'var(--ink4)', marginTop: '20px' }}>HOVER — INSPECT THE CREDENTIAL</div>
+          <div style={{ textAlign: 'center', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.26em', color: 'var(--ink4)', marginTop: '20px' }}>HOVER · INSPECT THE CREDENTIAL</div>
         </div>
       </div>
     </section>

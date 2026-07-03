@@ -58,11 +58,11 @@ class SigRuntime {
     "RECRUITER VIEW · DISCOVERY",
   ];
   stClocks = ["REC 00:07:42", "SCORED · 00:09:58", "LIVE · SHAREABLE", "RANKED BY SIGNAL"];
-  zQ = '"Walk me through a system you broke — and what you did in the next hour."';
+  zQ = '"Walk me through a system you broke, and what you did in the next hour."';
   rcM =
-    "Hi Aarav — just watched your verified system-design clip. The hot-key answer was sharp. Open to a chat about Backend L4?";
+    "Hi Aarav, just watched your verified system-design clip. The hot-key answer was sharp. Open to a chat about Backend L4?";
   zTR =
-    "YOU · \"I'd cap the blast radius first — freeze writes, bisect the deploy, then own the postmortem.\"";
+    "YOU · \"I'd cap the blast radius first: freeze writes, bisect the deploy, then own the postmortem.\"";
 
   lds: any[] = [];
   loops: any[] = [];
@@ -275,7 +275,7 @@ class SigRuntime {
         this.sndOn = !this.sndOn;
         this.au.setOn(this.sndOn);
         const tx = this.q("[data-snd-tx]");
-        if (tx) tx.textContent = this.sndOn ? "SOUND — ON" : "SOUND — OFF";
+        if (tx) tx.textContent = this.sndOn ? "SOUND · ON" : "SOUND · OFF";
         try { localStorage.setItem("brio-sound", this.sndOn ? "1" : "0"); } catch (e) {}
       };
       sndBtn.addEventListener("click", this._sndH);
