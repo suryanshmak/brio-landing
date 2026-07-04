@@ -1123,43 +1123,34 @@ class SigRuntime {
       "float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}\n" +
       "float n2(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);\n" +
       "return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+vec2(1.,1.)),f.x),f.y);}\n" +
-      "float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<3;i++){v+=a*n2(p);p=p*2.03+vec2(7.3,3.1);a*=.5;}return v;}\n" +
+      "float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*n2(p);p=p*2.03+vec2(7.3,3.1);a*=.5;}return v;}\n" +
       "void main(){\n" +
       "vec2 uv=(gl_FragCoord.xy-.5*uR)/min(uR.x,uR.y);\n" +
       "float t=uT;\n" +
-      "vec2 p=uv-uM*.05*uP;\n" +
+      "float v0=sin(t*2.3)*sin(t*3.1+1.7)*sin(t*.7+4.);\n" +
+      "float vc=smoothstep(.12,.8,v0*v0);\n" +
+      "vec2 p=uv-uM*.06*uP;\n" +
       "float r=length(p);\n" +
       "float an=atan(p.y,p.x);\n" +
-      "float vc=sin(t*2.3)*sin(t*3.1+1.7)*sin(t*.7+4.);\n" +
-      "vc=smoothstep(.12,.8,vc*vc);\n" +
-      "float amp=(.22+.78*vc)*mix(.45,1.,uC)+uE*.9;\n" +
-      "float breath=1.+.02*sin(t*.9);\n" +
-      "float w=sin(an*7.+t*1.4)*.3+sin(an*13.-t*2.2)*.18+sin(an*23.+t*3.6)*.1;\n" +
-      "float rad=uRb*breath*(1.+.09*w*(amp*.6+.08));\n" +
+      "float act=clamp((.35+.65*vc)*mix(.55,1.,uC)+uE*.6,0.,1.4);\n" +
+      "float wob=sin(an*3.+t*.8)*.022+sin(an*5.-t*.6)*.014+(fbm(vec2(an*.9+3.,t*.14))-.5)*.05;\n" +
+      "float rad=uRb*(1.+.016*sin(t*.7))+wob*uRb*3.2*act;\n" +
       "float d=r-rad;\n" +
-      "float ring=exp(-abs(d)*44.)*(.8+.55*vc);\n" +
-      "float tid=floor(an*7.639437+.5);\n" +
-      "float seg=abs(fract(an*7.639437+.5)-.5)*2.;\n" +
-      "float bl=n2(vec2(tid*.37,t*1.9));\n" +
-      "float len=.028+.13*bl*(.2+.8*vc)+.05*uE;\n" +
-      "float bar=(1.-smoothstep(.26,.45,seg))*smoothstep(.0,.008,d)*(1.-smoothstep(len-.014,len,d));\n" +
-      "float ticks=bar*(.3+.8*vc);\n" +
-      "float core=(1.-smoothstep(-.5,.0,d))*(.14+.12*fbm(p*3.+vec2(t*.1,-t*.07))+.1*vc);\n" +
-      "float rp=sin(d*46.-t*5.2);\n" +
-      "float ripple=smoothstep(.0,.02,d)*exp(-d*7.5)*rp*rp*vc*.45;\n" +
-      "float mA=atan(uM.y,uM.x);\n" +
-      "float dA=abs(mod(an-mA+3.14159,6.28318)-3.14159);\n" +
-      "float foc=exp(-dA*dA*3.)*uP;\n" +
-      "ring+=foc*.9*exp(-abs(d)*28.);\n" +
-      "float halo=exp(-max(d,0.)*4.5)*.2*(.5+.5*vc);\n" +
-      "float m=ring*1.1+ticks+core+ripple+halo;\n" +
+      "float body=1.-smoothstep(-.012,.012,d);\n" +
+      "float depth=1.-smoothstep(-.3,.02,d);\n" +
+      "float inner=fbm(p*2.6+vec2(t*.05,-t*.04));\n" +
+      "float caust=pow(fbm(p*4.2+vec2(-t*.07,t*.05)),2.)*1.4;\n" +
+      "float rim0=exp(-abs(d)*64.);\n" +
+      "float rim=rim0*(.75+.45*vc+.5*uP);\n" +
+      "float sss=exp(-max(d,0.)*9.)*.18;\n" +
+      "float m=body*(.22+.34*inner+.3*caust*depth)+rim+sss;\n" +
       "float fade=1.-smoothstep(uF.x,uF.y,length(uv));\n" +
       "vec2 eq=abs(gl_FragCoord.xy/uR-.5)*2.;\n" +
       "fade*=(1.-smoothstep(.7,.96,max(eq.x,eq.y)));\n" +
       "m*=fade;\n" +
-      "vec3 col=mix(uA,uB,clamp(.35+.5*vc+.45*foc+(1.-smoothstep(-.25,.02,d))*.15,0.,1.));\n" +
+      "vec3 col=mix(uA,uB,clamp(.25+.45*inner+.5*rim0,0.,1.));\n" +
       "float alpha=clamp(m,0.,1.);\n" +
-      "vec3 rgb=col*(.5+.62*min(m,1.25));\n" +
+      "vec3 rgb=col*(.5+.68*min(m,1.25));\n" +
       "if(uL>.5){rgb=col*.92;alpha=clamp(m*.85,0.,.92);}\n" +
       "gl_FragColor=vec4(rgb,alpha);\n" +
       "}";

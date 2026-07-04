@@ -36,7 +36,7 @@ export default function SceneAppWorld() {
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.2em', color: '#93a5d6' }}>BRIO · LIVE INTERVIEW</span>
                 <span style={{ marginLeft: 'auto', fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.14em', color: 'var(--zacc)' }}><span data-loop="dotp" data-dur="1.4" style={{ display: 'inline-block' }}>●</span> <span data-roomclock="">REC 00:07:42</span></span>
               </div>
-              <canvas data-orb="mini" data-cols="z" data-rb=".2" data-fade=".3,.42" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%', opacity: '.9' }}></canvas>
+              <canvas data-orb="mini" data-cols="z" data-rb=".24" data-fade=".34,.46" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%', opacity: '.9' }}></canvas>
               <div style={{ position: 'absolute', bottom: '0', left: '0', right: '0', padding: '10px 14px', textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.24em', color: '#93a5d6' }}>SYSTEM DESIGN · UN-ASSISTED · CAMERA ON</div>
               </div>
