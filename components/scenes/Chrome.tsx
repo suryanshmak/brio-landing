@@ -26,7 +26,6 @@ export default function Chrome() {
           <a href="#s-end" className="hv-ink" style={{ color: 'var(--ink2)', textDecoration: 'none', fontSize: '13px', fontWeight: '500' }}>Sign in</a>
           <a href="#s-end" className="hv-glow-1" style={{ background: 'var(--acc)', color: 'var(--acc-ink)', borderRadius: '999px', padding: '10px 20px', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>Start free</a>
         </div>
-        <span data-navprog="" aria-hidden="true" style={{ position: 'absolute', left: '0', bottom: '-1px', width: '100%', height: '2px', background: 'linear-gradient(90deg,var(--acc),var(--cyn))', transformOrigin: 'left', transform: 'scaleX(0)', opacity: '.85', pointerEvents: 'none' }}></span>
       </nav>
     </>
   );
