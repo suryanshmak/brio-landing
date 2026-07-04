@@ -154,7 +154,7 @@ export default function SceneAppCrisp() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '9px', padding: '10px 16px', background: 'rgba(255,255,255,.03)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
               <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#3a4668' }}></span><span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#3a4668' }}></span><span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#3a4668' }}></span>
               <span style={{ marginLeft: '12px', fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: '#93a5d6', background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.09)', borderRadius: '7px', padding: '3px 12px' }}>brio.so/p/aarav</span>
-              <span style={{ marginLeft: 'auto', fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.18em', color: '#7d8bb8' }}>PUBLIC PROFILE</span>
+              <span style={{ marginLeft: 'auto', fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.18em', color: '#7d8bb8' }}>PUBLIC PROFILE · BY CHOICE</span>
             </div>
             <div style={{ padding: 'clamp(18px,2.6vw,28px)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
@@ -164,7 +164,7 @@ export default function SceneAppCrisp() {
                     <span data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '760', fontStretch: '108%', fontSize: '24px', lineHeight: '1', letterSpacing: '-.02em', color: '#fff' }}>Aarav Mehta</span>
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.1em', color: 'var(--zacc)', background: 'var(--acc-bg)', border: '1px solid var(--acc-brd)', borderRadius: '999px', padding: '3px 9px' }}><span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--zacc)' }}></span>VERIFIED</span>
                   </div>
-                  <div style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: '#7d8bb8', marginTop: '5px' }}>Backend Engineer · un-assisted · on camera · 7 sessions</div>
+                  <div style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: '#7d8bb8', marginTop: '5px' }}>Backend Engineer · best takes kept · 7 sessions · public by choice</div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-end', gap: '10px' }}>
                   <span data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '830', fontStretch: '112%', fontSize: '46px', lineHeight: '.78', color: 'var(--zvio)', letterSpacing: '-.03em' }}>84</span>
@@ -228,7 +228,7 @@ export default function SceneAppCrisp() {
               <span style={{ fontFamily: 'var(--f-mono)', fontSize: '12.5px', color: '#dfe6ff', letterSpacing: '.02em' }}>brio.so/p/aarav</span>
               <button data-copy="" data-loop="pulse" data-dur="2.6" type="button" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.14em', background: 'var(--zacc)', color: 'var(--zacc-ink)', border: 'none', borderRadius: '999px', padding: '10px 18px', fontWeight: '700', cursor: 'pointer', boxShadow: '0 0 34px -8px var(--zacc)' }}>COPY LINK</button>
             </div>
-            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7d8bb8' }}>ONE LINK · THE WHOLE SIGNAL</span>
+            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7d8bb8' }}>ONE LINK · YOU CONTROL WHO SEES IT</span>
           </div>
           <div data-pr="3" style={{ textAlign: 'center', marginTop: '16px' }}>
             <a href="#s-end" className="hv-white" style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: '#9fb0da', textDecoration: 'none', borderBottom: '1px solid rgba(159,176,218,.35)', paddingBottom: '3px' }}>THIS COULD BE YOU IN 10 MINUTES · START FREE ↓</a>

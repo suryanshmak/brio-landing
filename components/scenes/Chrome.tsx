@@ -18,6 +18,7 @@ export default function Chrome() {
         </a>
         <div id="navlinks" style={{ marginLeft: '26px', display: 'flex', alignItems: 'center', gap: '24px' }}>
           <a href="#s-app" className="hv-ink" style={{ color: 'var(--ink2)', textDecoration: 'none', fontSize: '13px', fontWeight: '500' }}>How it works</a>
+          <a href="#s-takes" className="hv-ink" style={{ color: 'var(--ink2)', textDecoration: 'none', fontSize: '13px', fontWeight: '500' }}>Three takes</a>
           <a href="#s-cred" className="hv-ink" style={{ color: 'var(--ink2)', textDecoration: 'none', fontSize: '13px', fontWeight: '500' }}>Credential</a>
           <a href="#s-disc" className="hv-ink" style={{ color: 'var(--ink2)', textDecoration: 'none', fontSize: '13px', fontWeight: '500' }}>Recruiters</a>
           <a href="#s-valid" className="hv-ink" style={{ color: 'var(--ink2)', textDecoration: 'none', fontSize: '13px', fontWeight: '500' }}>Validity</a>

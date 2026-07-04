@@ -2,10 +2,12 @@ import SigEngine from "@/components/SigEngine";
 import Chrome from "@/components/scenes/Chrome";
 import SceneApp from "@/components/scenes/SceneApp";
 import SceneNoise from "@/components/scenes/SceneNoise";
+import SceneTakes from "@/components/scenes/SceneTakes";
 import SceneCred from "@/components/scenes/SceneCred";
 import SceneDisc from "@/components/scenes/SceneDisc";
 import SceneValid from "@/components/scenes/SceneValid";
 import SceneEnd from "@/components/scenes/SceneEnd";
+import SiteFooter from "@/components/scenes/SiteFooter";
 
 export default function Page() {
   return (
@@ -26,10 +28,12 @@ export default function Page() {
       <Chrome />
       <SceneApp />
       <SceneNoise />
+      <SceneTakes />
       <SceneCred />
       <SceneDisc />
       <SceneValid />
       <SceneEnd />
+      <SiteFooter />
       <SigEngine />
     </div>
   );
