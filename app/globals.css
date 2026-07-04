@@ -122,7 +122,7 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
   #stgclips{grid-template-columns:repeat(3,1fr)!important;max-width:none!important;gap:7px!important;}
   [data-rctoast]{white-space:normal!important;max-width:86vw;text-align:center;}
 }
-@media (max-height:860px){
+@media (max-height:860px) and (min-width:981px){
   #zhead{top:9vh!important;}
   #zlap{top:61%!important;width:min(720px,62vw,92vh)!important;}
   #zstat{top:20vh!important;right:5vw!important;}
