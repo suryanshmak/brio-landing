@@ -62,6 +62,27 @@ export const viewport: Viewport = {
   ],
 };
 
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://brio.so/#org",
+      name: "Brio",
+      url: "https://brio.so",
+      logo: "https://brio.so/icon.svg",
+      description: DESCRIPTION,
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://brio.so/#site",
+      name: "Brio",
+      url: "https://brio.so",
+      publisher: { "@id": "https://brio.so/#org" },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -72,7 +93,13 @@ export default function RootLayout({
       lang="en"
       className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        />
+      </body>
     </html>
   );
 }

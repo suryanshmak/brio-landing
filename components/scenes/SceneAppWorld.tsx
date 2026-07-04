@@ -34,7 +34,7 @@ export default function SceneAppWorld() {
               <div style={{ position: 'absolute', top: '0', left: '0', right: '0', display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 12px', background: 'rgba(255,255,255,.03)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
                 <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: 'radial-gradient(circle at 32% 28%,var(--logo1),var(--logo2) 62%,var(--logo3))', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: '800', fontSize: '9px' }}>b</span>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.2em', color: '#93a5d6' }}>BRIO · LIVE INTERVIEW</span>
-                <span style={{ marginLeft: 'auto', fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.14em', color: 'var(--zacc)' }}><span data-loop="dotp" data-dur="1.4" style={{ display: 'inline-block' }}>●</span> REC 00:07:42</span>
+                <span style={{ marginLeft: 'auto', fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.14em', color: 'var(--zacc)' }}><span data-loop="dotp" data-dur="1.4" style={{ display: 'inline-block' }}>●</span> <span data-roomclock="">REC 00:07:42</span></span>
               </div>
               <canvas data-orb="mini" data-cols="z" data-rb=".2" data-fade=".3,.42" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%', opacity: '.9' }}></canvas>
               <div style={{ position: 'absolute', bottom: '0', left: '0', right: '0', padding: '10px 14px', textAlign: 'center' }}>

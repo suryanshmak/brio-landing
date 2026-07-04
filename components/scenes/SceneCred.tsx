@@ -16,6 +16,8 @@ export default function SceneCred() {
             <div data-tiltcard="" style={{ position: 'relative', overflow: 'hidden', width: 'min(460px,88vw)', borderRadius: '26px', padding: '32px', background: 'linear-gradient(150deg,var(--card1),var(--card2) 75%)', border: '1px solid var(--cardbrd)', boxShadow: '0 70px 140px -50px var(--cardglow)', transformStyle: 'preserve-3d', willChange: 'transform' }}>
               <div aria-hidden="true" style={{ position: 'absolute', top: '-10%', bottom: '-10%', right: '22%', width: '56px', background: 'linear-gradient(180deg,var(--tint2),var(--g2),var(--acc-bg))', transform: 'skewX(-12deg)', opacity: '.55', pointerEvents: 'none' }}></div>
               <div data-sheen="" aria-hidden="true" style={{ position: 'absolute', inset: '-40%', background: 'linear-gradient(115deg,transparent 43%,rgba(255,255,255,.13) 50%,transparent 57%)', pointerEvents: 'none', willChange: 'transform' }}></div>
+              <div className="cred-foil" aria-hidden="true"></div>
+              <div className="cred-glare" aria-hidden="true"></div>
               <div data-loop="scanY" data-dur="7" aria-hidden="true" style={{ position: 'absolute', left: '0', right: '0', top: '0', height: '36px', background: 'linear-gradient(180deg,transparent,color-mix(in srgb,var(--acc) 14%,transparent),transparent)', opacity: '0', pointerEvents: 'none', willChange: 'transform,opacity' }}></div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: 'var(--acc)' }}>BRIO · VERIFIED CREDENTIAL</div>

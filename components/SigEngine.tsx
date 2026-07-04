@@ -116,6 +116,15 @@ class SigRuntime {
   _nv = false;
   _navHidden = false;
   _lastRawY = 0;
+  _wiped = false;
+  _li = -1;
+  _liT: any = null;
+  _rsec = -1;
+  liveMsgs = [
+    "3 RECRUITERS VIEWING · STRIPE OPENED YOUR SYS-DESIGN CLIP 2M AGO",
+    "LATTICE SAVED YOUR PROFILE TO A BACKEND L4 SHORTLIST",
+    "RAMP REPLAYED YOUR HOT-KEY ANSWER · 44S AGO",
+  ];
   _ldDone = false;
   _ferr = false;
   _copyT: any = null;
@@ -166,6 +175,10 @@ class SigRuntime {
       navbar: this.q("[data-nav]"),
       copyBtn: this.q("[data-copy]"),
       gw: this.q("[data-gw]"), shareCard: this.q('[data-pr="1"]'),
+      navProg: this.q("[data-navprog]"),
+      wipe: this.q("[data-wipe]"),
+      roomClock: this.q("[data-roomclock]"),
+      liveAct: this.q("[data-liveact]"),
     };
     this.wraps = {
       app: this.q("#s-app"), noise: this.q("#s-noise"), cred: this.q("#s-cred"),
@@ -233,8 +246,11 @@ class SigRuntime {
         const r = w.getBoundingClientRect();
         st.tx = ((ev.clientY - r.top) / Math.max(1, r.height) - 0.5) * -st.mx;
         st.ty = ((ev.clientX - r.left) / Math.max(1, r.width) - 0.5) * st.my;
+        st.px = ((ev.clientX - r.left) / Math.max(1, r.width)) * 100;
+        st.py = ((ev.clientY - r.top) / Math.max(1, r.height)) * 100;
+        st.hov = true;
       };
-      st.leave = () => { st.tx = 0; st.ty = 0; };
+      st.leave = () => { st.tx = 0; st.ty = 0; st.hov = false; };
       w.addEventListener("mousemove", st.move, { passive: true });
       w.addEventListener("mouseleave", st.leave, { passive: true });
       return st;
@@ -322,6 +338,7 @@ class SigRuntime {
   unmount() {
     if (this.raf) cancelAnimationFrame(this.raf);
     if (this._copyT) clearTimeout(this._copyT);
+    if (this._liT) clearTimeout(this._liT);
     if (this._mt) clearTimeout(this._mt);
     if (this.onMouse) removeEventListener("mousemove", this.onMouse);
     if (this.onResize) removeEventListener("resize", this.onResize);
@@ -428,6 +445,7 @@ class SigRuntime {
     if (this.vis.app) this.appFrame(y, now);
     if (this.vis.noise) this.noiseFrame(y);
     if (this.vis.disc) this.discFrame(y);
+    if (this.vis.valid) this.wipeFrame();
     this.countersFrame();
     this.kinFrame(y, t);
     this.hudFrame(y);
@@ -475,6 +493,15 @@ class SigRuntime {
         w.style.transform =
           "translate3d(" + tx.toFixed(2) + "px," + ty.toFixed(2) + "px,0) rotate(" +
           (Math.sin(e * Math.PI) * 1.4 * this.calm).toFixed(2) + "deg) scale(" + sc.toFixed(4) + ")";
+      }
+    }
+    // the laptop's REC clock runs in real time while we're still in the room
+    if (this.el.roomClock && e < 0.6) {
+      const rs = 462 + Math.floor(this._t);
+      if (rs !== this._rsec) {
+        this._rsec = rs;
+        this.el.roomClock.textContent =
+          "REC 00:" + String(Math.floor(rs / 60)).padStart(2, "0") + ":" + String(rs % 60).padStart(2, "0");
       }
     }
     const fadeEarly = this.clamp(e * 2.4, 0, 1);
@@ -683,6 +710,20 @@ class SigRuntime {
       el.style.transform = "translate3d(0," + ((1 - k) * 40).toFixed(1) + "px,0)";
       el.style.filter = k < 0.97 ? "blur(" + ((1 - k) * 5).toFixed(1) + "px)" : "none";
     });
+    // recruiter activity rotates while the profile is on screen
+    if (this.el.liveAct) {
+      const li = Math.floor(this._t / 3.8) % this.liveMsgs.length;
+      if (li !== this._li) {
+        this._li = li;
+        const el = this.el.liveAct;
+        el.style.opacity = "0";
+        if (this._liT) clearTimeout(this._liT);
+        this._liT = setTimeout(() => {
+          el.textContent = this.liveMsgs[li];
+          el.style.opacity = "1";
+        }, 330);
+      }
+    }
   }
 
   stageRecruit(t: number) {
@@ -782,6 +823,20 @@ class SigRuntime {
     if (this.el.discFill) this.el.discFill.style.transform = "scaleX(" + p.toFixed(3) + ")";
   }
 
+  /* ---------- VALIDITY WIPE (completes the design's data-wipe hook) ---------- */
+  wipeFrame() {
+    if (this._wiped || !this.el.wipe) return;
+    const r = this.el.wipe.getBoundingClientRect();
+    const k = this.clamp((this.vh * 0.92 - r.top) / (this.vh * 0.6), 0, 1);
+    const e = this.E.expOut(k);
+    if (e >= 0.999) {
+      this.el.wipe.style.clipPath = "none";
+      this._wiped = true;
+      return;
+    }
+    this.el.wipe.style.clipPath = "inset(-2% " + ((1 - e) * 100).toFixed(2) + "% -2% 0 round 28px)";
+  }
+
   /* ---------- KINETIC TYPE ---------- */
   kinFrame(y: number, t: number) {
     if (this.root.getAttribute("data-type") === "serif") return;
@@ -804,6 +859,7 @@ class SigRuntime {
   /* ---------- HUD ---------- */
   hudFrame(y: number) {
     const p = this.clamp(y / this.m.doc, 0, 1);
+    if (this.el.navProg) this.el.navProg.style.transform = "scaleX(" + p.toFixed(4) + ")";
     if (this.el.hudFill) this.el.hudFill.style.transform = "scaleY(" + p.toFixed(4) + ")";
     const pct = Math.round(p * 100);
     if (pct !== this._pct) {
@@ -848,10 +904,18 @@ class SigRuntime {
     this.tilts.forEach((s) => {
       s.cx += (s.tx - s.cx) * 0.09;
       s.cy += (s.ty - s.cy) * 0.09;
+      // foil/glare pointer vars glide toward the cursor (center when idle)
+      s.cpx = (s.cpx == null ? 50 : s.cpx) + ((s.hov ? s.px : 50) - (s.cpx == null ? 50 : s.cpx)) * 0.12;
+      s.cpy = (s.cpy == null ? 50 : s.cpy) + ((s.hov ? s.py : 50) - (s.cpy == null ? 50 : s.cpy)) * 0.12;
       const live = Math.abs(s.cx) + Math.abs(s.cy) > 0.02;
-      if (!live && !s._z) return;
+      if (!live && !s._z && !s.hov) return;
       s._z = live;
-      if (s.card) s.card.style.transform = "rotateX(" + (s.cx * this.calm).toFixed(2) + "deg) rotateY(" + (s.cy * this.calm).toFixed(2) + "deg)";
+      if (s.card) {
+        s.card.style.transform = "rotateX(" + (s.cx * this.calm).toFixed(2) + "deg) rotateY(" + (s.cy * this.calm).toFixed(2) + "deg)";
+        s.card.style.setProperty("--px", s.cpx.toFixed(1) + "%");
+        s.card.style.setProperty("--py", s.cpy.toFixed(1) + "%");
+        s.card.style.setProperty("--glareo", s.hov ? ".9" : "0");
+      }
       if (s.sheen) s.sheen.style.transform = "translate3d(" + (s.cy * 10).toFixed(1) + "px," + (s.cx * -10).toFixed(1) + "px,0)";
     });
   }

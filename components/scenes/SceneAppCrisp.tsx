@@ -221,7 +221,7 @@ export default function SceneAppCrisp() {
               <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg,#635bff,#2d2a8c)', border: '2px solid #05070f', marginLeft: '-7px', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: '700' }}>S</span>
               <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg,#0ea5e9,#075985)', border: '2px solid #05070f', marginLeft: '-7px', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: '700' }}>R</span>
             </span>
-            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.16em', color: '#9fb0da' }}><span data-loop="dotp" data-dur="1.8" style={{ display: 'inline-block', color: 'var(--zacc)' }}>●</span> 3 RECRUITERS VIEWING · STRIPE OPENED YOUR SYS-DESIGN CLIP 2M AGO</span>
+            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.16em', color: '#9fb0da' }}><span data-loop="dotp" data-dur="1.8" style={{ display: 'inline-block', color: 'var(--zacc)' }}>●</span> <span data-liveact="" style={{ transition: 'opacity .32s' }}>3 RECRUITERS VIEWING · STRIPE OPENED YOUR SYS-DESIGN CLIP 2M AGO</span></span>
           </div>
           <div data-pr="2" id="stgshare" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '13px', marginTop: '16px', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', border: '1px solid rgba(255,255,255,.16)', background: 'rgba(8,14,32,.6)', backdropFilter: 'blur(10px)', borderRadius: '999px', padding: '6px 6px 6px 18px' }}>

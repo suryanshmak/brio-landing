@@ -64,6 +64,21 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
 ::-webkit-scrollbar-thumb{background:rgba(148,180,230,.22);border-radius:6px;border:2px solid #04070f;}
 ::-webkit-scrollbar-thumb:hover{background:rgba(148,180,230,.4);}
 
+/* holographic credential — iridescent foil + pointer-tracked glare (ice) */
+.cred-foil{position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(115deg,
+      rgba(94,225,255,.42) 0 12px,
+      rgba(79,128,255,.36) 12px 24px,
+      rgba(233,246,255,.3) 24px 36px,
+      rgba(42,212,238,.38) 36px 48px),
+    radial-gradient(130% 100% at var(--px,50%) var(--py,50%),rgba(255,255,255,.5),transparent 55%);
+  background-position:var(--px,50%) var(--py,50%),0 0;
+  mix-blend-mode:overlay;opacity:.26;filter:saturate(1.35);}
+.cred-glare{position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(170px circle at var(--px,50%) var(--py,50%),rgba(255,255,255,.42),transparent 60%);
+  mix-blend-mode:soft-light;opacity:var(--glareo,0);transition:opacity .35s;}
+
 /* hover states (the prototype used style-hover attributes) */
 .hv-ink:hover{color:var(--ink)!important;}
 .hv-ink-acc:hover{color:var(--ink)!important;border-color:var(--acc-brd)!important;}
