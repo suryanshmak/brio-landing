@@ -55,6 +55,16 @@ body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",
 .ct-tl{top:13px;left:13px;}.ct-tr{top:13px;right:13px;transform:scaleX(-1);}.ct-bl{bottom:13px;left:13px;transform:scaleY(-1);}.ct-br{bottom:13px;right:13px;transform:scale(-1);}
 #grain{position:fixed;inset:0;z-index:95;pointer-events:none;opacity:var(--grain-op);mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
+
+/* iOS dynamic viewport: pinned scenes track the visible viewport (URL bar) */
+@supports (height: 100dvh){
+  [data-z="stick"]{height:100dvh!important;}
+  #s-noise > div{height:100dvh!important;}
+  #s-disc > div{height:100dvh!important;}
+}
+/* fixed controls clear the home indicator */
+[data-snd]{bottom:calc(18px + env(safe-area-inset-bottom, 0px))!important;}
+
 /* cinematic backdrop — slow zoom + ambient drift (video-loop feel, no file) */
 @keyframes kenburns{
   0%{transform:scale(1) translate(0,0);}
@@ -119,6 +129,9 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
   #stgclips{grid-template-columns:1fr!important;max-width:420px;}
   #stgscore{grid-template-columns:1fr!important;gap:26px!important;}
 }
+@media (max-width:480px){
+  #footgrid{grid-template-columns:1fr!important;gap:28px!important;}
+}
 @media (max-width:640px){
   #navlinks{display:none!important;}
   .disccard{width:80vw!important;}
@@ -138,12 +151,26 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
   #stgclips{grid-template-columns:repeat(3,1fr)!important;max-width:none!important;gap:7px!important;}
   [data-rctoast]{white-space:normal!important;max-width:86vw;text-align:center;}
 }
+/* portrait phones: reposition hero head + laptop so the CTA never collides
+   with the laptop (the 980 block resizes but never moves them vertically).
+   top:max(66px,…) keeps the eyebrow clear of the ~60px nav. */
+@media (max-width:600px){
+  #zhead{top:max(84px,8vh)!important;padding:0 5vw!important;}
+  #zhead h1{font-size:clamp(29px,8vw,42px)!important;line-height:1!important;}
+  #zhead .ld[data-d="2"]{margin-top:16px!important;}
+  #zlap{top:63%!important;width:min(84vw,150vh)!important;}
+}
+/* short portrait phones (SE, small Android): drop the decorative eyebrow so
+   the CTA clears the laptop without crowding the nav */
+@media (max-width:600px) and (max-height:740px){
+  #zhead .ld:first-child{display:none!important;}
+}
 @media (max-height:860px) and (min-width:981px){
   #zhead{top:9vh!important;}
   #zlap{top:61%!important;width:min(720px,62vw,92vh)!important;}
   #zstat{top:20vh!important;right:5vw!important;}
 }
-@media (max-height:720px){
+@media (max-height:720px) and (min-width:981px){
   #zhead{top:7vh!important;}
   #zhead .ld{margin-bottom:12px!important;}
   #zhead h1{font-size:clamp(30px,4.2vw,48px)!important;}

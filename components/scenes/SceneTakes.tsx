@@ -45,7 +45,7 @@ export default function SceneTakes() {
           </div>
           <div style={{ borderTop: '1px solid var(--line)', padding: '14px 18px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.18em', color: 'var(--ink3)', flexShrink: '0' }}>VISIBILITY</span>
-            <div style={{ display: 'inline-flex', border: '1px solid var(--line2)', borderRadius: '999px', padding: '3px', gap: '3px' }}>
+            <div style={{ display: 'inline-flex', flexWrap: 'wrap', border: '1px solid var(--line2)', borderRadius: '18px', padding: '3px', gap: '3px' }}>
               <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.12em', color: 'var(--ink3)', borderRadius: '999px', padding: '5px 12px' }}>PRIVATE · ONLY YOU</span>
               <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.12em', color: 'var(--zacc-ink)', background: 'var(--acc)', borderRadius: '999px', padding: '5px 12px', fontWeight: '700' }}>PUBLIC · DISCOVERABLE</span>
             </div>
