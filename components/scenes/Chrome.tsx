@@ -10,6 +10,8 @@ export default function Chrome() {
         <span data-snd-tx="">SOUND · OFF</span>
       </button>
 
+      <a href="#s-noise" className="skip-link">SKIP THE INTRO ↓</a>
+
       {/* NAV */}
       <nav data-nav="" style={{ position: 'fixed', top: '0', left: '0', right: '0', zIndex: '80', display: 'flex', alignItems: 'center', gap: '20px', padding: '16px 5vw', backdropFilter: 'blur(14px)', background: 'var(--nav0)', borderBottom: '1px solid var(--line)' }}>
         <a href="#s-app" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: 'var(--ink)' }}>
@@ -25,7 +27,7 @@ export default function Chrome() {
         </div>
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '16px' }}>
           <a href="#s-end" className="hv-ink" style={{ color: 'var(--ink2)', textDecoration: 'none', fontSize: '13px', fontWeight: '500' }}>Sign in</a>
-          <a href="#s-end" className="hv-glow-1" style={{ background: 'var(--acc)', color: 'var(--acc-ink)', borderRadius: '999px', padding: '10px 20px', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>Start free</a>
+          <a href="#s-end" className="hv-glow-1" style={{ background: 'var(--acc)', color: 'var(--acc-ink)', borderRadius: '999px', padding: '12px 22px', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>Start free</a>
         </div>
       </nav>
     </>

@@ -578,7 +578,7 @@ class SigRuntime {
       this._stIdx = idx;
       if (this.el.appMode) this.el.appMode.textContent = this.stModes[idx];
       if (this.el.appClock) this.el.appClock.textContent = this.stClocks[idx];
-      this.el.stSteps.forEach((s: HTMLElement | null, i: number) => { if (s) s.style.color = i === idx ? "var(--zacc)" : "#5d6a92"; });
+      this.el.stSteps.forEach((s: HTMLElement | null, i: number) => { if (s) s.style.color = i === idx ? "var(--zacc)" : "#7580a3"; });
       if (this.au) this.au.tick(620 + idx * 90);
     }
     const skv = this.clamp((this._svel || 0) * 0.00045, -0.7, 0.7);
@@ -593,6 +593,7 @@ class SigRuntime {
       stg.style.transform = "translate3d(0," + (((1 - inE) * 60 - outK * 54) * (i === 0 ? 0 : 1)).toFixed(1) + "px,0) skewY(" + skv.toFixed(3) + "deg)";
       stg.style.filter = (1 - inE) + outK > 0.04 ? "blur(" + ((1 - inE) * 9 + outK * 8).toFixed(1) + "px)" : "none";
       stg.style.pointerEvents = op > 0.5 ? "auto" : "none";
+      stg.style.visibility = op <= 0.01 ? "hidden" : "visible";
       if (op <= 0.01) return;
       if (i === 0) this.stageInterview(t01);
       else if (i === 1) this.stageScore(t01);

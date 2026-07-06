@@ -2,7 +2,7 @@ export default function SceneAppCrisp() {
   return (
     <div data-z="crisp" style={{ position: 'absolute', inset: '0', zIndex: '6', opacity: '0', pointerEvents: 'none', background: '#05070f', willChange: 'transform,opacity' }}>
       <div aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', width: 'min(900px,90vw)', aspectRatio: '1', transform: 'translate(-50%,-50%)', borderRadius: '50%', background: 'radial-gradient(circle,rgba(43,98,232,.26),transparent 64%)' }}></div>
-      <canvas data-stars="chamber" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%' }}></canvas>
+      <canvas data-stars="chamber" aria-hidden="true" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%' }}></canvas>
       <div aria-hidden="true" style={{ position: 'absolute', inset: '0', background: 'radial-gradient(120% 100% at 50% 50%,transparent 55%,rgba(2,4,10,.7))' }}></div>
 
       {/* persistent app chrome */}
@@ -17,11 +17,11 @@ export default function SceneAppCrisp() {
         <div id="appstep" style={{ display: 'flex', alignItems: 'center', gap: '14px', background: 'rgba(5,7,15,.55)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,.09)', borderRadius: '999px', padding: '8px 18px' }}>
           <span data-app="st0" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'var(--zacc)' }}>01 INTERVIEW</span>
           <span style={{ width: '26px', height: '1px', background: 'rgba(255,255,255,.18)' }}></span>
-          <span data-app="st1" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#5d6a92' }}>02 SCORE</span>
+          <span data-app="st1" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7580a3' }}>02 SCORE</span>
           <span style={{ width: '26px', height: '1px', background: 'rgba(255,255,255,.18)' }}></span>
-          <span data-app="st2" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#5d6a92' }}>03 PROFILE</span>
+          <span data-app="st2" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7580a3' }}>03 PROFILE</span>
           <span style={{ width: '26px', height: '1px', background: 'rgba(255,255,255,.18)' }}></span>
-          <span data-app="st3" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#5d6a92' }}>04 DISCOVERED</span>
+          <span data-app="st3" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7580a3' }}>04 DISCOVERED</span>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ export default function SceneAppCrisp() {
           </svg>
           <div style={{ position: 'absolute', left: '50%', bottom: '-6%', width: '74%', height: '12%', transform: 'translateX(-50%)', borderRadius: '50%', background: 'radial-gradient(ellipse,rgba(79,128,255,.16),transparent 70%)' }}></div>
         </div>
-        <canvas data-orb="hero" data-cols="z" data-rb=".3" data-fade=".44,.62" style={{ position: 'absolute', left: '50%', top: '46%', transform: 'translate(-50%,-50%)', width: 'min(74vh,94vw)', height: 'min(74vh,94vw)', opacity: '.95' }}></canvas>
+        <canvas data-orb="hero" aria-hidden="true" data-cols="z" data-rb=".3" data-fade=".44,.62" style={{ position: 'absolute', left: '50%', top: '46%', transform: 'translate(-50%,-50%)', width: 'min(74vh,94vw)', height: 'min(74vh,94vw)', opacity: '.95' }}></canvas>
         <div id="zcam" style={{ position: 'absolute', right: '4vw', bottom: '7vh', width: '180px', borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.14)', background: '#070b18', boxShadow: '0 24px 60px -24px rgba(0,0,0,.7)', zIndex: '4' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 10px', background: 'rgba(255,255,255,.04)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
             <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.18em', color: '#93a5d6' }}>YOU · CAMERA ON</span>
@@ -139,7 +139,7 @@ export default function SceneAppCrisp() {
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.14em', color: 'var(--zacc)', border: '1px solid var(--acc-brd)', background: 'var(--acc-bg)', borderRadius: '999px', padding: '3px 8px', flexShrink: '0' }}>CROSS-SESSION MEMORY</span>
               </div>
             </div>
-            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#5d6a92' }}>CALIBRATED BAND MARKERS · SCORED ON SUBSTANCE, NEVER DELIVERY</div>
+            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7580a3' }}>CALIBRATED BAND MARKERS · SCORED ON SUBSTANCE, NEVER DELIVERY</div>
           </div>
         </div>
       </div>
@@ -267,13 +267,13 @@ export default function SceneAppCrisp() {
               <div data-rcfit="" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '820', fontStretch: '110%', fontSize: '30px', lineHeight: '.85', color: 'var(--zacc)', fontVariantNumeric: 'tabular-nums' }}>0</div>
               <div style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.2em', color: '#7d8bb8', marginTop: '3px' }}>FIT</div>
             </div>
-            <button data-rcbtn="" type="button" style={{ flexShrink: '0', fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.12em', background: 'var(--zacc)', color: 'var(--zacc-ink)', border: 'none', borderRadius: '999px', padding: '10px 16px', fontWeight: '700', cursor: 'pointer', willChange: 'transform' }}>SHORTLIST</button>
+            <button data-rcbtn="" type="button" tabIndex={-1} aria-hidden="true" style={{ flexShrink: '0', fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.12em', background: 'var(--zacc)', color: 'var(--zacc-ink)', border: 'none', borderRadius: '999px', padding: '10px 16px', fontWeight: '700', cursor: 'pointer', willChange: 'transform' }}>SHORTLIST</button>
           </div>
           <div data-rc="" data-dim=".55" style={{ marginTop: '9px', borderRadius: '14px', border: '1px solid rgba(255,255,255,.08)', background: 'rgba(8,14,32,.45)', padding: '11px 17px', display: 'flex', alignItems: 'center', gap: '14px' }}>
             <span style={{ width: '38px', height: '38px', borderRadius: '11px', background: '#1c2748', color: '#8fa0c8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '13px', flexShrink: '0' }}>RI</span>
             <div style={{ flex: '1', minWidth: '0' }}>
               <span style={{ fontSize: '14.5px', fontWeight: '600', color: '#c6d0ea' }}>R. Iyer</span>
-              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: '#5d6a92', marginTop: '4px', letterSpacing: '.06em' }}>RÉSUMÉ ONLY · NO VERIFIED SIGNAL</div>
+              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: '#7580a3', marginTop: '4px', letterSpacing: '.06em' }}>RÉSUMÉ ONLY · NO VERIFIED SIGNAL</div>
             </div>
             <div style={{ fontFamily: 'var(--f-mono)', fontSize: '15px', color: '#8fa0c8', fontVariantNumeric: 'tabular-nums' }}>—</div>
           </div>
@@ -281,7 +281,7 @@ export default function SceneAppCrisp() {
             <span style={{ width: '38px', height: '38px', borderRadius: '11px', background: '#1c2748', color: '#8fa0c8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '13px', flexShrink: '0' }}>KO</span>
             <div style={{ flex: '1', minWidth: '0' }}>
               <span style={{ fontSize: '14.5px', fontWeight: '600', color: '#c6d0ea' }}>K. Osei</span>
-              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: '#5d6a92', marginTop: '4px', letterSpacing: '.06em' }}>RÉSUMÉ ONLY · NO VERIFIED SIGNAL</div>
+              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: '#7580a3', marginTop: '4px', letterSpacing: '.06em' }}>RÉSUMÉ ONLY · NO VERIFIED SIGNAL</div>
             </div>
             <div style={{ fontFamily: 'var(--f-mono)', fontSize: '15px', color: '#8fa0c8', fontVariantNumeric: 'tabular-nums' }}>—</div>
           </div>

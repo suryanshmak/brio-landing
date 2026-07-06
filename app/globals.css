@@ -12,7 +12,7 @@
 html,body{margin:0;padding:0;}
 body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.5;overflow-x:clip;}
 #sigroot{
-  --ink:#eef3ff;--ink2:#b9c3de;--ink3:#8791b3;--ink4:#5d6685;
+  --ink:#eef3ff;--ink2:#b9c3de;--ink3:#8791b3;--ink4:#7580a3;
   --line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.17);--wash:rgba(255,255,255,.04);--wash2:rgba(255,255,255,.08);
   --ghost:#454f6e;--mark:rgba(255,255,255,.45);--glass:rgba(8,14,32,.55);--shadow1:rgba(0,0,0,.8);
   --vig:rgba(2,4,10,.5);--vigF:rgba(3,4,10,.66);--grain-op:.05;
@@ -54,6 +54,14 @@ body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",
 .ctick::after{height:100%;width:1px;top:0;left:0;}
 .ct-tl{top:13px;left:13px;}.ct-tr{top:13px;right:13px;transform:scaleX(-1);}.ct-bl{bottom:13px;left:13px;transform:scaleY(-1);}.ct-br{bottom:13px;right:13px;transform:scale(-1);}
 #grain{position:fixed;inset:0;z-index:95;pointer-events:none;opacity:var(--grain-op);mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+/* touch + pointer affordances */
+a,button{touch-action:manipulation;}
+button{cursor:pointer;}
+
+/* skip link: hidden until keyboard focus */
+.skip-link{position:fixed;top:10px;left:10px;z-index:200;transform:translateY(-260%);background:var(--acc);color:var(--acc-ink);font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;font-weight:700;border-radius:999px;padding:11px 18px;text-decoration:none;transition:transform .2s;}
+.skip-link:focus-visible{transform:translateY(0);}
 
 /* craft states — selection, keyboard focus, scrollbar */
 ::selection{background:var(--acc);color:var(--acc-ink);}

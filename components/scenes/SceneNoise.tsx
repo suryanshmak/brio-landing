@@ -22,11 +22,11 @@ export default function SceneNoise() {
         </div>
         <div style={{ position: 'relative', zIndex: '2', padding: '0 6vw', maxWidth: '1200px', width: '100%' }}>
           <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)', marginBottom: '30px' }}>02 · THE DIFFERENCE</div>
-          <div style={{ position: 'relative', maxWidth: '14ch', fontFamily: 'var(--f-disp)', fontWeight: '760', fontStretch: '108%', fontSize: 'clamp(44px,6.6vw,100px)', lineHeight: '1.02', letterSpacing: '-.03em' }} data-disp="">
+          <h2 style={{ position: 'relative', maxWidth: '14ch', fontFamily: 'var(--f-disp)', fontWeight: '760', fontStretch: '108%', fontSize: 'clamp(44px,6.6vw,100px)', lineHeight: '1.02', letterSpacing: '-.03em', margin: '0' }} data-disp="">
             <div style={{ color: 'var(--ghost)' }}>Résumés say what you did. Brio shows what you <span data-ital="">can do.</span></div>
             <div data-noise="crisp" aria-hidden="true" style={{ position: 'absolute', inset: '0', color: 'var(--ink)', clipPath: 'inset(0 0 0 0)' }}>Résumés say what you did. Brio shows what you <span data-ital="" style={{ color: 'var(--acc-hl)' }}>can do.</span></div>
             <div data-noise="beam" aria-hidden="true" style={{ position: 'absolute', top: '-4%', bottom: '-4%', left: '0', width: '2px', background: 'linear-gradient(180deg,transparent,var(--acc),transparent)', boxShadow: '0 0 22px 3px var(--acc)', opacity: '0' }}></div>
-          </div>
+          </h2>
         </div>
         <div style={{ position: 'absolute', bottom: '6vh', right: '6vw', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.24em', color: 'var(--ink4)' }}>SIGNAL EXTRACTION · SCRUB ▸</div>
       </div>

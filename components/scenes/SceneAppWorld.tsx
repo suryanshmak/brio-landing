@@ -4,7 +4,7 @@ export default function SceneAppWorld() {
       {/* THE ROOM */}
       <div data-z="world" style={{ position: 'absolute', inset: '0', willChange: 'transform' }}>
         <div data-z="lights" aria-hidden="true" style={{ position: 'absolute', inset: '0' }}>
-          <canvas data-stars="app" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%' }}></canvas>
+          <canvas data-stars="app" aria-hidden="true" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%' }}></canvas>
           <div style={{ position: 'absolute', left: '-12%', top: '-18%', width: '62vw', height: '62vw', borderRadius: '50%', background: 'radial-gradient(closest-side,var(--g1),transparent 70%)' }}></div>
           <div style={{ position: 'absolute', right: '-14%', top: '20%', width: '50vw', height: '50vw', borderRadius: '50%', background: 'radial-gradient(closest-side,var(--g2),transparent 70%)' }}></div>
           <div style={{ position: 'absolute', left: '8%', top: '14%', width: '2px', height: '26vh', background: 'linear-gradient(180deg,transparent,var(--line2),transparent)' }}></div>
@@ -36,7 +36,7 @@ export default function SceneAppWorld() {
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.2em', color: '#93a5d6' }}>BRIO · LIVE INTERVIEW</span>
                 <span style={{ marginLeft: 'auto', fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.14em', color: 'var(--zacc)' }}><span data-loop="dotp" data-dur="1.4" style={{ display: 'inline-block' }}>●</span> <span data-roomclock="">REC 00:07:42</span></span>
               </div>
-              <canvas data-orb="mini" data-cols="z" data-rb=".24" data-fade=".34,.46" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%', opacity: '.9' }}></canvas>
+              <canvas data-orb="mini" aria-hidden="true" data-cols="z" data-rb=".24" data-fade=".34,.46" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%', opacity: '.9' }}></canvas>
               <div style={{ position: 'absolute', bottom: '0', left: '0', right: '0', padding: '10px 14px', textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.24em', color: '#93a5d6' }}>SYSTEM DESIGN · UN-ASSISTED · CAMERA ON</div>
               </div>
