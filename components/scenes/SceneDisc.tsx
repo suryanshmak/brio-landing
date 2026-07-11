@@ -29,7 +29,7 @@ export default function SceneDisc() {
                   <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.2em', color: 'var(--ink3)', marginTop: '4px' }}>FIT</div>
                 </div>
               </div>
-              <svg viewBox="0 0 600 60" preserveAspectRatio="none" style={{ width: '100%', height: '40px', overflow: 'hidden', WebkitMaskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)', maskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)' }}><g data-loop="flowx" data-dur="4"><path d="M0,30 C75,6 150,54 225,30 S375,4 450,30 S600,54 675,30 825,30" fill="none" style={{ stroke: 'var(--vio)' }} strokeWidth="2.5" strokeLinecap="round" /></g></svg>
+              <svg viewBox="0 0 600 60" preserveAspectRatio="none" style={{ width: '100%', height: '40px', overflow: 'hidden', WebkitMaskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)', maskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)' }}><g data-loop="flowx" data-dur="4"><path d="M0,30 C75,6 150,54 225,30 S375,4 450,30 S600,54 675,30 S750,6 825,30" fill="none" style={{ stroke: 'var(--vio)' }} strokeWidth="2.5" strokeLinecap="round" /></g></svg>
               <p style={{ fontSize: '13.5px', color: 'var(--ink2)', margin: '0', lineHeight: '1.55' }}>Top-decile on Substance and Structure. Closed every system-design follow-up un-assisted.</p>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: 'var(--acc-dim)', background: 'var(--acc-bg)', border: '1px solid var(--acc-brd)', borderRadius: '7px', padding: '4px 10px', fontWeight: '700' }}>A+</span>
@@ -48,7 +48,7 @@ export default function SceneDisc() {
                   <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.2em', color: 'var(--ink3)', marginTop: '4px' }}>FIT</div>
                 </div>
               </div>
-              <svg viewBox="0 0 600 60" preserveAspectRatio="none" style={{ width: '100%', height: '40px', overflow: 'hidden', WebkitMaskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)', maskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)' }}><g data-loop="flowx" data-dur="3.4"><path d="M0,30 C75,10 150,50 225,30 S375,2 450,30 S600,50 675,30 825,30" fill="none" stroke="#f5a524" strokeWidth="2.5" strokeLinecap="round" /></g></svg>
+              <svg viewBox="0 0 600 60" preserveAspectRatio="none" style={{ width: '100%', height: '40px', overflow: 'hidden', WebkitMaskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)', maskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)' }}><g data-loop="flowx" data-dur="3.4"><path d="M0,30 C75,10 150,50 225,30 S375,2 450,30 S600,50 675,30 S750,10 825,30" fill="none" stroke="#f5a524" strokeWidth="2.5" strokeLinecap="round" /></g></svg>
               <p style={{ fontSize: '13.5px', color: 'var(--ink2)', margin: '0', lineHeight: '1.55' }}>Strongest Composure in the pool, recovered cleanly on every curveball, never froze.</p>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: 'var(--acc-dim)', background: 'var(--acc-bg)', border: '1px solid var(--acc-brd)', borderRadius: '7px', padding: '4px 10px', fontWeight: '700' }}>A</span>
@@ -67,7 +67,7 @@ export default function SceneDisc() {
                   <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.2em', color: 'var(--ink3)', marginTop: '4px' }}>FIT</div>
                 </div>
               </div>
-              <svg viewBox="0 0 600 60" preserveAspectRatio="none" style={{ width: '100%', height: '40px', overflow: 'hidden', WebkitMaskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)', maskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)' }}><g data-loop="flowx" data-dur="4.6"><path d="M0,30 C75,16 150,44 225,30 S375,12 450,30 S600,44 675,30 825,30" fill="none" style={{ stroke: 'var(--cyn)' }} strokeWidth="2.5" strokeLinecap="round" /></g></svg>
+              <svg viewBox="0 0 600 60" preserveAspectRatio="none" style={{ width: '100%', height: '40px', overflow: 'hidden', WebkitMaskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)', maskImage: 'linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)' }}><g data-loop="flowx" data-dur="4.6"><path d="M0,30 C75,16 150,44 225,30 S375,12 450,30 S600,44 675,30 S750,16 825,30" fill="none" style={{ stroke: 'var(--cyn)' }} strokeWidth="2.5" strokeLinecap="round" /></g></svg>
               <p style={{ fontSize: '13.5px', color: 'var(--ink2)', margin: '0', lineHeight: '1.55' }}>Cleanest Clarity score on record, premise to payoff with zero backtracking.</p>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: 'var(--acc-dim)', background: 'var(--acc-bg)', border: '1px solid var(--acc-brd)', borderRadius: '7px', padding: '4px 10px', fontWeight: '700' }}>A</span>

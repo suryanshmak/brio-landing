@@ -1,6 +1,11 @@
+import CinemaBackdrop from "@/components/CinemaBackdrop";
+
 export default function SceneEnd() {
   return (
     <section id="s-end" data-vis="end" data-screen-label="06 Finale" style={{ position: 'relative', minHeight: '105vh', overflow: 'clip', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(1100px 800px at 50% 110%,var(--bgB),var(--bgA) 70%)' }}>
+      {/* the Listening Room returns for the closing line — same footage as the
+          opening (browser-cache hit, zero extra bytes), lit up on approach */}
+      <CinemaBackdrop video="/hero-loop.mp4" video4k="/hero-loop-4k.mp4" poster="/cinema-poster.jpg" opacity={0.32} cine="end" />
       <canvas data-stars="end" aria-hidden="true" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%' }}></canvas>
       <div aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', width: 'min(560px,92vw)', aspectRatio: '1', transform: 'translate(-50%,-52%)', opacity: '.4' }}>
         <canvas data-orb="end" aria-hidden="true" data-rb=".34" data-fade=".48,.7" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%' }}></canvas>

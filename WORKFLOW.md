@@ -12,12 +12,33 @@ accessibility handling included. You only supply the visual.
   loop) → Bytedance 4K upscale → ffmpeg tail-into-head crossfade. Served as
   `public/hero-loop-4k.mp4` (3840×2160, 3MB) on large/high-DPR screens and
   `public/hero-loop.mp4` (1080p, 1MB) otherwise, `cinema-poster.jpg` first.
-- **Noise scene**: "Noise becomes Signal" 4K still (`noise-signal.jpg`) with
-  Ken Burns drift behind the beam-scrub statement.
-- `CinemaBackdrop` is parameterized (`video`, `video4k`, `poster`, `opacity`)
-  — mount it in any scene; it handles loop, offscreen pause, reduced-motion,
-  data-saver, and the legibility scrim. Working files live in `.assets/`
-  (gitignored); regenerate via the steps below.
+- **Noise scene**: "Noise becomes Signal" 4K still (`noise-signal.jpg`) behind
+  the beam-scrub statement.
+- **Finale**: the Listening Room loop returns behind "Say it out loud." —
+  same files as the hero (browser-cache hit), engine-lit on approach.
+- `CinemaBackdrop` is parameterized (`video`, `video4k`, `poster`, `opacity`,
+  `cine`) — mount it in any scene; it handles loop, offscreen pause,
+  reduced-motion, data-saver, and the legibility scrim. Working files live in
+  `.assets/` (gitignored); regenerate via the steps below.
+
+## Scroll-directed cinematography (the `cine` prop)
+
+Passing `cine="<key>"` hands motion authorship to SigEngine: the media wrapper
+is stamped `data-cine="<key>"`, the video `data-cine-vid="<key>"`, and the Ken
+Burns fallback is dropped (the engine is the only source of motion, so stills
+stay static for reduced-motion users). Wired keys:
+
+- **`hero`** — during the dolly-zoom the footage magnifies slower than the
+  DOM world (multi-plane camera depth), racks out of focus (blur 0→9px,
+  ≥900px viewports only) and dims as you punch through the laptop glass,
+  and grades +22% saturation while the letterbox is in.
+- **`noise`** — the backdrop enacts the thesis: blurred/desaturated/dim at
+  rest, it develops to crisp full signal in lockstep with the beam scrub.
+- **`end`** — reveal on approach: scales 1.14→1, brightens 0.5→1.05.
+- **All videos** — playback rate follows scroll energy (1× at rest, up to
+  ~2× while moving, eased both ways), and `#grain` opacity answers the same
+  energy. New keys: mount `CinemaBackdrop cine="<key>"`, query
+  `[data-cine="<key>"]` in `SigEngine.mount()`, drive it from a frame method.
 
 ## Producing an asset
 

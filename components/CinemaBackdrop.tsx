@@ -14,6 +14,13 @@ import { useEffect, useRef, useState } from "react";
  *     4K tier served to large/high-DPR screens, 1080p otherwise. Skipped
  *     entirely for reduced-motion and data-saver users (poster shows instead).
  *   - Still mode (no video prop): slow Ken Burns drift on the poster.
+ *   - Cine mode (`cine="hero|noise|end"`): the media wrapper is stamped
+ *     `data-cine` and the video `data-cine-vid`, handing motion authorship to
+ *     SigEngine — scroll-directed dolly/parallax, rack focus, grade shifts,
+ *     and velocity-reactive playback. The Ken Burns fallback is dropped so
+ *     the engine is the only source of motion (and stills stay static for
+ *     reduced-motion users). The wrapper is oversized 2% to absorb the
+ *     room-light pointer drift without revealing edges; engine scale ≥ 1.
  *   - Always under a token-matched scrim so type stays legible.
  */
 export default function CinemaBackdrop({
@@ -22,12 +29,14 @@ export default function CinemaBackdrop({
   poster,
   opacity = 0.5,
   scrim = true,
+  cine = null,
 }: {
   video?: string | null;
   video4k?: string | null;
   poster: string;
   opacity?: number;
   scrim?: boolean;
+  cine?: string | null;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [src, setSrc] = useState<string | null>(null);
@@ -66,39 +75,49 @@ export default function CinemaBackdrop({
       aria-hidden="true"
       style={{ position: "absolute", inset: "0", overflow: "hidden", pointerEvents: "none" }}
     >
-      {src ? (
-        <video
-          ref={videoRef}
-          src={src}
-          poster={poster}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          style={{
-            position: "absolute",
-            inset: "0",
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            opacity: String(opacity),
-          }}
-        />
-      ) : (
-        <div
-          className="kenburns"
-          style={{
-            position: "absolute",
-            inset: "-6%",
-            backgroundImage: `url(${poster})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: String(opacity),
-            willChange: "transform",
-          }}
-        />
-      )}
+      <div
+        data-cine={cine || undefined}
+        style={{
+          position: "absolute",
+          inset: "-2%",
+          willChange: cine ? "transform,filter,opacity" : undefined,
+        }}
+      >
+        {src ? (
+          <video
+            ref={videoRef}
+            data-cine-vid={cine || undefined}
+            src={src}
+            poster={poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            style={{
+              position: "absolute",
+              inset: "0",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: String(opacity),
+            }}
+          />
+        ) : (
+          <div
+            className={cine ? undefined : "kenburns"}
+            style={{
+              position: "absolute",
+              inset: cine ? "0" : "-4%",
+              backgroundImage: `url(${poster})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              opacity: String(opacity),
+              willChange: cine ? undefined : "transform",
+            }}
+          />
+        )}
+      </div>
       {scrim && (
         <div
           style={{

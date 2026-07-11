@@ -34,7 +34,13 @@ Six scenes, one continuous story:
 5. **`#s-valid`** — published validity panel (N, CI, count-ups) with a
    cinematic wipe reveal.
 6. **`#s-end`** — "Say it out loud." finale: starfield, orb, ripples, kinetic
-   type.
+   type — and the Listening Room footage returns, lighting up on approach.
+
+Threaded through all of it: an AI-generated 4K "Listening Room" film layer
+(`CinemaBackdrop` + the engine's cine frames) that the scroll directs —
+multi-plane dolly parallax and rack focus during the hero dive, a
+noise→signal develop behind the beam scrub, and footage whose playback rate
+stirs with scroll velocity and breathes at rest. See `WORKFLOW.md`.
 
 ## Architecture
 

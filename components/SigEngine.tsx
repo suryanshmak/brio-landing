@@ -120,6 +120,13 @@ class SigRuntime {
   _li = -1;
   _liT: any = null;
   _rsec = -1;
+  _cineF = "";
+  _cineNF = "";
+  _cineEF = "";
+  _prate = 1;
+  _cineVids: HTMLVideoElement[] | null = null;
+  _cvT = 0;
+  _grq = -1;
   liveMsgs = [
     "3 RECRUITERS VIEWING · STRIPE OPENED YOUR SYS-DESIGN CLIP 2M AGO",
     "LATTICE SAVED YOUR PROFILE TO A BACKEND L4 SHORTLIST",
@@ -178,6 +185,10 @@ class SigRuntime {
       wipe: this.q("[data-wipe]"),
       roomClock: this.q("[data-roomclock]"),
       liveAct: this.q("[data-liveact]"),
+      cineHero: this.q('[data-cine="hero"]'),
+      cineNoise: this.q('[data-cine="noise"]'),
+      cineEnd: this.q('[data-cine="end"]'),
+      grain: this.q("#grain"),
     };
     this.wraps = {
       app: this.q("#s-app"), noise: this.q("#s-noise"), cred: this.q("#s-cred"),
@@ -445,6 +456,8 @@ class SigRuntime {
     if (this.vis.noise) this.noiseFrame(y);
     if (this.vis.disc) this.discFrame(y);
     if (this.vis.valid) this.wipeFrame();
+    if (this.vis.end) this.cineEndFrame(y);
+    this.cineRate();
     this.countersFrame();
     this.kinFrame(y, t);
     this.hudFrame(y);
@@ -559,6 +572,21 @@ class SigRuntime {
       this._plx = (this._plx || 0) + (px - this._plx) * 0.04;
       this._ply = (this._ply || 0) + (py - this._ply) * 0.04;
       this.el.zlights.style.transform = "translate3d(" + (this._plx * -18 * this.calm).toFixed(1) + "px," + (this._ply * -12 * this.calm).toFixed(1) + "px,0)";
+    }
+    // scroll-directed cinematography on the 4K room footage: the backdrop
+    // magnifies slower than the world (multi-plane dolly depth), racks out of
+    // focus and dims as we punch through the glass, and grades cooler while
+    // the letterbox is in. Blur is desktop-only — it's the costly filter.
+    if (this.el.cineHero && e < 0.997) {
+      const eP = E.cubicIO(e);
+      const focus = E.cubicIO(this.clamp((e - 0.45) / 0.45, 0, 1));
+      this.el.cineHero.style.transform =
+        "translate3d(0," + (eP * -14 * this.calm).toFixed(1) + "px,0) scale(" + (1 + eP * 0.14).toFixed(4) + ")";
+      const f =
+        this.vw >= 900 && this.calm >= 1
+          ? "blur(" + (focus * 9).toFixed(1) + "px) saturate(" + (1 + eP * 0.22).toFixed(3) + ") brightness(" + (1 - focus * 0.22).toFixed(3) + ")"
+          : "saturate(" + (1 + eP * 0.18).toFixed(3) + ")";
+      if (f !== this._cineF) { this._cineF = f; this.el.cineHero.style.filter = f; }
     }
     const cin = E.expOut(this.clamp((e - 0.8) / 0.18, 0, 1));
     if (this.el.zcrisp) {
@@ -795,6 +823,16 @@ class SigRuntime {
         el.style.opacity = (c[2] * (1 - 0.85 * push)).toFixed(3);
       }
     }
+    // the 4K backdrop enacts the thesis: it starts as noise — soft, drained,
+    // dim — and develops into full signal in lockstep with the beam scrub.
+    if (this.el.cineNoise) {
+      const nb = this.el.cineNoise;
+      nb.style.transform = "scale(" + (1.12 - 0.1 * k).toFixed(4) + ")";
+      nb.style.opacity = (0.72 + 0.28 * k).toFixed(3);
+      const bl = this.vw >= 900 && this.calm >= 1 ? (1 - k) * 7 : 0;
+      const f = "blur(" + bl.toFixed(1) + "px) saturate(" + (0.55 + 0.65 * k).toFixed(3) + ") brightness(" + (0.82 + 0.26 * k).toFixed(3) + ")";
+      if (f !== this._cineNF) { this._cineNF = f; nb.style.filter = f; }
+    }
   }
 
   /* ---------- DISCOVERY ---------- */
@@ -835,6 +873,50 @@ class SigRuntime {
       return;
     }
     this.el.wipe.style.clipPath = "inset(-2% " + ((1 - e) * 100).toFixed(2) + "% -2% 0 round 28px)";
+  }
+
+  /* ---------- CINEMA ---------- */
+  // Finale bookend: the Listening Room returns behind "Say it out loud." —
+  // dim and distant, then it lights up and settles as you arrive.
+  cineEndFrame(y: number) {
+    const eb = this.el.cineEnd;
+    if (!eb || !this.m.end) return;
+    const k = this.E.cubicIO(this.clamp((y - (this.m.end.top - this.vh)) / (this.vh * 0.9), 0, 1));
+    eb.style.transform = "scale(" + (1.14 - 0.14 * k).toFixed(4) + ")";
+    eb.style.opacity = (0.5 + 0.5 * k).toFixed(3);
+    const f = "saturate(" + (0.65 + 0.45 * k).toFixed(3) + ") brightness(" + (0.5 + 0.55 * k).toFixed(3) + ")";
+    if (f !== this._cineEF) { this._cineEF = f; eb.style.filter = f; }
+  }
+
+  // The footage listens to the scroll: at rest the room breathes at 1×; when
+  // you move, its playback stirs with your velocity, then settles. The film
+  // grain answers the same energy. (Videos mount late in CinemaBackdrop, so
+  // they're queried lazily until found, then cached.)
+  cineRate() {
+    if (!this._cineVids || !this._cineVids.length) {
+      this._cvT++;
+      if (this._cvT > 900 || this._cvT % 24 !== 1) return;
+      this._cineVids = this.qa("video[data-cine-vid]") as HTMLVideoElement[];
+      if (!this._cineVids.length) return;
+    }
+    const want = 1 + Math.min(1.1, (this.energy || 0) * 1.5) * this.calm;
+    this._prate += (want - this._prate) * 0.06;
+    const vids: HTMLVideoElement[] = this._cineVids;
+    for (let i = 0; i < vids.length; i++) {
+      const v = vids[i];
+      const sec = v.getAttribute("data-cine-vid") === "end" ? "end" : "app";
+      if (!this.vis[sec]) continue;
+      if (Math.abs((v.playbackRate || 1) - this._prate) > 0.02) {
+        try { v.playbackRate = this._prate; } catch (e) {}
+      }
+    }
+    if (this.el.grain) {
+      const q = Math.round((this.energy || 0) * this.calm * 12);
+      if (q !== this._grq) {
+        this._grq = q;
+        this.el.grain.style.opacity = "calc(var(--grain-op) + " + (q * 0.004).toFixed(3) + ")";
+      }
+    }
   }
 
   /* ---------- KINETIC TYPE ---------- */
