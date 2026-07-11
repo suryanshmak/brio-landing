@@ -56,6 +56,17 @@ body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",
 #grain{position:fixed;inset:0;z-index:95;pointer-events:none;opacity:var(--grain-op);mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
 
+/* cinematic scrim tokens (CinemaBackdrop legibility layer) */
+#sigroot{--scrimA:rgba(4,7,15,.55);--scrimB:rgba(4,7,15,.7);}
+#sigroot[data-theme="light"]{--scrimA:rgba(242,245,251,.5);--scrimB:rgba(242,245,251,.72);}
+
+/* light grade: the same 4K film reads as luminous atmosphere on paper —
+   screen blend keeps only the glow; theme toggle button clears the inset */
+#sigroot[data-theme="light"] [data-cine] video,
+#sigroot[data-theme="light"] [data-cine]>div{mix-blend-mode:screen;}
+#sigroot[data-theme="light"] canvas[data-stars]{opacity:.35;}
+[data-themetog]{bottom:calc(18px + env(safe-area-inset-bottom, 0px))!important;}
+
 /* iOS dynamic viewport: pinned scenes track the visible viewport (URL bar) */
 @supports (height: 100dvh){
   [data-z="stick"]{height:100dvh!important;}

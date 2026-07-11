@@ -77,6 +77,14 @@ class SigRuntime {
   au: any = null;
   sndOn = false;
   raf = 0;
+  asmSt: any = null;
+  asmFree: any[] = [];
+  draws: any[] = [];
+  _ttH: any = null;
+  _ttBtn: any = null;
+  _hAsm = false;
+  _lapF = "";
+  _mat = false;
 
   _t = 0;
   _t0 = 0;
@@ -166,6 +174,8 @@ class SigRuntime {
       stSteps: [this.q('[data-app="st0"]'), this.q('[data-app="st1"]'), this.q('[data-app="st2"]'), this.q('[data-app="st3"]')],
       appMode: this.q('[data-app="mode"]'), appClock: this.q('[data-app="clock"]'),
       zlisten: this.q("[data-zlisten]"), ztags: this.qa("[data-ztag]"),
+      v0a: this.q('[data-v0="1"]'), v0b: this.q('[data-v0="2"]'),
+      cineHeroVid: this.q('[data-cine-vid="hero"]'),
       rcs: this.qa("[data-rc]"), rcFit: this.q("[data-rcfit]"), rcBtn: this.q("[data-rcbtn]"), rcMsg: this.q("[data-rcmsg]"),
       pars: this.qa("[data-par]"),
       shock: this.q('[data-fg="shock"]'), rctoast: this.q("[data-rctoast]"),
@@ -214,6 +224,52 @@ class SigRuntime {
     this.scrs = this.qa("[data-scr]").map((el) => ({ el, txt: el.textContent, t0: 0, done: false, started: false }));
     this.mags = this.qa("[data-mag]").map((el) => ({ el, cx: 0, cy: 0 }));
     this.counters = this.qa("[data-count]").map((el) => ({ el, done: false }));
+    // assembly choreography: [data-asm] pieces dock into place, staggered by
+    // their index — inside app stages they ride stage progress, elsewhere
+    // they scrub with their own viewport position
+    this.asmSt = new Map();
+    this.asmFree = [];
+    this.qa("[data-asm]").forEach((el) => {
+      const j = +(el.getAttribute("data-asm") || 0);
+      const st = el.closest("[data-st]");
+      if (st) {
+        const i = +(st.getAttribute("data-st") || 0);
+        if (!this.asmSt.has(i)) this.asmSt.set(i, []);
+        this.asmSt.get(i).push({ el, j });
+      } else this.asmFree.push({ el, j });
+    });
+    // self-drawing SVG paths
+    this.draws = this.qa("path[data-draw]").map((el: any) => {
+      let len = 0;
+      try { len = el.getTotalLength(); } catch (e) {}
+      if (len > 0) {
+        el.style.strokeDasharray = String(len);
+        el.style.strokeDashoffset = this.reduced ? "0" : String(len);
+      }
+      return { el, len, k: -1 };
+    });
+    // light/dark grade toggle — the same film, two grades
+    const tBtn = this.q("[data-themetog]");
+    if (tBtn) {
+      let saved: string | null = null;
+      try { saved = localStorage.getItem("brio-theme"); } catch (e) {}
+      if (saved === "light" || saved === "dark") this.root.setAttribute("data-theme", saved);
+      const syncT = () => {
+        this.isLight = this.root.getAttribute("data-theme") === "light";
+        this.orbColors = this.readColors();
+        const tx = this.q("[data-themetog-tx]");
+        if (tx) tx.textContent = this.isLight ? "LIGHT" : "DARK";
+      };
+      syncT();
+      this._ttH = () => {
+        this.root.setAttribute("data-theme", this.isLight ? "dark" : "light");
+        try { localStorage.setItem("brio-theme", this.isLight ? "dark" : "light"); } catch (e) {}
+        syncT();
+        if (this.au) this.au.tick(760);
+      };
+      tBtn.addEventListener("click", this._ttH);
+      this._ttBtn = tBtn;
+    }
     if (this.reduced) {
       this._ldDone = true;
       this.scrs.forEach((s) => { s.done = true; });
@@ -355,6 +411,7 @@ class SigRuntime {
     if (this.tilts) this.tilts.forEach((s) => { s.w.removeEventListener("mousemove", s.move); s.w.removeEventListener("mouseleave", s.leave); });
     if (this.dotHandlers) this.dotHandlers.forEach((o) => o.d.removeEventListener("click", o.h));
     if (this.el && this.el.copyBtn && this._copyH) this.el.copyBtn.removeEventListener("click", this._copyH);
+    if (this._ttBtn && this._ttH) this._ttBtn.removeEventListener("click", this._ttH);
     const sb = this.q && this.q("[data-snd]");
     if (sb && this._sndH) sb.removeEventListener("click", this._sndH);
     if (this._sndOnce) { removeEventListener("pointerdown", this._sndOnce); removeEventListener("keydown", this._sndOnce); }
@@ -459,6 +516,8 @@ class SigRuntime {
     if (this.vis.end) this.cineEndFrame(y);
     this.cineRate();
     this.countersFrame();
+    this.asmFreeFrame();
+    this.drawFrame();
     this.kinFrame(y, t);
     this.hudFrame(y);
     this.tiltFrame();
@@ -487,8 +546,15 @@ class SigRuntime {
   /* ========== SCENE 01 · THE APP ========== */
   appFrame(y: number, now: number) {
     if (!this.zg) return;
-    const p = this.prog("app", y);
+    const pRaw = this.prog("app", y);
     const E = this.E;
+    // ACT I — the void. The first 11.5% of the pin is UI-free: film + two
+    // spoken lines, then the room assembles around the entity. Everything
+    // downstream runs on the remapped progress so the dive keeps its timing.
+    const INTRO = 0.115;
+    const ip = this.clamp(pRaw / INTRO, 0, 1);
+    const p = this.clamp((pRaw - INTRO) / (1 - INTRO), 0, 1);
+    const asm = E.expOut(this.clamp((ip - 0.64) / 0.36, 0, 1));
     // dolly through the glass over the first 22%
     const e = E.quartIO(this.clamp(p / 0.22, 0, 1));
     this._zE = e;
@@ -517,10 +583,48 @@ class SigRuntime {
       }
     }
     const fadeEarly = this.clamp(e * 2.4, 0, 1);
-    if (this.el.zhead) { this.el.zhead.style.opacity = (1 - fadeEarly).toFixed(3); this.el.zhead.style.pointerEvents = fadeEarly > 0.4 ? "none" : "auto"; }
-    if (this.el.zstat) this.el.zstat.style.opacity = (1 - this.clamp(e * 3, 0, 1)).toFixed(3);
-    if (this.el.zmarq) this.el.zmarq.style.opacity = (1 - this.clamp(e * 3, 0, 1)).toFixed(3);
-    if (this.el.zcue) this.el.zcue.style.opacity = (1 - this.clamp(e * 4, 0, 1)).toFixed(3);
+    if (this.el.zhead) {
+      this.el.zhead.style.opacity = ((1 - fadeEarly) * asm).toFixed(3);
+      this.el.zhead.style.pointerEvents = fadeEarly > 0.4 || asm < 0.4 ? "none" : "auto";
+      if (asm < 0.999) this.el.zhead.style.transform = "translate3d(0," + ((1 - asm) * 26).toFixed(1) + "px,0)";
+      else if (this._hAsm) this.el.zhead.style.transform = "";
+    }
+    if (this.el.zstat) {
+      this.el.zstat.style.opacity = ((1 - this.clamp(e * 3, 0, 1)) * asm).toFixed(3);
+      if (asm < 0.999) this.el.zstat.style.transform = "translate3d(" + ((1 - asm) * 42).toFixed(1) + "px,0,0)";
+      else if (this._hAsm) this.el.zstat.style.transform = "";
+    }
+    this._hAsm = asm < 0.999;
+    if (this.el.zmarq) this.el.zmarq.style.opacity = ((1 - this.clamp(e * 3, 0, 1)) * asm).toFixed(3);
+    if (this.el.zcue) this.el.zcue.style.opacity = ((1 - this.clamp(e * 4, 0, 1)) * asm).toFixed(3);
+    // laptop materializes out of the film
+    if (this.el.zlap) {
+      this.el.zlap.style.opacity = asm.toFixed(3);
+      const lb = (1 - asm) * 12;
+      const lf = lb > 0.2 ? "blur(" + lb.toFixed(1) + "px)" : "none";
+      if (lf !== this._lapF) { this._lapF = lf; this.el.zlap.style.filter = lf; }
+    }
+    // the two spoken lines of the void
+    const vL = (k: number, a: number, b: number) => {
+      const t01 = this.clamp((k - a) / (b - a), 0, 1);
+      const inK = E.expOut(this.clamp(t01 / 0.3, 0, 1));
+      const outK = E.cubicIO(this.clamp((t01 - 0.74) / 0.26, 0, 1));
+      return { o: Math.min(inK, 1 - outK), y: (1 - inK) * 30 - outK * 34, w: 100 + inK * 12 - outK * 4 };
+    };
+    if (this.el.v0a) {
+      const L = vL(ip, 0.02, 0.34);
+      this.el.v0a.style.opacity = L.o.toFixed(3);
+      this.el.v0a.style.transform = "translate3d(0," + L.y.toFixed(1) + "px,0)";
+      (this.el.v0a.style as any).fontStretch = L.w.toFixed(1) + "%";
+    }
+    if (this.el.v0b) {
+      const L = vL(ip, 0.32, 0.62);
+      this.el.v0b.style.opacity = L.o.toFixed(3);
+      this.el.v0b.style.transform = "translate3d(0," + L.y.toFixed(1) + "px,0)";
+      (this.el.v0b.style as any).fontStretch = L.w.toFixed(1) + "%";
+    }
+    // the film carries the void, then settles into ambience as the room forms
+    if (this.el.cineHeroVid) this.el.cineHeroVid.style.opacity = (0.55 + (1 - asm) * 0.33).toFixed(3);
     if (this.el.zlights) this.el.zlights.style.opacity = (1 - this.clamp((e - 0.1) * 1.6, 0, 1) * 0.8).toFixed(3);
     if (this.el.zglare) this.el.zglare.style.opacity = (1 - this.clamp((e - 0.45) / 0.3, 0, 1)).toFixed(3);
     if (this.el.zflash) {
@@ -563,8 +667,11 @@ class SigRuntime {
       this._crx = (this._crx || 0) + (tgx - this._crx) * 0.06;
       this._cry = (this._cry || 0) + (tgy - this._cry) * 0.06;
       const live = Math.abs(this._crx) + Math.abs(this._cry) > 0.03;
-      if (live || this._crz) this.el.chassis.style.transform = live ? "rotateX(" + this._crx.toFixed(2) + "deg) rotateY(" + this._cry.toFixed(2) + "deg)" : "";
+      const mat = asm < 0.999 ? "translateY(" + ((1 - asm) * 34).toFixed(1) + "px) scale(" + (0.93 + asm * 0.07).toFixed(4) + ") " : "";
+      if (live || this._crz || mat || this._mat)
+        this.el.chassis.style.transform = mat + (live ? "rotateX(" + this._crx.toFixed(2) + "deg) rotateY(" + this._cry.toFixed(2) + "deg)" : "");
       this._crz = live;
+      this._mat = !!mat;
     }
     // room lights drift opposite the cursor (depth)
     if (this.el.zlights) {
@@ -627,6 +734,7 @@ class SigRuntime {
       else if (i === 1) this.stageScore(t01);
       else if (i === 2) this.stageShare(t01);
       else if (i === 3) this.stageRecruit(t01);
+      this.asmStage(i, t01);
     });
   }
 
@@ -1107,11 +1215,64 @@ class SigRuntime {
     const E = this.E, clamp = this.clamp;
     const step = (now: number) => {
       const k = E.expOut(clamp((now - t0) / dur, 0, 1));
-      const v = Math.round(target * k);
+      // compute jitter: the number flutters as if being resolved live, then settles
+      const jit = k > 0.55 && k < 0.97 ? (Math.random() - 0.5) * Math.max(2, target * 0.012) * (1 - k) * 3 : 0;
+      const v = Math.round(target * k + jit);
       el.textContent = fmt === "plus" ? "+" + v : fmt === "pct" ? v + "%" : v.toLocaleString("en-US");
       if (k < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
+  }
+
+  /* ---------- ASSEMBLY + SELF-DRAWING PATHS ---------- */
+  asmApply(el: HTMLElement, k: number, j: number) {
+    const done = k >= 0.999;
+    if (done && (el as any)._asmZ) return;
+    (el as any)._asmZ = done;
+    const inv = 1 - k;
+    const dir = j % 2 ? 1 : -1;
+    const tgt = +(el.getAttribute("data-asm-o") || 1);
+    el.style.opacity = (k * tgt).toFixed(3);
+    el.style.transform = done
+      ? ""
+      : "translate3d(" + (dir * inv * 22).toFixed(1) + "px," + (inv * 16).toFixed(1) + "px,0) rotate(" + (dir * inv * 1.1).toFixed(2) + "deg)";
+    const b = inv * 6;
+    el.style.filter = b > 0.25 ? "blur(" + b.toFixed(1) + "px)" : "none";
+  }
+
+  asmStage(i: number, t01: number) {
+    if (this.reduced || !this.asmSt) return;
+    const g = this.asmSt.get(i);
+    if (!g) return;
+    for (let n = 0; n < g.length; n++) {
+      const k = this.E.expOut(this.clamp((t01 - 0.06 - g[n].j * 0.05) / 0.3, 0, 1));
+      this.asmApply(g[n].el, k, g[n].j);
+    }
+  }
+
+  asmFreeFrame() {
+    if (this.reduced || !this.asmFree || !this.asmFree.length) return;
+    for (let n = 0; n < this.asmFree.length; n++) {
+      const it = this.asmFree[n];
+      const r = it.el.getBoundingClientRect();
+      if (r.bottom < -80 || r.top > this.vh + 80) continue;
+      const raw = this.clamp((this.vh * 0.92 - r.top) / (this.vh * 0.42) - it.j * 0.09, 0, 1);
+      this.asmApply(it.el, this.E.expOut(raw), it.j);
+    }
+  }
+
+  drawFrame() {
+    if (this.reduced || !this.draws || !this.draws.length) return;
+    for (let n = 0; n < this.draws.length; n++) {
+      const d = this.draws[n];
+      if (!d.len) continue;
+      const r = d.el.getBoundingClientRect();
+      if (r.bottom < -80 || r.top > this.vh + 80) continue;
+      const k = this.E.cubicIO(this.clamp((this.vh * 0.88 - r.top) / (this.vh * 0.55), 0, 1));
+      if (Math.abs(k - d.k) < 0.002) continue;
+      d.k = k;
+      d.el.style.strokeDashoffset = (d.len * (1 - k)).toFixed(1);
+    }
   }
 
   /* ---------- STARFIELD ---------- */

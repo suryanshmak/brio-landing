@@ -124,7 +124,7 @@ export default function CinemaBackdrop({
             position: "absolute",
             inset: "0",
             background:
-              "radial-gradient(120% 90% at 50% 40%,transparent 30%,var(--bgA) 92%),linear-gradient(180deg,rgba(4,7,15,.55),transparent 30%,transparent 62%,rgba(4,7,15,.7))",
+              "radial-gradient(120% 90% at 50% 40%,transparent 30%,var(--bgA) 92%),linear-gradient(180deg,var(--scrimA),transparent 30%,transparent 62%,var(--scrimB))",
           }}
         />
       )}

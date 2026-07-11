@@ -6,6 +6,12 @@
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["dev"],
       "port": 3400
+    },
+    {
+      "name": "brio-landing-alt",
+      "runtimeExecutable": "env",
+      "runtimeArgs": ["NEXT_DIST_DIR=.next-alt", "pnpm", "exec", "next", "dev", "-p", "3401"],
+      "port": 3401
     }
   ]
 }

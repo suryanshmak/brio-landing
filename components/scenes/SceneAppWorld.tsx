@@ -17,6 +17,12 @@ export default function SceneAppWorld() {
           <div data-loop="sweep" data-dur="13" aria-hidden="true" style={{ position: 'absolute', top: '-20%', bottom: '-20%', left: '0', width: '30%', background: 'linear-gradient(100deg,transparent,var(--wash2) 50%,transparent)', filter: 'blur(10px)', transform: 'translateX(-30vw)', willChange: 'transform' }}></div>
         </div>
 
+        {/* ACT I · the void — two spoken lines before the room exists */}
+        <div aria-hidden="true" style={{ position: 'absolute', left: '0', right: '0', top: '0', bottom: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '5', pointerEvents: 'none', padding: '0 6vw' }}>
+          <div data-v0="1" data-disp="" style={{ position: 'absolute', opacity: '0', fontFamily: 'var(--f-disp)', fontWeight: '780', fontStretch: '106%', fontSize: 'clamp(34px,5.2vw,76px)', letterSpacing: '-.03em', lineHeight: '1.04', textAlign: 'center', textWrap: 'balance', maxWidth: '16ch', willChange: 'transform,opacity' }}>Résumés can&rsquo;t speak.</div>
+          <div data-v0="2" data-disp="" style={{ position: 'absolute', opacity: '0', fontFamily: 'var(--f-disp)', fontWeight: '780', fontStretch: '106%', fontSize: 'clamp(38px,6vw,88px)', letterSpacing: '-.03em', lineHeight: '1.04', textAlign: 'center', willChange: 'transform,opacity' }}>You <span data-ital="" style={{ color: 'var(--acc-hl)' }}>can.</span></div>
+        </div>
+
         <div data-z="head" id="zhead" style={{ position: 'absolute', left: '0', right: '0', top: '11vh', textAlign: 'center', zIndex: '3', padding: '0 6vw' }}>
           <div className="ld" style={{ display: 'inline-flex', alignItems: 'center', gap: '9px', border: '1px solid var(--acc-brd)', background: 'var(--acc-bg)', borderRadius: '999px', padding: '7px 14px', marginBottom: '20px' }}>
             <span data-loop="dotp" data-dur="2.2" style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--acc)' }}></span>

@@ -12,6 +12,11 @@ export default function Chrome() {
 
       <a href="#s-noise" className="skip-link">SKIP THE INTRO ↓</a>
 
+      <button data-themetog="" type="button" className="hv-ink-acc" style={{ position: 'fixed', left: '18px', bottom: '18px', zIndex: '90', display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.18em', color: 'var(--ink2)', background: 'var(--glass)', backdropFilter: 'blur(10px)', border: '1px solid var(--line2)', borderRadius: '999px', padding: '9px 14px', cursor: 'pointer' }}>
+        <span aria-hidden="true" style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'linear-gradient(90deg,var(--ink) 50%,var(--bgA) 50%)', border: '1px solid var(--line2)' }}></span>
+        <span data-themetog-tx="">DARK</span>
+      </button>
+
       {/* NAV */}
       <nav data-nav="" style={{ position: 'fixed', top: '0', left: '0', right: '0', zIndex: '80', display: 'flex', alignItems: 'center', gap: '20px', padding: '16px 5vw', backdropFilter: 'blur(14px)', background: 'var(--nav0)', borderBottom: '1px solid var(--line)' }}>
         <a href="#s-app" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: 'var(--ink)' }}>

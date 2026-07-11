@@ -91,7 +91,7 @@ export default function SceneAppCrisp() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', minWidth: '0' }}>
             <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.26em', color: '#7d8bb8' }}>SUBSTANCE, SPLIT FOUR WAYS</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
+            <div data-asm="0" style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
               <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: '#b9c3de', textAlign: 'right', flexShrink: '0' }}>Problem Reading</div>
               <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'rgba(255,255,255,.07)', overflow: 'hidden' }}>
                 <div data-fgfill="" data-t="86" style={{ position: 'absolute', inset: '0', borderRadius: '7px', background: 'linear-gradient(90deg,#7c5ce0,#9b7bf8)', transformOrigin: 'left', transform: 'scaleX(0)', willChange: 'transform' }}></div>
@@ -99,7 +99,7 @@ export default function SceneAppCrisp() {
               </div>
               <div data-fgnum="" data-t="86" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: '#fff', fontVariantNumeric: 'tabular-nums' }}>0</div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
+            <div data-asm="1" style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
               <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: '#b9c3de', textAlign: 'right', flexShrink: '0' }}>Reasoning Clarity</div>
               <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'rgba(255,255,255,.07)', overflow: 'hidden' }}>
                 <div data-fgfill="" data-t="79" style={{ position: 'absolute', inset: '0', borderRadius: '7px', background: 'linear-gradient(90deg,#0ea5c9,#2ad4ee)', transformOrigin: 'left', transform: 'scaleX(0)', willChange: 'transform' }}></div>
@@ -107,7 +107,7 @@ export default function SceneAppCrisp() {
               </div>
               <div data-fgnum="" data-t="79" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: '#fff', fontVariantNumeric: 'tabular-nums' }}>0</div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
+            <div data-asm="2" style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
               <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: '#b9c3de', textAlign: 'right', flexShrink: '0' }}>Technical</div>
               <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'rgba(255,255,255,.07)', overflow: 'hidden' }}>
                 <div data-fgfill="" data-t="84" style={{ position: 'absolute', inset: '0', borderRadius: '7px', background: 'linear-gradient(90deg,#6d3ee8,#8b5cf6)', transformOrigin: 'left', transform: 'scaleX(0)', willChange: 'transform' }}></div>
@@ -115,7 +115,7 @@ export default function SceneAppCrisp() {
               </div>
               <div data-fgnum="" data-t="84" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: '#fff', fontVariantNumeric: 'tabular-nums' }}>0</div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
+            <div data-asm="3" style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
               <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: '#b9c3de', textAlign: 'right', flexShrink: '0' }}>Behavioral</div>
               <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'rgba(255,255,255,.07)', overflow: 'hidden' }}>
                 <div data-fgfill="" data-t="88" style={{ position: 'absolute', inset: '0', borderRadius: '7px', background: 'linear-gradient(90deg,#d98a06,#f5a524)', transformOrigin: 'left', transform: 'scaleX(0)', willChange: 'transform' }}></div>

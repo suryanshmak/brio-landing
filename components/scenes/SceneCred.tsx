@@ -1,6 +1,18 @@
 export default function SceneCred() {
   return (
     <section id="s-cred" data-vis="cred" data-screen-label="03 Credential" style={{ position: 'relative', overflow: 'clip', padding: '20vh 6vw', background: 'radial-gradient(900px 700px at 80% -8%,var(--g1),transparent 60%),var(--bgC)' }}>
+      {/* the signal ribbon — the spoken waveform from the previous scene
+          flows down and hands itself to the credential */}
+      <svg aria-hidden="true" viewBox="0 0 1200 700" preserveAspectRatio="none" style={{ position: 'absolute', left: '0', top: '0', width: '100%', height: '58%', pointerEvents: 'none', overflow: 'visible' }}>
+        <defs>
+          <linearGradient id="ribg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" style={{ stopColor: 'var(--vio)', stopOpacity: '0' }} />
+            <stop offset=".35" style={{ stopColor: 'var(--vio)', stopOpacity: '.7' }} />
+            <stop offset="1" style={{ stopColor: 'var(--acc)', stopOpacity: '.9' }} />
+          </linearGradient>
+        </defs>
+        <path data-draw="" d="M 150,-10 C 250,170 430,140 560,280 C 665,395 780,420 910,462 C 1000,491 1058,548 1082,660" fill="none" stroke="url(#ribg)" strokeWidth="1.6" strokeLinecap="round" opacity=".6" />
+      </svg>
       <div id="credgrid" style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '6vw', alignItems: 'center', maxWidth: '1340px', margin: '0 auto' }}>
         <div>
           <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)' }}>04 · THE CREDENTIAL</div>
