@@ -5,17 +5,19 @@ loop) to this site. The code side is already built — `components/CinemaBackdro
 renders any asset you produce, with motion, legibility scrims, and
 accessibility handling included. You only supply the visual.
 
-## What's already wired
+## What's live (generated 2026-07-11 via Higgsfield CLI)
 
-- `CinemaBackdrop` sits as the deepest layer of the hero room (behind the
-  starfield and laptop). It currently shows `public/cinema-poster.svg`, a
-  procedural placeholder in the brand palette, animated with a slow Ken Burns
-  drift (zoom + ambient pan — the same motion class an AI video loop gives).
-- Drop in a real video and it upgrades itself: seamless muted loop,
-  poster-first paint, pauses offscreen, skipped for reduced-motion and
-  data-saver users, always under a token-matched scrim.
-- The component is reusable — mount it in any scene that needs atmosphere
-  (`#s-end` is the natural second candidate).
+- **Hero**: "The Listening Room" — Nano Banana 2 4K still → Veo 3.1 Lite
+  img2video (8s, start & end frame pinned to the same still for a seamless
+  loop) → Bytedance 4K upscale → ffmpeg tail-into-head crossfade. Served as
+  `public/hero-loop-4k.mp4` (3840×2160, 3MB) on large/high-DPR screens and
+  `public/hero-loop.mp4` (1080p, 1MB) otherwise, `cinema-poster.jpg` first.
+- **Noise scene**: "Noise becomes Signal" 4K still (`noise-signal.jpg`) with
+  Ken Burns drift behind the beam-scrub statement.
+- `CinemaBackdrop` is parameterized (`video`, `video4k`, `poster`, `opacity`)
+  — mount it in any scene; it handles loop, offscreen pause, reduced-motion,
+  data-saver, and the legibility scrim. Working files live in `.assets/`
+  (gitignored); regenerate via the steps below.
 
 ## Producing an asset
 

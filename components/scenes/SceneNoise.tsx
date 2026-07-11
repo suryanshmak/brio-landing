@@ -1,7 +1,10 @@
+import CinemaBackdrop from "@/components/CinemaBackdrop";
+
 export default function SceneNoise() {
   return (
     <section id="s-noise" data-vis="noise" data-screen-label="02 Noise to Signal" style={{ position: 'relative', height: '190vh', background: 'var(--bgC)' }}>
       <div style={{ position: 'sticky', top: '0', height: '100vh', overflow: 'clip', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <CinemaBackdrop poster="/noise-signal.jpg" opacity={0.34} />
         <div aria-hidden="true" data-par="a" style={{ position: 'absolute', left: '7%', top: '16%', width: '210px', padding: '16px', borderRadius: '14px', background: 'var(--wash)', border: '1px solid var(--line)', filter: 'blur(1.6px)', opacity: '.75' }}>
           <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.2em', color: 'var(--ink4)' }}>RÉSUMÉ · PDF</div>
           <div style={{ height: '7px', borderRadius: '4px', background: 'var(--wash2)', marginTop: '12px', width: '86%' }}></div>

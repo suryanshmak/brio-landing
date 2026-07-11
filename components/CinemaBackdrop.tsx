@@ -3,40 +3,51 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * CinemaBackdrop — ambient animated background layer (the "AI video hero"
- * pattern, productionized).
+ * CinemaBackdrop — ambient cinematic background layer.
  *
- * Drop-in workflow (see WORKFLOW.md):
- *   1. Generate a 16:9 visual with an image AI, save as /public/cinema-poster.jpg
- *   2. (Optional) Animate it into a seamless loop, save as /public/hero-loop.mp4
- *   3. Point VIDEO_SRC / POSTER_SRC below at the files.
+ * Generated via the Higgsfield pipeline in WORKFLOW.md (Nano Banana 2 4K still
+ * → Veo 3.1 img2video with pinned end frame → Bytedance 4K upscale → ffmpeg
+ * tail-into-head crossfade for a seamless loop).
  *
  * Behavior:
- *   - With a video: muted seamless loop, poster-first, pauses offscreen,
- *     skipped entirely for reduced-motion and data-saver users.
- *   - Poster only: slow Ken Burns drift (the same zoom/ambient motion an AI
- *     video loop gives, without the file weight or loop seam).
- *   - Always sits under an overlay gradient so design tokens stay legible.
+ *   - Video mode: seamless muted loop, poster-first paint, pauses offscreen,
+ *     4K tier served to large/high-DPR screens, 1080p otherwise. Skipped
+ *     entirely for reduced-motion and data-saver users (poster shows instead).
+ *   - Still mode (no video prop): slow Ken Burns drift on the poster.
+ *   - Always under a token-matched scrim so type stays legible.
  */
-const VIDEO_SRC: string | null = null; // e.g. "/hero-loop.mp4" once generated
-const POSTER_SRC = "/cinema-poster.svg"; // placeholder until an AI visual lands
-const OPACITY = 0.5;
-
-export default function CinemaBackdrop() {
+export default function CinemaBackdrop({
+  video = null,
+  video4k = null,
+  poster,
+  opacity = 0.5,
+  scrim = true,
+}: {
+  video?: string | null;
+  video4k?: string | null;
+  poster: string;
+  opacity?: number;
+  scrim?: boolean;
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [useVideo, setUseVideo] = useState(false);
+  const [src, setSrc] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!VIDEO_SRC) return;
+    if (!video) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const saveData = (navigator as any).connection?.saveData === true;
     if (reduce || saveData) return;
-    setUseVideo(true);
-  }, []);
+    // 4K tier for big or dense screens; 1080p covers the rest
+    const wantsUltra =
+      video4k &&
+      (window.innerWidth >= 1600 ||
+        (window.devicePixelRatio > 1.5 && window.innerWidth >= 1100));
+    setSrc(wantsUltra ? video4k : video);
+  }, [video, video4k]);
 
   useEffect(() => {
     const v = videoRef.current;
-    if (!v || !useVideo) return;
+    if (!v || !src) return;
     const io = new IntersectionObserver(
       (ents) => {
         ents.forEach((e) => {
@@ -48,18 +59,18 @@ export default function CinemaBackdrop() {
     );
     io.observe(v);
     return () => io.disconnect();
-  }, [useVideo]);
+  }, [src]);
 
   return (
     <div
       aria-hidden="true"
       style={{ position: "absolute", inset: "0", overflow: "hidden", pointerEvents: "none" }}
     >
-      {useVideo && VIDEO_SRC ? (
+      {src ? (
         <video
           ref={videoRef}
-          src={VIDEO_SRC}
-          poster={POSTER_SRC}
+          src={src}
+          poster={poster}
           autoPlay
           muted
           loop
@@ -71,7 +82,7 @@ export default function CinemaBackdrop() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            opacity: String(OPACITY),
+            opacity: String(opacity),
           }}
         />
       ) : (
@@ -80,23 +91,24 @@ export default function CinemaBackdrop() {
           style={{
             position: "absolute",
             inset: "-6%",
-            backgroundImage: `url(${POSTER_SRC})`,
+            backgroundImage: `url(${poster})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: String(OPACITY),
+            opacity: String(opacity),
             willChange: "transform",
           }}
         />
       )}
-      {/* legibility scrim — keeps type and UI tokens readable over any visual */}
-      <div
-        style={{
-          position: "absolute",
-          inset: "0",
-          background:
-            "radial-gradient(120% 90% at 50% 40%,transparent 30%,var(--bgA) 92%),linear-gradient(180deg,rgba(4,7,15,.55),transparent 30%,transparent 62%,rgba(4,7,15,.7))",
-        }}
-      />
+      {scrim && (
+        <div
+          style={{
+            position: "absolute",
+            inset: "0",
+            background:
+              "radial-gradient(120% 90% at 50% 40%,transparent 30%,var(--bgA) 92%),linear-gradient(180deg,rgba(4,7,15,.55),transparent 30%,transparent 62%,rgba(4,7,15,.7))",
+          }}
+        />
+      )}
     </div>
   );
 }

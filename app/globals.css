@@ -165,10 +165,19 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
 @media (max-width:600px) and (max-height:740px){
   #zhead .ld:first-child{display:none!important;}
 }
-@media (max-height:860px) and (min-width:981px){
+/* desktop hero bands — keep the head block clear of the laptop at every
+   height (base geometry only resolves collision-free above ~1400px tall) */
+@media (min-width:981px) and (min-height:1121px) and (max-height:1400px){
   #zhead{top:9vh!important;}
-  #zlap{top:61%!important;width:min(720px,62vw,92vh)!important;}
-  #zstat{top:20vh!important;right:5vw!important;}
+  #zlap{top:62%!important;width:min(800px,64vw,72vh)!important;}
+  #zstat{top:19vh!important;right:5vw!important;}
+}
+@media (min-width:981px) and (max-height:1120px){
+  #zhead{top:8vh!important;}
+  #zhead .ld{margin-bottom:12px!important;}
+  #zhead h1{font-size:clamp(30px,4.2vw,50px)!important;}
+  #zlap{top:69%!important;width:min(720px,60vw,76vh)!important;}
+  #zstat{top:17vh!important;right:5vw!important;}
 }
 @media (max-height:720px) and (min-width:981px){
   #zhead{top:7vh!important;}

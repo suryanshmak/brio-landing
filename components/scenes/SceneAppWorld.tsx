@@ -6,7 +6,7 @@ export default function SceneAppWorld() {
       {/* THE ROOM */}
       <div data-z="world" style={{ position: 'absolute', inset: '0', willChange: 'transform' }}>
         <div data-z="lights" aria-hidden="true" style={{ position: 'absolute', inset: '0' }}>
-          <CinemaBackdrop />
+          <CinemaBackdrop video="/hero-loop.mp4" video4k="/hero-loop-4k.mp4" poster="/cinema-poster.jpg" opacity={0.55} />
           <canvas data-stars="app" aria-hidden="true" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%' }}></canvas>
           <div style={{ position: 'absolute', left: '-12%', top: '-18%', width: '62vw', height: '62vw', borderRadius: '50%', background: 'radial-gradient(closest-side,var(--g1),transparent 70%)' }}></div>
           <div style={{ position: 'absolute', right: '-14%', top: '20%', width: '50vw', height: '50vw', borderRadius: '50%', background: 'radial-gradient(closest-side,var(--g2),transparent 70%)' }}></div>
