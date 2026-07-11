@@ -71,6 +71,7 @@ body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",
 @supports (height: 100dvh){
   [data-z="stick"]{height:100dvh!important;}
   #s-noise > div{height:100dvh!important;}
+  #s-film > div{height:100dvh!important;}
   #s-disc > div{height:100dvh!important;}
 }
 /* fixed controls clear the home indicator */
@@ -144,6 +145,11 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
   #footgrid{grid-template-columns:1fr!important;gap:28px!important;}
 }
 @media (max-width:640px){
+  .fui-qa{left:4%!important;top:16%!important;max-width:58vw!important;}
+  .fui-qb{right:4%!important;top:34%!important;max-width:58vw!important;}
+  .fui-m{left:4%!important;bottom:24%!important;}
+  .fui-r{right:4%!important;bottom:23%!important;}
+  .fui-p{bottom:5vh!important;}
   #navlinks{display:none!important;}
   .disccard{width:80vw!important;}
   #valcount{grid-template-columns:1fr!important;gap:34px!important;}
@@ -203,4 +209,6 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;}
+  [data-fui]{opacity:1!important;transform:none!important;filter:none!important;}
+  .fui-p{transform:translateX(-50%)!important;}
 }

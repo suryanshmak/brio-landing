@@ -15,7 +15,7 @@ export default function SceneCred() {
       </svg>
       <div id="credgrid" style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '6vw', alignItems: 'center', maxWidth: '1340px', margin: '0 auto' }}>
         <div>
-          <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)' }}>04 · THE CREDENTIAL</div>
+          <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)' }}>05 · THE CREDENTIAL</div>
           <h2 data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '790', fontStretch: '111%', fontSize: 'clamp(42px,5.6vw,90px)', lineHeight: '.96', letterSpacing: '-.033em', margin: '16px 0 0', textWrap: 'balance' }}>Pass once. <span data-ital="" style={{ color: 'var(--acc-hl)' }}>Carry the proof</span> anywhere.</h2>
           <p style={{ fontSize: 'clamp(15px,1.5vw,18px)', lineHeight: '1.55', color: 'var(--ink2)', margin: '24px 0 0', maxWidth: '46ch' }}>One un-assisted, on-camera assessment becomes a shareable, verifiable credential, the same signal recruiters discover you by. No grind, no gaming.</p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginTop: '32px', flexWrap: 'wrap' }}>

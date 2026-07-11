@@ -80,6 +80,10 @@ class SigRuntime {
   asmSt: any = null;
   asmFree: any[] = [];
   draws: any[] = [];
+  filmUI: any[] = [];
+  _fT = 0;
+  _fTc = -1;
+  _fN = -1;
   _ttH: any = null;
   _ttBtn: any = null;
   _hAsm = false;
@@ -201,10 +205,15 @@ class SigRuntime {
       grain: this.q("#grain"),
     };
     this.wraps = {
-      app: this.q("#s-app"), noise: this.q("#s-noise"), cred: this.q("#s-cred"),
+      app: this.q("#s-app"), film: this.q("#s-film"), noise: this.q("#s-noise"), cred: this.q("#s-cred"),
       disc: this.q("#s-disc"), valid: this.q("#s-valid"), end: this.q("#s-end"),
     };
-    this.sections = ["s-app", "s-noise", "s-cred", "s-disc", "s-valid", "s-end"].map((id) => this.q("#" + id));
+    this.sections = ["s-app", "s-film", "s-noise", "s-cred", "s-disc", "s-valid", "s-end"].map((id) => this.q("#" + id));
+    // the interview film: scrubbed footage + UI that assembles out of it
+    this.el.filmVid = this.q("[data-film]");
+    this.el.filmTc = this.q("[data-film-tc]");
+    this.el.filmN = this.q("[data-film-n]");
+    this.filmUI = this.qa("[data-fui]").map((el) => ({ el, w: +(el.getAttribute("data-fui") || 0) }));
 
     if (this.el.zq) this.el.zq.textContent = "";
     if (this.el.ztr) this.el.ztr.textContent = "";
@@ -510,6 +519,7 @@ class SigRuntime {
     if (this.au && this.au.on) this.au.frame(this._zE || 0, this.energy);
     this.visCalc(y);
     if (this.vis.app) this.appFrame(y, now);
+    if (this.vis.film) this.filmFrame(y);
     if (this.vis.noise) this.noiseFrame(y);
     if (this.vis.disc) this.discFrame(y);
     if (this.vis.valid) this.wipeFrame();
@@ -1222,6 +1232,56 @@ class SigRuntime {
       if (k < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
+  }
+
+  /* ---------- SCENE 02 · THE FILM (scrubbed interview) ---------- */
+  filmFrame(y: number) {
+    const fp = this.prog("film", y);
+    const E = this.E;
+    // scroll drives the lens: the push-in footage scrubs over the first 55%
+    const v = this.el.filmVid;
+    if (v && v.duration && !this.reduced) {
+      const t = Math.min(v.duration - 0.06, v.duration * this.clamp(fp / 0.55, 0, 1));
+      if (Math.abs((this._fT || 0) - t) > 0.024) {
+        this._fT = t;
+        try { v.currentTime = t; } catch (e) {}
+      }
+    }
+    // the timecode advances with the scroll, like tape
+    if (this.el.filmTc) {
+      const s = 462 + Math.round(fp * 34);
+      if (s !== this._fTc) {
+        this._fTc = s;
+        this.el.filmTc.textContent =
+          "REC 00:" + String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0");
+      }
+    }
+    // UI assembles out of the footage, each piece on its own window;
+    // everything eases off in the last beats to hand the frame to the next scene
+    const eg = 1 - E.cubicIO(this.clamp((fp - 0.94) / 0.06, 0, 1));
+    if (this.filmUI) {
+      for (let i = 0; i < this.filmUI.length; i++) {
+        const it = this.filmUI[i];
+        const k = E.expOut(this.clamp((fp - it.w) / 0.085, 0, 1));
+        const op = k * eg;
+        const el = it.el;
+        if (op <= 0.004 && (el as any)._fz) continue;
+        (el as any)._fz = op <= 0.004;
+        el.style.opacity = op.toFixed(3);
+        const inv = 1 - k;
+        el.style.transform =
+          (el.classList.contains("fui-p") ? "translateX(-50%) " : "") +
+          "translate3d(0," + (inv * 26).toFixed(1) + "px,0) scale(" + (0.965 + k * 0.035).toFixed(4) + ")";
+        el.style.filter = inv > 0.05 ? "blur(" + (inv * 6).toFixed(1) + "px)" : "none";
+      }
+    }
+    // the readiness score resolves as if computed live
+    if (this.el.filmN) {
+      const nk = this.clamp((fp - 0.68) / 0.14, 0, 1);
+      const jit = nk > 0.35 && nk < 0.96 ? (Math.random() - 0.5) * 5 * (1 - nk) : 0;
+      const n = Math.max(0, Math.round(84 * E.cubicIO(nk) + jit));
+      if (n !== this._fN) { this._fN = n; this.el.filmN.textContent = String(n); }
+    }
   }
 
   /* ---------- ASSEMBLY + SELF-DRAWING PATHS ---------- */

@@ -3,7 +3,7 @@ export default function SceneTakes() {
     <section id="s-takes" data-vis="takes" data-screen-label="03 Three Takes" style={{ position: 'relative', overflow: 'clip', padding: '18vh 6vw', background: 'var(--bgD)' }}>
       <div id="takesgrid" style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1fr 1.05fr', gap: '6vw', alignItems: 'center', maxWidth: '1340px', margin: '0 auto' }}>
         <div>
-          <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)' }}>03 · THREE TAKES</div>
+          <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)' }}>04 · THREE TAKES</div>
           <h2 data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '790', fontStretch: '111%', fontSize: 'clamp(40px,5.2vw,84px)', lineHeight: '.98', letterSpacing: '-.032em', margin: '16px 0 0', textWrap: 'balance' }}>Three takes. <span data-ital="" style={{ color: 'var(--acc-hl)' }}>Your best self.</span></h2>
           <p style={{ fontSize: 'clamp(15px,1.5vw,18px)', lineHeight: '1.6', color: 'var(--ink2)', margin: '24px 0 0', maxWidth: '46ch' }}>One shot rarely shows what you can do. Brio gives you up to three takes per question: re-record until it sounds like you, keep the one you are proud of. Only the take you keep gets scored.</p>
           <div style={{ marginTop: '28px', borderTop: '1px solid var(--line)', paddingTop: '24px' }}>

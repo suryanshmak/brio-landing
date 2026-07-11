@@ -24,7 +24,7 @@ export default function SceneNoise() {
           <div style={{ height: '7px', borderRadius: '4px', background: 'var(--wash2)', marginTop: '8px', width: '84%' }}></div>
         </div>
         <div style={{ position: 'relative', zIndex: '2', padding: '0 6vw', maxWidth: '1200px', width: '100%' }}>
-          <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)', marginBottom: '30px' }}>02 · THE DIFFERENCE</div>
+          <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)', marginBottom: '30px' }}>03 · THE DIFFERENCE</div>
           <h2 style={{ position: 'relative', maxWidth: '14ch', fontFamily: 'var(--f-disp)', fontWeight: '760', fontStretch: '108%', fontSize: 'clamp(44px,6.6vw,100px)', lineHeight: '1.02', letterSpacing: '-.03em', margin: '0' }} data-disp="">
             <div style={{ color: 'var(--ghost)' }}>Résumés say what you did. Brio shows what you <span data-ital="">can do.</span></div>
             <div data-noise="crisp" aria-hidden="true" style={{ position: 'absolute', inset: '0', color: 'var(--ink)', clipPath: 'inset(0 0 0 0)' }}>Résumés say what you did. Brio shows what you <span data-ital="" style={{ color: 'var(--acc-hl)' }}>can do.</span></div>

@@ -1,6 +1,7 @@
 import SigEngine from "@/components/SigEngine";
 import Chrome from "@/components/scenes/Chrome";
 import SceneApp from "@/components/scenes/SceneApp";
+import SceneFilm from "@/components/scenes/SceneFilm";
 import SceneNoise from "@/components/scenes/SceneNoise";
 import SceneTakes from "@/components/scenes/SceneTakes";
 import SceneCred from "@/components/scenes/SceneCred";
@@ -27,6 +28,7 @@ export default function Page() {
     >
       <Chrome />
       <SceneApp />
+      <SceneFilm />
       <SceneNoise />
       <SceneTakes />
       <SceneCred />
