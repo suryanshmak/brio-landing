@@ -80,10 +80,7 @@ class SigRuntime {
   asmSt: any = null;
   asmFree: any[] = [];
   draws: any[] = [];
-  filmUI: any[] = [];
-  _fT = 0;
-  _fTc = -1;
-  _fN = -1;
+  rises: any[] = [];
   _ttH: any = null;
   _ttBtn: any = null;
   _hAsm = false;
@@ -178,7 +175,6 @@ class SigRuntime {
       stSteps: [this.q('[data-app="st0"]'), this.q('[data-app="st1"]'), this.q('[data-app="st2"]'), this.q('[data-app="st3"]')],
       appMode: this.q('[data-app="mode"]'), appClock: this.q('[data-app="clock"]'),
       zlisten: this.q("[data-zlisten]"), ztags: this.qa("[data-ztag]"),
-      v0a: this.q('[data-v0="1"]'), v0b: this.q('[data-v0="2"]'),
       cineHeroVid: this.q('[data-cine-vid="hero"]'),
       rcs: this.qa("[data-rc]"), rcFit: this.q("[data-rcfit]"), rcBtn: this.q("[data-rcbtn]"), rcMsg: this.q("[data-rcmsg]"),
       pars: this.qa("[data-par]"),
@@ -205,15 +201,10 @@ class SigRuntime {
       grain: this.q("#grain"),
     };
     this.wraps = {
-      app: this.q("#s-app"), film: this.q("#s-film"), noise: this.q("#s-noise"), cred: this.q("#s-cred"),
+      app: this.q("#s-app"), noise: this.q("#s-noise"), cred: this.q("#s-cred"),
       disc: this.q("#s-disc"), valid: this.q("#s-valid"), end: this.q("#s-end"),
     };
-    this.sections = ["s-app", "s-film", "s-noise", "s-cred", "s-disc", "s-valid", "s-end"].map((id) => this.q("#" + id));
-    // the interview film: scrubbed footage + UI that assembles out of it
-    this.el.filmVid = this.q("[data-film]");
-    this.el.filmTc = this.q("[data-film-tc]");
-    this.el.filmN = this.q("[data-film-n]");
-    this.filmUI = this.qa("[data-fui]").map((el) => ({ el, w: +(el.getAttribute("data-fui") || 0) }));
+    this.sections = ["s-app", "s-noise", "s-cred", "s-disc", "s-valid", "s-end"].map((id) => this.q("#" + id));
 
     if (this.el.zq) this.el.zq.textContent = "";
     if (this.el.ztr) this.el.ztr.textContent = "";
@@ -247,6 +238,8 @@ class SigRuntime {
         this.asmSt.get(i).push({ el, j });
       } else this.asmFree.push({ el, j });
     });
+    // unified reveal grammar: text unveils with a masked wipe + rise
+    this.rises = this.qa("[data-rise]").map((el) => ({ el, j: +(el.getAttribute("data-rise") || 0), k: -1 }));
     // self-drawing SVG paths
     this.draws = this.qa("path[data-draw]").map((el: any) => {
       let len = 0;
@@ -519,7 +512,6 @@ class SigRuntime {
     if (this.au && this.au.on) this.au.frame(this._zE || 0, this.energy);
     this.visCalc(y);
     if (this.vis.app) this.appFrame(y, now);
-    if (this.vis.film) this.filmFrame(y);
     if (this.vis.noise) this.noiseFrame(y);
     if (this.vis.disc) this.discFrame(y);
     if (this.vis.valid) this.wipeFrame();
@@ -527,6 +519,7 @@ class SigRuntime {
     this.cineRate();
     this.countersFrame();
     this.asmFreeFrame();
+    this.riseFrame();
     this.drawFrame();
     this.kinFrame(y, t);
     this.hudFrame(y);
@@ -561,10 +554,10 @@ class SigRuntime {
     // ACT I — the void. The first 11.5% of the pin is UI-free: film + two
     // spoken lines, then the room assembles around the entity. Everything
     // downstream runs on the remapped progress so the dive keeps its timing.
-    const INTRO = 0.115;
+    const INTRO = 0.06;
     const ip = this.clamp(pRaw / INTRO, 0, 1);
     const p = this.clamp((pRaw - INTRO) / (1 - INTRO), 0, 1);
-    const asm = E.expOut(this.clamp((ip - 0.64) / 0.36, 0, 1));
+    const asm = E.expOut(this.clamp((ip - 0.25) / 0.75, 0, 1));
     // dolly through the glass over the first 22%
     const e = E.quartIO(this.clamp(p / 0.22, 0, 1));
     this._zE = e;
@@ -613,25 +606,6 @@ class SigRuntime {
       const lb = (1 - asm) * 12;
       const lf = lb > 0.2 ? "blur(" + lb.toFixed(1) + "px)" : "none";
       if (lf !== this._lapF) { this._lapF = lf; this.el.zlap.style.filter = lf; }
-    }
-    // the two spoken lines of the void
-    const vL = (k: number, a: number, b: number) => {
-      const t01 = this.clamp((k - a) / (b - a), 0, 1);
-      const inK = E.expOut(this.clamp(t01 / 0.3, 0, 1));
-      const outK = E.cubicIO(this.clamp((t01 - 0.74) / 0.26, 0, 1));
-      return { o: Math.min(inK, 1 - outK), y: (1 - inK) * 30 - outK * 34, w: 100 + inK * 12 - outK * 4 };
-    };
-    if (this.el.v0a) {
-      const L = vL(ip, 0.02, 0.34);
-      this.el.v0a.style.opacity = L.o.toFixed(3);
-      this.el.v0a.style.transform = "translate3d(0," + L.y.toFixed(1) + "px,0)";
-      (this.el.v0a.style as any).fontStretch = L.w.toFixed(1) + "%";
-    }
-    if (this.el.v0b) {
-      const L = vL(ip, 0.32, 0.62);
-      this.el.v0b.style.opacity = L.o.toFixed(3);
-      this.el.v0b.style.transform = "translate3d(0," + L.y.toFixed(1) + "px,0)";
-      (this.el.v0b.style as any).fontStretch = L.w.toFixed(1) + "%";
     }
     // the film carries the void, then settles into ambience as the room forms
     if (this.el.cineHeroVid) this.el.cineHeroVid.style.opacity = (0.55 + (1 - asm) * 0.33).toFixed(3);
@@ -723,7 +697,7 @@ class SigRuntime {
       this._stIdx = idx;
       if (this.el.appMode) this.el.appMode.textContent = this.stModes[idx];
       if (this.el.appClock) this.el.appClock.textContent = this.stClocks[idx];
-      this.el.stSteps.forEach((s: HTMLElement | null, i: number) => { if (s) s.style.color = i === idx ? "var(--zacc)" : "#7580a3"; });
+      this.el.stSteps.forEach((s: HTMLElement | null, i: number) => { if (s) s.style.color = i === idx ? "var(--zacc)" : "var(--zink4)"; });
       if (this.au) this.au.tick(620 + idx * 90);
     }
     const skv = this.clamp((this._svel || 0) * 0.00045, -0.7, 0.7);
@@ -1225,63 +1199,11 @@ class SigRuntime {
     const E = this.E, clamp = this.clamp;
     const step = (now: number) => {
       const k = E.expOut(clamp((now - t0) / dur, 0, 1));
-      // compute jitter: the number flutters as if being resolved live, then settles
-      const jit = k > 0.55 && k < 0.97 ? (Math.random() - 0.5) * Math.max(2, target * 0.012) * (1 - k) * 3 : 0;
-      const v = Math.round(target * k + jit);
+      const v = Math.round(target * k);
       el.textContent = fmt === "plus" ? "+" + v : fmt === "pct" ? v + "%" : v.toLocaleString("en-US");
       if (k < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
-  }
-
-  /* ---------- SCENE 02 · THE FILM (scrubbed interview) ---------- */
-  filmFrame(y: number) {
-    const fp = this.prog("film", y);
-    const E = this.E;
-    // scroll drives the lens: the push-in footage scrubs over the first 55%
-    const v = this.el.filmVid;
-    if (v && v.duration && !this.reduced) {
-      const t = Math.min(v.duration - 0.06, v.duration * this.clamp(fp / 0.55, 0, 1));
-      if (Math.abs((this._fT || 0) - t) > 0.024) {
-        this._fT = t;
-        try { v.currentTime = t; } catch (e) {}
-      }
-    }
-    // the timecode advances with the scroll, like tape
-    if (this.el.filmTc) {
-      const s = 462 + Math.round(fp * 34);
-      if (s !== this._fTc) {
-        this._fTc = s;
-        this.el.filmTc.textContent =
-          "REC 00:" + String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0");
-      }
-    }
-    // UI assembles out of the footage, each piece on its own window;
-    // everything eases off in the last beats to hand the frame to the next scene
-    const eg = 1 - E.cubicIO(this.clamp((fp - 0.94) / 0.06, 0, 1));
-    if (this.filmUI) {
-      for (let i = 0; i < this.filmUI.length; i++) {
-        const it = this.filmUI[i];
-        const k = E.expOut(this.clamp((fp - it.w) / 0.085, 0, 1));
-        const op = k * eg;
-        const el = it.el;
-        if (op <= 0.004 && (el as any)._fz) continue;
-        (el as any)._fz = op <= 0.004;
-        el.style.opacity = op.toFixed(3);
-        const inv = 1 - k;
-        el.style.transform =
-          (el.classList.contains("fui-p") ? "translateX(-50%) " : "") +
-          "translate3d(0," + (inv * 26).toFixed(1) + "px,0) scale(" + (0.965 + k * 0.035).toFixed(4) + ")";
-        el.style.filter = inv > 0.05 ? "blur(" + (inv * 6).toFixed(1) + "px)" : "none";
-      }
-    }
-    // the readiness score resolves as if computed live
-    if (this.el.filmN) {
-      const nk = this.clamp((fp - 0.68) / 0.14, 0, 1);
-      const jit = nk > 0.35 && nk < 0.96 ? (Math.random() - 0.5) * 5 * (1 - nk) : 0;
-      const n = Math.max(0, Math.round(84 * E.cubicIO(nk) + jit));
-      if (n !== this._fN) { this._fN = n; this.el.filmN.textContent = String(n); }
-    }
   }
 
   /* ---------- ASSEMBLY + SELF-DRAWING PATHS ---------- */
@@ -1290,14 +1212,9 @@ class SigRuntime {
     if (done && (el as any)._asmZ) return;
     (el as any)._asmZ = done;
     const inv = 1 - k;
-    const dir = j % 2 ? 1 : -1;
     const tgt = +(el.getAttribute("data-asm-o") || 1);
     el.style.opacity = (k * tgt).toFixed(3);
-    el.style.transform = done
-      ? ""
-      : "translate3d(" + (dir * inv * 22).toFixed(1) + "px," + (inv * 16).toFixed(1) + "px,0) rotate(" + (dir * inv * 1.1).toFixed(2) + "deg)";
-    const b = inv * 6;
-    el.style.filter = b > 0.25 ? "blur(" + b.toFixed(1) + "px)" : "none";
+    el.style.transform = done ? "" : "translate3d(0," + (inv * 18).toFixed(1) + "px,0)";
   }
 
   asmStage(i: number, t01: number) {
@@ -1307,6 +1224,22 @@ class SigRuntime {
     for (let n = 0; n < g.length; n++) {
       const k = this.E.expOut(this.clamp((t01 - 0.06 - g[n].j * 0.05) / 0.3, 0, 1));
       this.asmApply(g[n].el, k, g[n].j);
+    }
+  }
+
+  riseFrame() {
+    if (this.reduced || !this.rises || !this.rises.length) return;
+    for (let n = 0; n < this.rises.length; n++) {
+      const it = this.rises[n];
+      const r = it.el.getBoundingClientRect();
+      if (r.bottom < -60 || r.top > this.vh + 60) continue;
+      const raw = this.clamp((this.vh * 0.9 - r.top) / (this.vh * 0.34) - it.j * 0.1, 0, 1);
+      const k = this.E.expOut(raw);
+      if (Math.abs(k - it.k) < 0.003) continue;
+      it.k = k;
+      const inv = 1 - k;
+      it.el.style.clipPath = k >= 0.999 ? "none" : "inset(0 0 " + (inv * 94).toFixed(1) + "% 0)";
+      it.el.style.transform = k >= 0.999 ? "" : "translate3d(0," + (inv * 26).toFixed(1) + "px,0)";
     }
   }
 
@@ -1372,7 +1305,7 @@ class SigRuntime {
           const px = x * w - mx * 26 * p.z, py = p.y * h - my * 18 * p.z;
           const twk = 0.5 + 0.5 * Math.sin(t * (1 + p.z) + p.tw);
           let al = p.z * (0.22 + 0.5 * twk);
-          if (!dark) al *= 0.5;
+          if (!dark) al *= 0.8;
           const rr = 0.5 + p.z * (p.a ? 1.3 : 0.9);
           if (p.a) ctx.fillStyle = "rgba(" + B[0] + "," + B[1] + "," + B[2] + "," + al.toFixed(3) + ")";
           else ctx.fillStyle = dark ? "rgba(196,216,255," + al.toFixed(3) + ")" : "rgba(46,66,120," + al.toFixed(3) + ")";
@@ -1397,8 +1330,9 @@ class SigRuntime {
             const s = o.sh;
             s.x += s.vx; s.y += s.vy; s.life -= 0.017;
             const g = ctx.createLinearGradient(s.x - s.vx * 9, s.y - s.vy * 9, s.x, s.y);
-            g.addColorStop(0, "rgba(196,216,255,0)");
-            g.addColorStop(1, "rgba(210,230,255," + (0.65 * Math.max(0, s.life)).toFixed(3) + ")");
+            const tc = dark ? "196,216,255" : "66,88,140";
+            g.addColorStop(0, "rgba(" + tc + ",0)");
+            g.addColorStop(1, "rgba(" + tc + "," + ((dark ? 0.65 : 0.3) * Math.max(0, s.life)).toFixed(3) + ")");
             ctx.strokeStyle = g;
             ctx.lineWidth = 1.1;
             ctx.beginPath();
@@ -1455,7 +1389,11 @@ class SigRuntime {
       "vec3 col=mix(uA,uB,clamp(.25+.45*inner+.5*rim0,0.,1.));\n" +
       "float alpha=clamp(m,0.,1.);\n" +
       "vec3 rgb=col*(.5+.68*min(m,1.25));\n" +
-      "if(uL>.5){rgb=col*.92;alpha=clamp(m*.85,0.,.92);}\n" +
+      "if(uL>.5){\n" +
+      "vec3 lc=mix(vec3(.07,.36,.55),vec3(.15,.28,.68),clamp(.25+.6*inner,0.,1.));\n" +
+      "rgb=lc;\n" +
+      "alpha=clamp((rim*1.05+body*(.16+.22*caust*depth)+sss*.25)*fade,0.,.92);\n" +
+      "}\n" +
       "gl_FragColor=vec4(rgb,alpha);\n" +
       "}";
     const mk = (type: number, src: string) => {
@@ -1515,7 +1453,7 @@ class SigRuntime {
         gl.uniform1f(U.uP, prox);
         gl.uniform3f(U.uA, A[0] / 255, A[1] / 255, A[2] / 255);
         gl.uniform3f(U.uB, B[0] / 255, B[1] / 255, B[2] / 255);
-        gl.uniform1f(U.uL, comp.isLight && !useZ ? 1 : 0);
+        gl.uniform1f(U.uL, comp.isLight ? 1 : 0);
         gl.uniform1f(U.uC, calm);
         gl.uniform1f(U.uRb, rb);
         gl.uniform2f(U.uF, f0, f1);

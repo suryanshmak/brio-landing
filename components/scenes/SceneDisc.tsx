@@ -5,8 +5,8 @@ export default function SceneDisc() {
         <div aria-hidden="true" style={{ position: 'absolute', left: '-8%', bottom: '-20%', width: '50vw', height: '50vw', borderRadius: '50%', background: 'radial-gradient(closest-side,var(--g1),transparent 70%)', pointerEvents: 'none' }}></div>
         <div style={{ position: 'absolute', top: '9vh', left: '6vw', right: '6vw', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '24px', zIndex: '5' }}>
           <div>
-            <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)' }}>06 · FOR RECRUITERS</div>
-            <h2 data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '790', fontStretch: '111%', fontSize: 'clamp(34px,4.6vw,66px)', lineHeight: '.98', letterSpacing: '-.03em', margin: '12px 0 0' }}>Hear the signal,<br /><span data-ital="" style={{ color: 'var(--acc-hl)' }}>before the résumé.</span></h2>
+            <div data-rise="0" data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.26em', color: 'var(--acc-dim)' }}>05 · FOR RECRUITERS</div>
+            <h2 data-rise="1" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '790', fontStretch: '111%', fontSize: 'clamp(34px,4.6vw,66px)', lineHeight: '.98', letterSpacing: '-.03em', margin: '12px 0 0' }}>Hear the signal,<br /><span data-ital="" style={{ color: 'var(--acc-hl)' }}>before the résumé.</span></h2>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '10px', flexShrink: '0' }}>
             <div data-disc="idx" style={{ fontFamily: 'var(--f-mono)', fontSize: '11px', letterSpacing: '.2em', color: 'var(--ink2)', fontVariantNumeric: 'tabular-nums' }}>01 / 04</div>

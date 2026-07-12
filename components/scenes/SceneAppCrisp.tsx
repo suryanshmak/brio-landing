@@ -1,27 +1,27 @@
 export default function SceneAppCrisp() {
   return (
-    <div data-z="crisp" style={{ position: 'absolute', inset: '0', zIndex: '6', opacity: '0', pointerEvents: 'none', background: '#05070f', willChange: 'transform,opacity' }}>
+    <div data-z="crisp" style={{ position: 'absolute', inset: '0', zIndex: '6', opacity: '0', pointerEvents: 'none', background: 'var(--zbg)', willChange: 'transform,opacity' }}>
       <div aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', width: 'min(900px,90vw)', aspectRatio: '1', transform: 'translate(-50%,-50%)', borderRadius: '50%', background: 'radial-gradient(circle,rgba(43,98,232,.26),transparent 64%)' }}></div>
       <canvas data-stars="chamber" aria-hidden="true" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%' }}></canvas>
-      <div aria-hidden="true" style={{ position: 'absolute', inset: '0', background: 'radial-gradient(120% 100% at 50% 50%,transparent 55%,rgba(2,4,10,.7))' }}></div>
+      <div aria-hidden="true" style={{ position: 'absolute', inset: '0', background: 'radial-gradient(120% 100% at 50% 50%,transparent 55%,var(--zvig))' }}></div>
 
       {/* persistent app chrome */}
-      <div id="appchrome" style={{ position: 'absolute', top: '0', left: '0', right: '0', display: 'flex', alignItems: 'center', gap: '12px', padding: '14px 4vw', borderBottom: '1px solid rgba(255,255,255,.07)', background: 'rgba(5,7,15,.5)', zIndex: '9' }}>
+      <div id="appchrome" style={{ position: 'absolute', top: '0', left: '0', right: '0', display: 'flex', alignItems: 'center', gap: '12px', padding: '14px 4vw', borderBottom: '1px solid var(--zline)', background: 'var(--zglass)', zIndex: '9' }}>
         <span style={{ width: '24px', height: '24px', borderRadius: '8px', background: 'radial-gradient(circle at 32% 28%,var(--logo1),var(--logo2) 62%,var(--logo3))', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: '800', fontSize: '13px' }}>b</span>
-        <span data-app="mode" style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.22em', color: '#93a5d6' }}>LIVE INTERVIEW · SYSTEM DESIGN</span>
+        <span data-app="mode" style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.22em', color: 'var(--zink3)' }}>LIVE INTERVIEW · SYSTEM DESIGN</span>
         <span style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.16em', color: 'var(--zacc)' }}><span data-loop="dotp" data-dur="1.4" style={{ display: 'inline-block' }}>●</span> <span data-app="clock">REC 00:07:42</span></span>
-        <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.14em', color: '#7d8bb8', border: '1px solid rgba(255,255,255,.14)', borderRadius: '999px', padding: '5px 12px' }}>UN-ASSISTED · CAMERA ON</span>
+        <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.14em', color: 'var(--zink4)', border: '1px solid var(--zline2)', borderRadius: '999px', padding: '5px 12px' }}>UN-ASSISTED · CAMERA ON</span>
       </div>
       {/* journey stepper */}
       <div style={{ position: 'absolute', top: '64px', left: '0', right: '0', display: 'flex', justifyContent: 'center', zIndex: '9' }}>
-        <div id="appstep" style={{ display: 'flex', alignItems: 'center', gap: '14px', background: 'rgba(5,7,15,.55)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,.09)', borderRadius: '999px', padding: '8px 18px' }}>
+        <div id="appstep" style={{ display: 'flex', alignItems: 'center', gap: '14px', background: 'var(--zglass)', backdropFilter: 'blur(8px)', border: '1px solid var(--zline)', borderRadius: '999px', padding: '8px 18px' }}>
           <span data-app="st0" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'var(--zacc)' }}>01 INTERVIEW</span>
-          <span style={{ width: '26px', height: '1px', background: 'rgba(255,255,255,.18)' }}></span>
-          <span data-app="st1" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7580a3' }}>02 SCORE</span>
-          <span style={{ width: '26px', height: '1px', background: 'rgba(255,255,255,.18)' }}></span>
-          <span data-app="st2" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7580a3' }}>03 PROFILE</span>
-          <span style={{ width: '26px', height: '1px', background: 'rgba(255,255,255,.18)' }}></span>
-          <span data-app="st3" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7580a3' }}>04 DISCOVERED</span>
+          <span style={{ width: '26px', height: '1px', background: 'var(--zline2)' }}></span>
+          <span data-app="st1" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'var(--zink4)' }}>02 SCORE</span>
+          <span style={{ width: '26px', height: '1px', background: 'var(--zline2)' }}></span>
+          <span data-app="st2" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'var(--zink4)' }}>03 PROFILE</span>
+          <span style={{ width: '26px', height: '1px', background: 'var(--zline2)' }}></span>
+          <span data-app="st3" style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'var(--zink4)' }}>04 DISCOVERED</span>
         </div>
       </div>
 
@@ -49,12 +49,12 @@ export default function SceneAppCrisp() {
         </div>
         <div style={{ position: 'absolute', left: '0', right: '0', bottom: '6vh', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '13px', padding: '0 6vw', textAlign: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#93a5d6', border: '1px solid rgba(255,255,255,.14)', borderRadius: '999px', padding: '3px 10px' }}>SESSION 7</span>
-            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#93a5d6', border: '1px solid rgba(255,255,255,.14)', borderRadius: '999px', padding: '3px 10px' }}>Q1 / 3</span>
+            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: 'var(--zink3)', border: '1px solid var(--zline2)', borderRadius: '999px', padding: '3px 10px' }}>SESSION 7</span>
+            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: 'var(--zink3)', border: '1px solid var(--zline2)', borderRadius: '999px', padding: '3px 10px' }}>Q1 / 3</span>
             <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.3em', color: 'var(--zacc)' }}>BRIO ASKS</span>
           </div>
-          <div id="zq" data-z="q" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '730', fontStretch: '109%', fontSize: 'clamp(20px,2.6vw,34px)', lineHeight: '1.2', letterSpacing: '-.02em', color: '#f2f5ff', maxWidth: '34ch', minHeight: '2.4em', textWrap: 'balance' }}>“Walk me through a system you broke, and what you did in the next hour.”</div>
-          <div data-z="hint" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.24em', color: '#7d8bb8' }}>
+          <div id="zq" data-z="q" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '730', fontStretch: '109%', fontSize: 'clamp(20px,2.6vw,34px)', lineHeight: '1.2', letterSpacing: '-.02em', color: 'var(--zink)', maxWidth: '34ch', minHeight: '2.4em', textWrap: 'balance' }}>“Walk me through a system you broke, and what you did in the next hour.”</div>
+          <div data-z="hint" style={{ display: 'flex', alignItems: 'center', gap: '12px', fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.24em', color: 'var(--zink4)' }}>
             <span style={{ display: 'inline-flex', alignItems: 'flex-end', gap: '2px', height: '12px' }}><span data-loop="eq" data-dur="1.3" data-ph="0" style={{ width: '2px', height: '40%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span><span data-loop="eq" data-dur="1.3" data-ph=".2" style={{ width: '2px', height: '90%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span><span data-loop="eq" data-dur="1.3" data-ph=".4" style={{ width: '2px', height: '60%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span></span>
             SCROLL · ANSWER OUT LOUD
           </div>
@@ -63,7 +63,7 @@ export default function SceneAppCrisp() {
             <span data-ztag="1" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#8b5cf6', border: '1px solid rgba(139,92,246,.4)', background: 'rgba(139,92,246,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ METHOD</span>
             <span data-ztag="2" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#2ad4ee', border: '1px solid rgba(42,212,238,.4)', background: 'rgba(42,212,238,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ ACCOUNTABILITY</span>
           </div>
-          <div data-z="tr" style={{ fontFamily: 'var(--f-mono)', fontSize: 'clamp(11px,1.2vw,13.5px)', letterSpacing: '.04em', color: '#9fb0da', maxWidth: '74ch', minHeight: '1.5em', opacity: '0' }}>YOU · “I’d cap the blast radius first: freeze writes, bisect the deploy, then own the postmortem.”</div>
+          <div data-z="tr" style={{ fontFamily: 'var(--f-mono)', fontSize: 'clamp(11px,1.2vw,13.5px)', letterSpacing: '.04em', color: 'var(--zink3)', maxWidth: '74ch', minHeight: '1.5em', opacity: '0' }}>YOU · “I’d cap the blast radius first: freeze writes, bisect the deploy, then own the postmortem.”</div>
         </div>
       </div>
 
@@ -73,7 +73,7 @@ export default function SceneAppCrisp() {
           <div data-gw="" style={{ position: 'relative', width: 'min(300px,72vw)', aspectRatio: '1', justifySelf: 'center' }}>
             <div data-fg="shock" aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', width: '100%', aspectRatio: '1', transform: 'translate(-50%,-50%) scale(.6)', borderRadius: '50%', border: '2px solid var(--zacc)', opacity: '0', pointerEvents: 'none', willChange: 'transform,opacity' }}></div>
             <svg viewBox="0 0 340 340" style={{ width: '100%', height: '100%', transform: 'rotate(-90deg)', overflow: 'visible' }}>
-              <circle cx="170" cy="170" r="150" fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="16" />
+              <circle cx="170" cy="170" r="150" fill="none" stroke="var(--zline)" strokeWidth="16" />
               <circle data-fg="arc" cx="170" cy="170" r="150" fill="none" stroke="url(#sigarc)" strokeWidth="16" strokeLinecap="round" strokeDasharray="942.48" strokeDashoffset="942.48" />
               <defs><linearGradient id="sigarc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style={{ stopColor: 'var(--zvio)' }} /><stop offset="0.55" style={{ stopColor: 'var(--cyn)' }} /><stop offset="1" style={{ stopColor: 'var(--zacc)' }} /></linearGradient></defs>
             </svg>
@@ -84,62 +84,62 @@ export default function SceneAppCrisp() {
               <span style={{ position: 'absolute', left: '50%', top: '50%', width: '11px', height: '11px', borderRadius: '50%', background: '#f5a524', boxShadow: '0 0 14px 2px rgba(245,165,36,.5)', transform: 'translate(-50%,-50%) rotate(270deg) translateY(min(-150px,-44%))' }}></span>
             </div>
             <div style={{ position: 'absolute', inset: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-              <div data-fg="score" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '820', fontStretch: '112%', fontSize: 'clamp(64px,9vh,104px)', lineHeight: '.82', color: '#fff', fontVariantNumeric: 'tabular-nums', letterSpacing: '-.03em' }}>0</div>
-              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.26em', color: '#9fb0da', marginTop: '9px' }}>READINESS / 100</div>
+              <div data-fg="score" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '820', fontStretch: '112%', fontSize: 'clamp(64px,9vh,104px)', lineHeight: '.82', color: 'var(--zink)', fontVariantNumeric: 'tabular-nums', letterSpacing: '-.03em' }}>0</div>
+              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.26em', color: 'var(--zink3)', marginTop: '9px' }}>READINESS / 100</div>
               <div data-fg="band" style={{ marginTop: '10px', display: 'inline-flex', alignItems: 'center', gap: '7px', border: '1px solid var(--acc-brd)', background: 'var(--acc-bg)', borderRadius: '999px', padding: '5px 13px', fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.18em', color: 'var(--zacc)', opacity: '0', transform: 'scale(.6)' }}>BAND A · VERIFIED</div>
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', minWidth: '0' }}>
-            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.26em', color: '#7d8bb8' }}>SUBSTANCE, SPLIT FOUR WAYS</div>
+            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.26em', color: 'var(--zink4)' }}>SUBSTANCE, SPLIT FOUR WAYS</div>
             <div data-asm="0" style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
-              <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: '#b9c3de', textAlign: 'right', flexShrink: '0' }}>Problem Reading</div>
-              <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'rgba(255,255,255,.07)', overflow: 'hidden' }}>
+              <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: 'var(--zink2)', textAlign: 'right', flexShrink: '0' }}>Problem Reading</div>
+              <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'var(--zline)', overflow: 'hidden' }}>
                 <div data-fgfill="" data-t="86" style={{ position: 'absolute', inset: '0', borderRadius: '7px', background: 'linear-gradient(90deg,#7c5ce0,#9b7bf8)', transformOrigin: 'left', transform: 'scaleX(0)', willChange: 'transform' }}></div>
-                <div aria-hidden="true" style={{ position: 'absolute', top: '0', bottom: '0', left: '70%', width: '2px', background: 'rgba(255,255,255,.4)', zIndex: '2' }}></div>
+                <div aria-hidden="true" style={{ position: 'absolute', top: '0', bottom: '0', left: '70%', width: '2px', background: 'var(--zmark)', zIndex: '2' }}></div>
               </div>
-              <div data-fgnum="" data-t="86" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: '#fff', fontVariantNumeric: 'tabular-nums' }}>0</div>
+              <div data-fgnum="" data-t="86" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: 'var(--zink)', fontVariantNumeric: 'tabular-nums' }}>0</div>
             </div>
             <div data-asm="1" style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
-              <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: '#b9c3de', textAlign: 'right', flexShrink: '0' }}>Reasoning Clarity</div>
-              <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'rgba(255,255,255,.07)', overflow: 'hidden' }}>
+              <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: 'var(--zink2)', textAlign: 'right', flexShrink: '0' }}>Reasoning Clarity</div>
+              <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'var(--zline)', overflow: 'hidden' }}>
                 <div data-fgfill="" data-t="79" style={{ position: 'absolute', inset: '0', borderRadius: '7px', background: 'linear-gradient(90deg,#0ea5c9,#2ad4ee)', transformOrigin: 'left', transform: 'scaleX(0)', willChange: 'transform' }}></div>
-                <div aria-hidden="true" style={{ position: 'absolute', top: '0', bottom: '0', left: '66%', width: '2px', background: 'rgba(255,255,255,.4)', zIndex: '2' }}></div>
+                <div aria-hidden="true" style={{ position: 'absolute', top: '0', bottom: '0', left: '66%', width: '2px', background: 'var(--zmark)', zIndex: '2' }}></div>
               </div>
-              <div data-fgnum="" data-t="79" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: '#fff', fontVariantNumeric: 'tabular-nums' }}>0</div>
+              <div data-fgnum="" data-t="79" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: 'var(--zink)', fontVariantNumeric: 'tabular-nums' }}>0</div>
             </div>
             <div data-asm="2" style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
-              <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: '#b9c3de', textAlign: 'right', flexShrink: '0' }}>Technical</div>
-              <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'rgba(255,255,255,.07)', overflow: 'hidden' }}>
+              <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: 'var(--zink2)', textAlign: 'right', flexShrink: '0' }}>Technical</div>
+              <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'var(--zline)', overflow: 'hidden' }}>
                 <div data-fgfill="" data-t="84" style={{ position: 'absolute', inset: '0', borderRadius: '7px', background: 'linear-gradient(90deg,#6d3ee8,#8b5cf6)', transformOrigin: 'left', transform: 'scaleX(0)', willChange: 'transform' }}></div>
-                <div aria-hidden="true" style={{ position: 'absolute', top: '0', bottom: '0', left: '64%', width: '2px', background: 'rgba(255,255,255,.4)', zIndex: '2' }}></div>
+                <div aria-hidden="true" style={{ position: 'absolute', top: '0', bottom: '0', left: '64%', width: '2px', background: 'var(--zmark)', zIndex: '2' }}></div>
               </div>
-              <div data-fgnum="" data-t="84" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: '#fff', fontVariantNumeric: 'tabular-nums' }}>0</div>
+              <div data-fgnum="" data-t="84" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: 'var(--zink)', fontVariantNumeric: 'tabular-nums' }}>0</div>
             </div>
             <div data-asm="3" style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
-              <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: '#b9c3de', textAlign: 'right', flexShrink: '0' }}>Behavioral</div>
-              <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'rgba(255,255,255,.07)', overflow: 'hidden' }}>
+              <div className="fgl" style={{ width: '132px', fontFamily: 'var(--f-mono)', fontSize: '11px', color: 'var(--zink2)', textAlign: 'right', flexShrink: '0' }}>Behavioral</div>
+              <div style={{ position: 'relative', flex: '1', height: '11px', borderRadius: '7px', background: 'var(--zline)', overflow: 'hidden' }}>
                 <div data-fgfill="" data-t="88" style={{ position: 'absolute', inset: '0', borderRadius: '7px', background: 'linear-gradient(90deg,#d98a06,#f5a524)', transformOrigin: 'left', transform: 'scaleX(0)', willChange: 'transform' }}></div>
-                <div aria-hidden="true" style={{ position: 'absolute', top: '0', bottom: '0', left: '72%', width: '2px', background: 'rgba(255,255,255,.4)', zIndex: '2' }}></div>
+                <div aria-hidden="true" style={{ position: 'absolute', top: '0', bottom: '0', left: '72%', width: '2px', background: 'var(--zmark)', zIndex: '2' }}></div>
               </div>
-              <div data-fgnum="" data-t="88" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: '#fff', fontVariantNumeric: 'tabular-nums' }}>0</div>
+              <div data-fgnum="" data-t="88" data-disp="" style={{ width: '46px', fontFamily: 'var(--f-disp)', fontWeight: '750', fontStretch: '108%', fontSize: '23px', color: 'var(--zink)', fontVariantNumeric: 'tabular-nums' }}>0</div>
             </div>
             <div data-fg="gap" style={{ marginTop: '6px', border: '1px solid var(--acc-brd)', background: 'var(--acc-bg)', borderRadius: '14px', padding: '13px 16px', opacity: '0' }}>
               <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.2em', color: 'var(--zacc)', marginBottom: '8px' }}>↳ WHAT IT HEARD · PINNED FROM YOUR ANSWER</div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                 <span style={{ flexShrink: '0', marginTop: '6px', width: '6px', height: '6px', borderRadius: '50%', background: '#f5a524' }}></span>
-                <span style={{ fontSize: '12.5px', color: '#dfe6ff', lineHeight: '1.5' }}>“cap the blast radius first” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: '#f5a524' }}>OWNERSHIP · 00:08:04</span></span>
+                <span style={{ fontSize: '12.5px', color: 'var(--zink2)', lineHeight: '1.5' }}>“cap the blast radius first” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: '#f5a524' }}>OWNERSHIP · 00:08:04</span></span>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '6px' }}>
                 <span style={{ flexShrink: '0', marginTop: '6px', width: '6px', height: '6px', borderRadius: '50%', background: '#8b5cf6' }}></span>
-                <span style={{ fontSize: '12.5px', color: '#dfe6ff', lineHeight: '1.5' }}>“bisect the deploy” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: '#8b5cf6' }}>METHOD · 00:08:11</span></span>
+                <span style={{ fontSize: '12.5px', color: 'var(--zink2)', lineHeight: '1.5' }}>“bisect the deploy” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: '#8b5cf6' }}>METHOD · 00:08:11</span></span>
               </div>
-              <div style={{ marginTop: '9px', borderTop: '1px solid rgba(255,255,255,.1)', paddingTop: '8px', fontSize: '12px', color: '#9fb0da', lineHeight: '1.5' }}><b style={{ color: '#f2f5ff' }}>Fix next:</b> state your constraints before the plan. You led with action twice.</div>
-              <div style={{ marginTop: '9px', borderTop: '1px solid rgba(255,255,255,.1)', paddingTop: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '12px', color: '#9fb0da', lineHeight: '1.5' }}><b style={{ color: '#f2f5ff' }}>Brio remembers.</b> Session 8 opens right here, on your weak spot.</span>
+              <div style={{ marginTop: '9px', borderTop: '1px solid var(--zline)', paddingTop: '8px', fontSize: '12px', color: 'var(--zink3)', lineHeight: '1.5' }}><b style={{ color: 'var(--zink)' }}>Fix next:</b> state your constraints before the plan. You led with action twice.</div>
+              <div style={{ marginTop: '9px', borderTop: '1px solid var(--zline)', paddingTop: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
+                <span style={{ fontSize: '12px', color: 'var(--zink3)', lineHeight: '1.5' }}><b style={{ color: 'var(--zink)' }}>Brio remembers.</b> Session 8 opens right here, on your weak spot.</span>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.14em', color: 'var(--zacc)', border: '1px solid var(--acc-brd)', background: 'var(--acc-bg)', borderRadius: '999px', padding: '3px 8px', flexShrink: '0' }}>CROSS-SESSION MEMORY</span>
               </div>
             </div>
-            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7580a3' }}>CALIBRATED BAND MARKERS · SCORED ON SUBSTANCE, NEVER DELIVERY</div>
+            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'var(--zink4)' }}>CALIBRATED BAND MARKERS · SCORED ON SUBSTANCE, NEVER DELIVERY</div>
           </div>
         </div>
       </div>
@@ -150,88 +150,88 @@ export default function SceneAppCrisp() {
           <div data-pr="0" style={{ textAlign: 'center', marginBottom: '22px' }}>
             <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.3em', color: 'var(--zacc)' }}>YOUR PROOF · READY TO SHARE</div>
           </div>
-          <div data-pr="1" style={{ borderRadius: '20px', overflow: 'hidden', background: 'linear-gradient(180deg,#0d1530,#070c1d)', border: '1px solid rgba(96,158,255,.28)', boxShadow: '0 60px 120px -50px rgba(34,110,230,.5)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '9px', padding: '10px 16px', background: 'rgba(255,255,255,.03)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-              <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#3a4668' }}></span><span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#3a4668' }}></span><span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#3a4668' }}></span>
-              <span style={{ marginLeft: '12px', fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: '#93a5d6', background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.09)', borderRadius: '7px', padding: '3px 12px' }}>brio.so/p/aarav</span>
-              <span style={{ marginLeft: 'auto', fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.18em', color: '#7d8bb8' }}>PUBLIC PROFILE · BY CHOICE</span>
+          <div data-pr="1" style={{ borderRadius: '20px', overflow: 'hidden', background: 'linear-gradient(180deg,var(--zsurf3),var(--zsurf))', border: '1px solid rgba(96,158,255,.28)', boxShadow: '0 60px 120px -50px rgba(34,110,230,.5)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '9px', padding: '10px 16px', background: 'var(--zwash)', borderBottom: '1px solid var(--zline)' }}>
+              <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--zink5)' }}></span><span style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--zink5)' }}></span><span style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--zink5)' }}></span>
+              <span style={{ marginLeft: '12px', fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: 'var(--zink3)', background: 'var(--zwash)', border: '1px solid var(--zline)', borderRadius: '7px', padding: '3px 12px' }}>brio.so/p/aarav</span>
+              <span style={{ marginLeft: 'auto', fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.18em', color: 'var(--zink4)' }}>PUBLIC PROFILE · BY CHOICE</span>
             </div>
             <div style={{ padding: 'clamp(18px,2.6vw,28px)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
-                <span style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'linear-gradient(135deg,var(--av1),var(--av2))', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '17px', flexShrink: '0' }}>AM</span>
+                <span style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'linear-gradient(135deg,var(--av1),var(--av2))', color: 'var(--zink)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '17px', flexShrink: '0' }}>AM</span>
                 <div style={{ flex: '1', minWidth: '180px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '9px', flexWrap: 'wrap' }}>
-                    <span data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '760', fontStretch: '108%', fontSize: '24px', lineHeight: '1', letterSpacing: '-.02em', color: '#fff' }}>Aarav Mehta</span>
+                    <span data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '760', fontStretch: '108%', fontSize: '24px', lineHeight: '1', letterSpacing: '-.02em', color: 'var(--zink)' }}>Aarav Mehta</span>
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.1em', color: 'var(--zacc)', background: 'var(--acc-bg)', border: '1px solid var(--acc-brd)', borderRadius: '999px', padding: '3px 9px' }}><span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--zacc)' }}></span>VERIFIED</span>
                   </div>
-                  <div style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: '#7d8bb8', marginTop: '5px' }}>Backend Engineer · best takes kept · 7 sessions · public by choice</div>
+                  <div style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', color: 'var(--zink4)', marginTop: '5px' }}>Backend Engineer · best takes kept · 7 sessions · public by choice</div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-end', gap: '10px' }}>
                   <span data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '830', fontStretch: '112%', fontSize: '46px', lineHeight: '.78', color: 'var(--zvio)', letterSpacing: '-.03em' }}>84</span>
                   <div style={{ paddingBottom: '3px' }}>
                     <div data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '770', fontSize: '19px', color: 'var(--zacc)', lineHeight: '1' }}>A</div>
-                    <div style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.14em', color: '#7d8bb8' }}>PROVEN</div>
+                    <div style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.14em', color: 'var(--zink4)' }}>PROVEN</div>
                   </div>
                 </div>
               </div>
               <div id="stgclips" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '11px', marginTop: '18px' }}>
-                <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.09)', background: 'rgba(255,255,255,.03)' }}>
+                <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--zline)', background: 'var(--zwash)' }}>
                   <div style={{ position: 'relative', height: '52px', background: 'linear-gradient(160deg,rgba(99,102,241,.16),rgba(99,102,241,.04))' }}>
                     <svg viewBox="0 0 200 44" preserveAspectRatio="none" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%', opacity: '.6' }}><path d="M0,22 C20,8 32,36 50,22 S82,6 100,22 S140,38 158,22 S188,8 200,22" fill="none" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" /></svg>
-                    <div style={{ position: 'absolute', inset: '0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'rgba(255,255,255,.14)', border: '1px solid rgba(255,255,255,.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '0', height: '0', borderLeft: '8px solid #dfe6ff', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', marginLeft: '2px' }}></span></span></div>
-                    <span style={{ position: 'absolute', right: '7px', bottom: '6px', fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: '#c8d2f2', background: 'rgba(5,10,25,.6)', borderRadius: '4px', padding: '1px 5px' }}>0:42</span>
+                    <div style={{ position: 'absolute', inset: '0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'var(--zline2)', border: '1px solid var(--zline3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '0', height: '0', borderLeft: '8px solid var(--zink2)', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', marginLeft: '2px' }}></span></span></div>
+                    <span style={{ position: 'absolute', right: '7px', bottom: '6px', fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: 'var(--zink2)', background: 'var(--zglass)', borderRadius: '4px', padding: '1px 5px' }}>0:42</span>
                   </div>
                   <div style={{ padding: '9px 11px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
-                    <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', color: '#dfe6ff', fontWeight: '600' }}>Sys Design · T2</span>
+                    <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', color: 'var(--zink2)', fontWeight: '600' }}>Sys Design · T2</span>
                     <span style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', color: '#8b8ff5', border: '1px solid rgba(139,143,245,.35)', borderRadius: '4px', padding: '1px 5px' }}>TECH</span>
                   </div>
                 </div>
-                <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.09)', background: 'rgba(255,255,255,.03)' }}>
+                <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--zline)', background: 'var(--zwash)' }}>
                   <div style={{ position: 'relative', height: '52px', background: 'linear-gradient(160deg,rgba(245,165,36,.14),rgba(245,165,36,.03))' }}>
                     <svg viewBox="0 0 200 44" preserveAspectRatio="none" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%', opacity: '.6' }}><path d="M0,22 C18,34 36,10 54,22 S90,36 108,20 S150,6 168,24 S192,34 200,22" fill="none" stroke="#f5a524" strokeWidth="2" strokeLinecap="round" /></svg>
-                    <div style={{ position: 'absolute', inset: '0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'rgba(255,255,255,.14)', border: '1px solid rgba(255,255,255,.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '0', height: '0', borderLeft: '8px solid #ffe9c4', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', marginLeft: '2px' }}></span></span></div>
-                    <span style={{ position: 'absolute', right: '7px', bottom: '6px', fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: '#c8d2f2', background: 'rgba(5,10,25,.6)', borderRadius: '4px', padding: '1px 5px' }}>0:38</span>
+                    <div style={{ position: 'absolute', inset: '0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'var(--zline2)', border: '1px solid var(--zline3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '0', height: '0', borderLeft: '8px solid #ffe9c4', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', marginLeft: '2px' }}></span></span></div>
+                    <span style={{ position: 'absolute', right: '7px', bottom: '6px', fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: 'var(--zink2)', background: 'var(--zglass)', borderRadius: '4px', padding: '1px 5px' }}>0:38</span>
                   </div>
                   <div style={{ padding: '9px 11px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
-                    <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', color: '#dfe6ff', fontWeight: '600' }}>Behavioral · T3</span>
+                    <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', color: 'var(--zink2)', fontWeight: '600' }}>Behavioral · T3</span>
                     <span style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', color: '#f5a524', border: '1px solid rgba(245,165,36,.35)', borderRadius: '4px', padding: '1px 5px' }}>BEHAV</span>
                   </div>
                 </div>
-                <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.09)', background: 'rgba(255,255,255,.03)' }}>
+                <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--zline)', background: 'var(--zwash)' }}>
                   <div style={{ position: 'relative', height: '52px', background: 'linear-gradient(160deg,rgba(42,212,238,.14),rgba(42,212,238,.03))' }}>
                     <svg viewBox="0 0 200 44" preserveAspectRatio="none" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%', opacity: '.6' }}><path d="M0,22 C22,14 40,30 60,22 S96,8 116,26 S156,36 176,18 S192,12 200,22" fill="none" stroke="#2ad4ee" strokeWidth="2" strokeLinecap="round" /></svg>
-                    <div style={{ position: 'absolute', inset: '0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'rgba(255,255,255,.14)', border: '1px solid rgba(255,255,255,.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '0', height: '0', borderLeft: '8px solid #d2f4fb', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', marginLeft: '2px' }}></span></span></div>
-                    <span style={{ position: 'absolute', right: '7px', bottom: '6px', fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: '#c8d2f2', background: 'rgba(5,10,25,.6)', borderRadius: '4px', padding: '1px 5px' }}>0:51</span>
+                    <div style={{ position: 'absolute', inset: '0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'var(--zline2)', border: '1px solid var(--zline3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ width: '0', height: '0', borderLeft: '8px solid #d2f4fb', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', marginLeft: '2px' }}></span></span></div>
+                    <span style={{ position: 'absolute', right: '7px', bottom: '6px', fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: 'var(--zink2)', background: 'var(--zglass)', borderRadius: '4px', padding: '1px 5px' }}>0:51</span>
                   </div>
                   <div style={{ padding: '9px 11px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
-                    <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', color: '#dfe6ff', fontWeight: '600' }}>Coding · T2</span>
+                    <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', color: 'var(--zink2)', fontWeight: '600' }}>Coding · T2</span>
                     <span style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', color: '#2ad4ee', border: '1px solid rgba(42,212,238,.35)', borderRadius: '4px', padding: '1px 5px' }}>REASON</span>
                   </div>
                 </div>
               </div>
-              <div style={{ marginTop: '16px', borderTop: '1px solid rgba(255,255,255,.08)', paddingTop: '13px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
-                <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', color: '#7d8bb8', letterSpacing: '.08em' }}>EVERY SCORE LINKS TO THE SPOKEN MOMENT · ID 7F4A·2606</span>
-                <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', color: '#7d8bb8', letterSpacing: '.08em' }}>ALWAYS CURRENT</span>
+              <div style={{ marginTop: '16px', borderTop: '1px solid var(--zline)', paddingTop: '13px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
+                <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', color: 'var(--zink4)', letterSpacing: '.08em' }}>EVERY SCORE LINKS TO THE SPOKEN MOMENT · ID 7F4A·2606</span>
+                <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', color: 'var(--zink4)', letterSpacing: '.08em' }}>ALWAYS CURRENT</span>
               </div>
             </div>
           </div>
           <div data-pr="v" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginTop: '14px', flexWrap: 'wrap' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center' }}>
-              <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg,#d97706,#92400e)', border: '2px solid #05070f', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: '700' }}>L</span>
-              <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg,#635bff,#2d2a8c)', border: '2px solid #05070f', marginLeft: '-7px', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: '700' }}>S</span>
-              <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg,#0ea5e9,#075985)', border: '2px solid #05070f', marginLeft: '-7px', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: '700' }}>R</span>
+              <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg,#d97706,#92400e)', border: '2px solid var(--zbg)', color: 'var(--zink)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: '700' }}>L</span>
+              <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg,#635bff,#2d2a8c)', border: '2px solid var(--zbg)', marginLeft: '-7px', color: 'var(--zink)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: '700' }}>S</span>
+              <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'linear-gradient(135deg,#0ea5e9,#075985)', border: '2px solid var(--zbg)', marginLeft: '-7px', color: 'var(--zink)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: '700' }}>R</span>
             </span>
-            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.16em', color: '#9fb0da' }}><span data-loop="dotp" data-dur="1.8" style={{ display: 'inline-block', color: 'var(--zacc)' }}>●</span> <span data-liveact="" style={{ transition: 'opacity .32s' }}>3 RECRUITERS VIEWING · STRIPE OPENED YOUR SYS-DESIGN CLIP 2M AGO</span></span>
+            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.16em', color: 'var(--zink3)' }}><span data-loop="dotp" data-dur="1.8" style={{ display: 'inline-block', color: 'var(--zacc)' }}>●</span> <span data-liveact="" style={{ transition: 'opacity .32s' }}>3 RECRUITERS VIEWING · STRIPE OPENED YOUR SYS-DESIGN CLIP 2M AGO</span></span>
           </div>
           <div data-pr="2" id="stgshare" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '13px', marginTop: '16px', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', border: '1px solid rgba(255,255,255,.16)', background: 'rgba(8,14,32,.6)', backdropFilter: 'blur(10px)', borderRadius: '999px', padding: '6px 6px 6px 18px' }}>
-              <span style={{ fontFamily: 'var(--f-mono)', fontSize: '12.5px', color: '#dfe6ff', letterSpacing: '.02em' }}>brio.so/p/aarav</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', border: '1px solid var(--zline2)', background: 'var(--zglass)', backdropFilter: 'blur(10px)', borderRadius: '999px', padding: '6px 6px 6px 18px' }}>
+              <span style={{ fontFamily: 'var(--f-mono)', fontSize: '12.5px', color: 'var(--zink2)', letterSpacing: '.02em' }}>brio.so/p/aarav</span>
               <button data-copy="" data-loop="pulse" data-dur="2.6" type="button" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.14em', background: 'var(--zacc)', color: 'var(--zacc-ink)', border: 'none', borderRadius: '999px', padding: '10px 18px', fontWeight: '700', cursor: 'pointer', boxShadow: '0 0 34px -8px var(--zacc)' }}>COPY LINK</button>
             </div>
-            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: '#7d8bb8' }}>ONE LINK · YOU CONTROL WHO SEES IT</span>
+            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'var(--zink4)' }}>ONE LINK · YOU CONTROL WHO SEES IT</span>
           </div>
           <div data-pr="3" style={{ textAlign: 'center', marginTop: '16px' }}>
-            <a href="#s-end" className="hv-white" style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: '#9fb0da', textDecoration: 'none', borderBottom: '1px solid rgba(159,176,218,.35)', paddingBottom: '3px' }}>THIS COULD BE YOU IN 10 MINUTES · START FREE ↓</a>
+            <a href="#s-end" className="hv-white" style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: 'var(--zink3)', textDecoration: 'none', borderBottom: '1px solid rgba(159,176,218,.35)', paddingBottom: '3px' }}>THIS COULD BE YOU IN 10 MINUTES · START FREE ↓</a>
           </div>
         </div>
       </div>
@@ -245,51 +245,51 @@ export default function SceneAppCrisp() {
         <div style={{ position: 'absolute', left: '50%', top: '54%', transform: 'translate(-50%,-50%)', width: 'min(680px,92vw)' }}>
           <div data-rc="" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', marginBottom: '16px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span style={{ width: '30px', height: '30px', borderRadius: '9px', background: 'linear-gradient(135deg,#d97706,#92400e)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '12px' }}>L</span>
+              <span style={{ width: '30px', height: '30px', borderRadius: '9px', background: 'linear-gradient(135deg,#d97706,#92400e)', color: 'var(--zink)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '12px' }}>L</span>
               <div>
-                <div style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: '#dfe6ff' }}>LATTICE · ENG RECRUITING</div>
-                <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#7d8bb8', marginTop: '3px' }}>TALENT QUEUE · RANKED BY VERIFIED SIGNAL</div>
+                <div style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: 'var(--zink2)' }}>LATTICE · ENG RECRUITING</div>
+                <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: 'var(--zink4)', marginTop: '3px' }}>TALENT QUEUE · RANKED BY VERIFIED SIGNAL</div>
               </div>
             </div>
-            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.16em', color: '#7d8bb8', border: '1px solid rgba(255,255,255,.12)', borderRadius: '999px', padding: '4px 10px' }}>BACKEND · L4</span>
+            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.16em', color: 'var(--zink4)', border: '1px solid var(--zline2)', borderRadius: '999px', padding: '4px 10px' }}>BACKEND · L4</span>
           </div>
-          <div data-rc="" style={{ position: 'relative', borderRadius: '16px', border: '1px solid var(--acc-brd)', background: 'linear-gradient(180deg,rgba(94,225,255,.06),rgba(8,14,32,.6))', padding: '15px 17px', display: 'flex', alignItems: 'center', gap: '14px', boxShadow: '0 0 60px -22px var(--zacc)' }}>
-            <span style={{ width: '44px', height: '44px', borderRadius: '13px', background: 'linear-gradient(135deg,var(--av1),var(--av2))', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '15px', flexShrink: '0' }}>AM</span>
+          <div data-rc="" style={{ position: 'relative', borderRadius: '16px', border: '1px solid var(--acc-brd)', background: 'linear-gradient(180deg,rgba(94,225,255,.06),var(--zglass))', padding: '15px 17px', display: 'flex', alignItems: 'center', gap: '14px', boxShadow: '0 0 60px -22px var(--zacc)' }}>
+            <span style={{ width: '44px', height: '44px', borderRadius: '13px', background: 'linear-gradient(135deg,var(--av1),var(--av2))', color: 'var(--zink)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '15px', flexShrink: '0' }}>AM</span>
             <div style={{ flex: '1', minWidth: '0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                <span data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '760', fontStretch: '108%', fontSize: '19px', color: '#fff', letterSpacing: '-.01em' }}>Aarav Mehta</span>
+                <span data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '760', fontStretch: '108%', fontSize: '19px', color: 'var(--zink)', letterSpacing: '-.01em' }}>Aarav Mehta</span>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.12em', color: 'var(--zacc)', border: '1px solid var(--acc-brd)', borderRadius: '999px', padding: '2px 7px' }}>YOU</span>
                 <span style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.12em', color: 'var(--zacc)' }}>VERIFIED ✓</span>
               </div>
-              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', color: '#7d8bb8', marginTop: '5px', letterSpacing: '.06em' }}>SYS DESIGN 84 · UN-ASSISTED · 3 CLIPS PINNED</div>
+              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', color: 'var(--zink4)', marginTop: '5px', letterSpacing: '.06em' }}>SYS DESIGN 84 · UN-ASSISTED · 3 CLIPS PINNED</div>
             </div>
             <div style={{ textAlign: 'right', flexShrink: '0' }}>
               <div data-rcfit="" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '820', fontStretch: '110%', fontSize: '30px', lineHeight: '.85', color: 'var(--zacc)', fontVariantNumeric: 'tabular-nums' }}>0</div>
-              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.2em', color: '#7d8bb8', marginTop: '3px' }}>FIT</div>
+              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.2em', color: 'var(--zink4)', marginTop: '3px' }}>FIT</div>
             </div>
             <button data-rcbtn="" type="button" tabIndex={-1} aria-hidden="true" style={{ flexShrink: '0', fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.12em', background: 'var(--zacc)', color: 'var(--zacc-ink)', border: 'none', borderRadius: '999px', padding: '10px 16px', fontWeight: '700', cursor: 'pointer', willChange: 'transform' }}>SHORTLIST</button>
           </div>
-          <div data-rc="" data-dim=".55" style={{ marginTop: '9px', borderRadius: '14px', border: '1px solid rgba(255,255,255,.08)', background: 'rgba(8,14,32,.45)', padding: '11px 17px', display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <span style={{ width: '38px', height: '38px', borderRadius: '11px', background: '#1c2748', color: '#8fa0c8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '13px', flexShrink: '0' }}>RI</span>
+          <div data-rc="" data-dim=".55" style={{ marginTop: '9px', borderRadius: '14px', border: '1px solid var(--zline)', background: 'var(--zglass)', padding: '11px 17px', display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <span style={{ width: '38px', height: '38px', borderRadius: '11px', background: 'var(--zsurf2)', color: 'var(--zink3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '13px', flexShrink: '0' }}>RI</span>
             <div style={{ flex: '1', minWidth: '0' }}>
-              <span style={{ fontSize: '14.5px', fontWeight: '600', color: '#c6d0ea' }}>R. Iyer</span>
-              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: '#7580a3', marginTop: '4px', letterSpacing: '.06em' }}>RÉSUMÉ ONLY · NO VERIFIED SIGNAL</div>
+              <span style={{ fontSize: '14.5px', fontWeight: '600', color: 'var(--zink2)' }}>R. Iyer</span>
+              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: 'var(--zink4)', marginTop: '4px', letterSpacing: '.06em' }}>RÉSUMÉ ONLY · NO VERIFIED SIGNAL</div>
             </div>
-            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '15px', color: '#8fa0c8', fontVariantNumeric: 'tabular-nums' }}>—</div>
+            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '15px', color: 'var(--zink3)', fontVariantNumeric: 'tabular-nums' }}>—</div>
           </div>
-          <div data-rc="" data-dim=".38" style={{ marginTop: '8px', borderRadius: '14px', border: '1px solid rgba(255,255,255,.07)', background: 'rgba(8,14,32,.4)', padding: '11px 17px', display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <span style={{ width: '38px', height: '38px', borderRadius: '11px', background: '#1c2748', color: '#8fa0c8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '13px', flexShrink: '0' }}>KO</span>
+          <div data-rc="" data-dim=".38" style={{ marginTop: '8px', borderRadius: '14px', border: '1px solid var(--zline)', background: 'var(--zglass)', padding: '11px 17px', display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <span style={{ width: '38px', height: '38px', borderRadius: '11px', background: 'var(--zsurf2)', color: 'var(--zink3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', fontSize: '13px', flexShrink: '0' }}>KO</span>
             <div style={{ flex: '1', minWidth: '0' }}>
-              <span style={{ fontSize: '14.5px', fontWeight: '600', color: '#c6d0ea' }}>K. Osei</span>
-              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: '#7580a3', marginTop: '4px', letterSpacing: '.06em' }}>RÉSUMÉ ONLY · NO VERIFIED SIGNAL</div>
+              <span style={{ fontSize: '14.5px', fontWeight: '600', color: 'var(--zink2)' }}>K. Osei</span>
+              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', color: 'var(--zink4)', marginTop: '4px', letterSpacing: '.06em' }}>RÉSUMÉ ONLY · NO VERIFIED SIGNAL</div>
             </div>
-            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '15px', color: '#8fa0c8', fontVariantNumeric: 'tabular-nums' }}>—</div>
+            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '15px', color: 'var(--zink3)', fontVariantNumeric: 'tabular-nums' }}>—</div>
           </div>
-          <div data-rc="" style={{ marginTop: '14px', borderRadius: '14px', border: '1px solid rgba(255,255,255,.1)', background: 'rgba(5,7,15,.72)', padding: '13px 16px' }}>
-            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.18em', color: '#7d8bb8', marginBottom: '7px' }}>MESSAGE → AARAV</div>
-            <div data-rcmsg="" style={{ fontFamily: 'var(--f-mono)', fontSize: '12px', color: '#dfe6ff', minHeight: '1.6em', letterSpacing: '.02em', lineHeight: '1.5' }}></div>
+          <div data-rc="" style={{ marginTop: '14px', borderRadius: '14px', border: '1px solid var(--zline)', background: 'var(--zglass2)', padding: '13px 16px' }}>
+            <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.18em', color: 'var(--zink4)', marginBottom: '7px' }}>MESSAGE → AARAV</div>
+            <div data-rcmsg="" style={{ fontFamily: 'var(--f-mono)', fontSize: '12px', color: 'var(--zink2)', minHeight: '1.6em', letterSpacing: '.02em', lineHeight: '1.5' }}></div>
           </div>
-          <div data-rc="" style={{ textAlign: 'center', marginTop: '15px', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.22em', color: '#7d8bb8' }}>SIGNAL GETS SEEN. RÉSUMÉS GET SKIMMED.</div>
+          <div data-rc="" style={{ textAlign: 'center', marginTop: '15px', fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.22em', color: 'var(--zink4)' }}>SIGNAL GETS SEEN. RÉSUMÉS GET SKIMMED.</div>
         </div>
       </div>
     </div>

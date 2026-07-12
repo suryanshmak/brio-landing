@@ -17,12 +17,6 @@ export default function SceneAppWorld() {
           <div data-loop="sweep" data-dur="13" aria-hidden="true" style={{ position: 'absolute', top: '-20%', bottom: '-20%', left: '0', width: '30%', background: 'linear-gradient(100deg,transparent,var(--wash2) 50%,transparent)', filter: 'blur(10px)', transform: 'translateX(-30vw)', willChange: 'transform' }}></div>
         </div>
 
-        {/* ACT I · the void — two spoken lines before the room exists */}
-        <div aria-hidden="true" style={{ position: 'absolute', left: '0', right: '0', top: '0', bottom: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: '5', pointerEvents: 'none', padding: '0 6vw' }}>
-          <div data-v0="1" data-disp="" style={{ position: 'absolute', opacity: '0', fontFamily: 'var(--f-disp)', fontWeight: '780', fontStretch: '106%', fontSize: 'clamp(34px,5.2vw,76px)', letterSpacing: '-.03em', lineHeight: '1.04', textAlign: 'center', textWrap: 'balance', maxWidth: '16ch', willChange: 'transform,opacity' }}>Résumés can&rsquo;t speak.</div>
-          <div data-v0="2" data-disp="" style={{ position: 'absolute', opacity: '0', fontFamily: 'var(--f-disp)', fontWeight: '780', fontStretch: '106%', fontSize: 'clamp(38px,6vw,88px)', letterSpacing: '-.03em', lineHeight: '1.04', textAlign: 'center', willChange: 'transform,opacity' }}>You <span data-ital="" style={{ color: 'var(--acc-hl)' }}>can.</span></div>
-        </div>
-
         <div data-z="head" id="zhead" style={{ position: 'absolute', left: '0', right: '0', top: '11vh', textAlign: 'center', zIndex: '3', padding: '0 6vw' }}>
           <div className="ld" style={{ display: 'inline-flex', alignItems: 'center', gap: '9px', border: '1px solid var(--acc-brd)', background: 'var(--acc-bg)', borderRadius: '999px', padding: '7px 14px', marginBottom: '20px' }}>
             <span data-loop="dotp" data-dur="2.2" style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--acc)' }}></span>
@@ -37,24 +31,24 @@ export default function SceneAppWorld() {
 
         {/* LAPTOP */}
         <div id="zlap" data-z="lap" style={{ position: 'absolute', left: '50%', top: '56.5%', transform: 'translate(-50%,-50%)', width: 'min(880px,74vw,108vh)', zIndex: '2', perspective: '1400px' }}>
-          <div data-z="chassis" style={{ position: 'relative', borderRadius: '22px', padding: '14px 14px 30px', background: 'linear-gradient(180deg,#2a3350,#131a2e 60%,#0b1020)', border: '1px solid rgba(255,255,255,.14)', boxShadow: '0 60px 120px -40px rgba(0,0,0,.75),0 4px 18px -6px rgba(0,0,0,.5)', willChange: 'transform', transformStyle: 'preserve-3d' }}>
-            <div data-z="screen" style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', background: '#05070f', aspectRatio: '16/10', border: '1px solid rgba(0,0,0,.6)' }}>
+          <div data-z="chassis" style={{ position: 'relative', borderRadius: '22px', padding: '14px 14px 30px', background: 'linear-gradient(180deg,var(--lap1),var(--lap2) 60%,var(--lap3))', border: '1px solid var(--lapline)', boxShadow: '0 60px 120px -40px rgba(0,0,0,.75),0 4px 18px -6px rgba(0,0,0,.5)', willChange: 'transform', transformStyle: 'preserve-3d' }}>
+            <div data-z="screen" style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', background: 'var(--zbg)', aspectRatio: '16/10', border: '1px solid rgba(0,0,0,.6)' }}>
               <div aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '54%', width: '70%', aspectRatio: '1', transform: 'translate(-50%,-50%)', borderRadius: '50%', background: 'radial-gradient(circle,rgba(43,98,232,.3),transparent 65%)' }}></div>
-              <div style={{ position: 'absolute', top: '0', left: '0', right: '0', display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 12px', background: 'rgba(255,255,255,.03)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+              <div style={{ position: 'absolute', top: '0', left: '0', right: '0', display: 'flex', alignItems: 'center', gap: '8px', padding: '9px 12px', background: 'var(--zwash)', borderBottom: '1px solid var(--zline)' }}>
                 <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: 'radial-gradient(circle at 32% 28%,var(--logo1),var(--logo2) 62%,var(--logo3))', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: '800', fontSize: '9px' }}>b</span>
-                <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.2em', color: '#93a5d6' }}>BRIO · LIVE INTERVIEW</span>
+                <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.2em', color: 'var(--zink3)' }}>BRIO · LIVE INTERVIEW</span>
                 <span style={{ marginLeft: 'auto', fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.14em', color: 'var(--zacc)' }}><span data-loop="dotp" data-dur="1.4" style={{ display: 'inline-block' }}>●</span> <span data-roomclock="">REC 00:07:42</span></span>
               </div>
               <canvas data-orb="mini" aria-hidden="true" data-cols="z" data-rb=".24" data-fade=".34,.46" style={{ position: 'absolute', inset: '0', width: '100%', height: '100%', opacity: '.9' }}></canvas>
               <div style={{ position: 'absolute', bottom: '0', left: '0', right: '0', padding: '10px 14px', textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.24em', color: '#93a5d6' }}>SYSTEM DESIGN · UN-ASSISTED · CAMERA ON</div>
+                <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.24em', color: 'var(--zink3)' }}>SYSTEM DESIGN · UN-ASSISTED · CAMERA ON</div>
               </div>
               <div data-z="glare" aria-hidden="true" style={{ position: 'absolute', inset: '0', background: 'linear-gradient(118deg,transparent 30%,rgba(255,255,255,.09) 42%,rgba(255,255,255,.02) 50%,transparent 62%)', pointerEvents: 'none' }}></div>
             </div>
-            <div style={{ position: 'absolute', bottom: '9px', left: '50%', transform: 'translateX(-50%)', fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.3em', color: '#5a6488' }}>BRIO</div>
+            <div style={{ position: 'absolute', bottom: '9px', left: '50%', transform: 'translateX(-50%)', fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.3em', color: 'var(--zink4)' }}>BRIO</div>
           </div>
-          <div style={{ margin: '0 auto', width: '26%', height: '14px', background: 'linear-gradient(180deg,#0e1426,#070b16)', borderRadius: '0 0 10px 10px', border: '1px solid rgba(255,255,255,.07)', borderTop: 'none' }}></div>
-          <div style={{ margin: '-2px auto 0', width: '40%', height: '7px', background: 'linear-gradient(180deg,#131a2e,#0a0f1e)', borderRadius: '6px' }}></div>
+          <div style={{ margin: '0 auto', width: '26%', height: '14px', background: 'linear-gradient(180deg,var(--lapb1),var(--lapb2))', borderRadius: '0 0 10px 10px', border: '1px solid var(--zline)', borderTop: 'none' }}></div>
+          <div style={{ margin: '-2px auto 0', width: '40%', height: '7px', background: 'linear-gradient(180deg,var(--lapb3),var(--lapb4))', borderRadius: '6px' }}></div>
           <div aria-hidden="true" style={{ margin: '26px auto 0', width: '78%', height: '34px', borderRadius: '50%', background: 'radial-gradient(ellipse,var(--shadow1),transparent 70%)', opacity: '.6' }}></div>
         </div>
 

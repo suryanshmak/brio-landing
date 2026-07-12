@@ -16,7 +16,7 @@ export default function SceneEnd() {
         <span data-loop="ripple" data-dur="5.5" data-ph="3.66" style={{ position: 'absolute', left: '-30vmin', top: '-30vmin', width: '60vmin', height: '60vmin', borderRadius: '50%', border: '1px solid var(--acc-brd)', opacity: '0', willChange: 'transform,opacity' }}></span>
       </div>
       <div style={{ position: 'relative', zIndex: '2', textAlign: 'center', padding: '0 6vw' }}>
-        <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.3em', color: 'var(--acc-dim)' }}>08 · READY WHEN YOU ARE</div>
+        <div data-scr="" style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.3em', color: 'var(--acc-dim)' }}>07 · READY WHEN YOU ARE</div>
         <h2 data-kin="end" data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '820', fontStretch: '113%', fontSize: 'clamp(60px,10.5vw,164px)', lineHeight: '.92', letterSpacing: '-.04em', margin: '22px 0 0', textWrap: 'balance', color: 'var(--ink)' }}>Say it <span data-ital="" data-loop="tglow" data-dur="5" style={{ color: 'var(--acc-hl)' }}>out loud.</span></h2>
         <div style={{ fontFamily: 'var(--f-mono)', fontSize: '10.5px', letterSpacing: '.22em', color: 'var(--ink3)', marginTop: '26px' }}>FREE DIAGNOSTIC · 3 TAKES · PRIVATE BY DEFAULT</div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', marginTop: '34px', flexWrap: 'wrap' }}>

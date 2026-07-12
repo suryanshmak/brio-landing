@@ -30,18 +30,18 @@ body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",
 #sigroot[data-palette="lime"]{--acc:#c9f24d;--acc-hl:#c9f24d;--acc-ink:#161c04;--acc-dim:#a4c93e;--acc-brd:rgba(201,242,77,.34);--acc-bg:rgba(201,242,77,.08);--vio:#9b7bf8;--g1:rgba(124,58,237,.30);--g2:rgba(42,212,238,.12);--zacc:#c9f24d;--zvio:#9b7bf8;--zacc-ink:#161c04;--bgA:#06050d;--bgB:#170e38;--bgC:#07060f;--bgD:#050410;--card1:#1b1240;--card2:#0d0a20;--cardbrd:rgba(155,123,248,.38);--cardline:rgba(155,123,248,.2);--cardglow:rgba(90,50,200,.6);--panel1:rgba(24,17,48,.72);--panel2:rgba(10,8,20,.85);--panelbrd:rgba(155,123,248,.22);--tint:rgba(124,58,237,.2);--tintbrd:rgba(124,58,237,.4);--tinttxt:#c4b5fd;--tint2:rgba(124,58,237,.13);--tint2brd:rgba(124,58,237,.3);--av1:#7c3aed;--av2:#3f1d80;--logo1:#e6ddff;--logo2:#7c3aed;--logo3:#3f1d80;}
 #sigroot[data-palette="violet"]{--acc:#9b7bf8;--acc-hl:#9b7bf8;--acc-ink:#130b38;--acc-dim:#8a71dd;--acc-brd:rgba(155,123,248,.4);--acc-bg:rgba(155,123,248,.1);--vio:#9b7bf8;--g1:rgba(124,58,237,.42);--g2:rgba(155,123,248,.14);--zacc:#9b7bf8;--zvio:#c9b3ff;--zacc-ink:#130b38;--bgA:#06050d;--bgB:#170e38;--bgC:#07060f;--bgD:#050410;--card1:#1b1240;--card2:#0d0a20;--cardbrd:rgba(155,123,248,.38);--cardline:rgba(155,123,248,.2);--cardglow:rgba(90,50,200,.6);--panel1:rgba(24,17,48,.72);--panel2:rgba(10,8,20,.85);--panelbrd:rgba(155,123,248,.22);--tint:rgba(124,58,237,.2);--tintbrd:rgba(124,58,237,.4);--tinttxt:#c4b5fd;--tint2:rgba(124,58,237,.13);--tint2brd:rgba(124,58,237,.3);--av1:#7c3aed;--av2:#3f1d80;--logo1:#e6ddff;--logo2:#7c3aed;--logo3:#3f1d80;}
 #sigroot[data-theme="light"]{
-  --ink:#0e1424;--ink2:#3c465f;--ink3:#6b7590;--ink4:#98a2bd;
+  --ink:#0e1424;--ink2:#3c465f;--ink3:#5f6b89;--ink4:#7a86a6;
   --line:rgba(14,20,36,.1);--line2:rgba(14,20,36,.18);--wash:rgba(14,20,36,.035);--wash2:rgba(14,20,36,.07);
   --ghost:#c3cbde;--mark:rgba(14,20,36,.35);--glass:rgba(255,255,255,.65);--shadow1:rgba(30,45,90,.22);
   --vig:rgba(175,190,220,.22);--vigF:rgba(214,224,244,.5);--grain-op:.03;
   --nav0:linear-gradient(180deg,rgba(242,245,251,.7),rgba(242,245,251,0));--navS:linear-gradient(180deg,rgba(242,245,251,.94),rgba(242,245,251,.6));
   --bgA:#f2f5fb;--bgB:#d8e6ff;--bgC:#eaeff8;--bgD:#f6f8fd;
-  --card1:#0b1c42;--card2:#050c20;--cardbrd:rgba(58,99,232,.35);--cardline:rgba(120,160,255,.25);--cardglow:rgba(30,80,200,.35);
+  --card1:#ffffff;--card2:#e7edf8;--cardbrd:rgba(38,80,200,.3);--cardline:rgba(14,20,36,.14);--cardglow:rgba(58,99,232,.32);
   --panel1:#ffffff;--panel2:#f2f5fd;--panelbrd:rgba(14,20,36,.09);
   --tint:rgba(58,99,232,.1);--tintbrd:rgba(58,99,232,.35);--tinttxt:#28418f;--tint2:rgba(58,99,232,.08);--tint2brd:rgba(58,99,232,.25);
   --logo1:#eaf5ff;
 }
-#sigroot[data-theme="light"][data-palette="ice"]{--acc:#0fb5e8;--acc-hl:#0891c9;--acc-ink:#03222c;--acc-dim:#0879a8;--acc-brd:rgba(8,145,196,.4);--acc-bg:rgba(10,170,220,.09);--vio:#3a63e8;--cyn:#0aa6cf;--g1:rgba(58,99,232,.14);--g2:rgba(10,166,207,.1);}
+#sigroot[data-theme="light"][data-palette="ice"]{--acc:#0fb5e8;--acc-hl:#0891c9;--acc-ink:#03222c;--acc-dim:#0879a8;--acc-brd:rgba(8,145,196,.4);--acc-bg:rgba(10,170,220,.09);--vio:#3a63e8;--cyn:#0aa6cf;--g1:rgba(58,99,232,.22);--g2:rgba(10,166,207,.17);}
 #sigroot[data-theme="light"][data-palette="lime"]{--acc:#b8e332;--acc-hl:#5c8a0a;--acc-ink:#1a2205;--acc-dim:#5c8a0a;--acc-brd:rgba(120,165,20,.45);--acc-bg:rgba(150,200,30,.12);--vio:#7c3aed;--g1:rgba(124,58,237,.14);--g2:rgba(42,180,220,.1);}
 #sigroot[data-theme="light"][data-palette="violet"]{--acc:#7c3aed;--acc-hl:#6d31d8;--acc-ink:#ffffff;--acc-dim:#6d31d8;--acc-brd:rgba(124,58,237,.4);--acc-bg:rgba(124,58,237,.09);--vio:#7c3aed;--g1:rgba(124,58,237,.16);--g2:rgba(155,123,248,.12);}
 #sigroot[data-type="serif"] [data-disp]{font-family:var(--font-serif),"Instrument Serif",Georgia,serif!important;font-weight:400!important;font-stretch:100%!important;letter-spacing:-.012em!important;}
@@ -56,22 +56,43 @@ body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",
 #grain{position:fixed;inset:0;z-index:95;pointer-events:none;opacity:var(--grain-op);mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
 
+/* in-app world (laptop screen + dive stages) — flips with the theme */
+#sigroot{--cink:#ffffff;--cink2:#9fb0da;--cink3:#7d8bb8;--csheen:rgba(255,255,255,.13);--zbg:#05070f;--zglass:rgba(5,7,15,.55);--zglass2:rgba(5,7,15,.72);--zvig:rgba(2,4,10,.7);
+  --zink:#f2f5ff;--zink2:#dfe6ff;--zink3:#9fb0da;--zink4:#7d8bb8;--zink5:#3a4668;
+  --zwash:rgba(255,255,255,.04);--zline:rgba(255,255,255,.08);--zline2:rgba(255,255,255,.15);--zline3:rgba(255,255,255,.25);--zmark:rgba(255,255,255,.4);
+  --zsurf:#070c1d;--zsurf2:#1c2748;--zsurf3:#0d1530;
+  --lap1:#2a3350;--lap2:#131a2e;--lap3:#0b1020;--lapline:rgba(255,255,255,.14);
+  --lapb1:#0e1426;--lapb2:#070b16;--lapb3:#131a2e;--lapb4:#0a0f1e;}
+#sigroot[data-theme="light"]{--cink:#101828;--cink2:#3f4f78;--cink3:#5d6a8e;--csheen:rgba(30,50,110,.1);--zbg:#eef2f9;--zglass:rgba(244,247,252,.66);--zglass2:rgba(244,247,252,.86);--zvig:rgba(203,215,235,.55);
+  --zink:#101828;--zink2:#2b3a5c;--zink3:#46557b;--zink4:#5d6a8e;--zink5:#93a0bd;
+  --zwash:rgba(14,20,36,.05);--zline:rgba(14,20,36,.1);--zline2:rgba(14,20,36,.18);--zline3:rgba(14,20,36,.3);--zmark:rgba(14,20,36,.4);
+  --zsurf:#e3e9f4;--zsurf2:#d3dcec;--zsurf3:#dde5f2;
+  --lap1:#e2e7f0;--lap2:#c5cddb;--lap3:#aab4c8;--lapline:rgba(14,20,36,.18);
+  --lapb1:#c9d1df;--lapb2:#aeb8c9;--lapb3:#d4dbe8;--lapb4:#b3bdce;
+  --zacc:#0891c9;--zvio:#3a63e8;--zacc-ink:#ffffff;}
+
 /* cinematic scrim tokens (CinemaBackdrop legibility layer) */
 #sigroot{--scrimA:rgba(4,7,15,.55);--scrimB:rgba(4,7,15,.7);}
 #sigroot[data-theme="light"]{--scrimA:rgba(242,245,251,.5);--scrimB:rgba(242,245,251,.72);}
 
-/* light grade: the same 4K film reads as luminous atmosphere on paper —
-   screen blend keeps only the glow; theme toggle button clears the inset */
+/* ---- LIGHT GRADE ---- same film, developed as a DAY plate.
+   Screen-blending night footage onto paper made fog; inverting it makes
+   daylight: bright room, ink ripples, the cone reads as a shaft of shade.
+   Stars stay, drawn by the engine as ink motes. */
 #sigroot[data-theme="light"] [data-cine] video,
-#sigroot[data-theme="light"] [data-cine]>div{mix-blend-mode:screen;}
-#sigroot[data-theme="light"] canvas[data-stars]{opacity:.35;}
+#sigroot[data-theme="light"] [data-cine]>div{filter:invert(1) hue-rotate(180deg) saturate(1.25) brightness(1.04);opacity:.85!important;mix-blend-mode:normal;}
+#sigroot[data-theme="light"] #s-app{background:linear-gradient(180deg,#fbfdff,#eef3fb 42%,#e4ebf7)!important;}
+#sigroot[data-theme="light"] [data-z="crisp"]{background:linear-gradient(180deg,#f4f7fc,#e7edf8)!important;}
+#sigroot[data-theme="light"] #s-end{background:radial-gradient(1100px 800px at 50% 110%,#c7dbff,#f2f5fb 72%)!important;}
+#sigroot[data-theme="light"] #s-noise{background:linear-gradient(180deg,#eef2f9,#e8eef8)!important;}
+#sigroot[data-theme="light"] #zlap > div[aria-hidden="true"]:last-child{opacity:.95;}
+#sigroot[data-theme="light"] #grain{mix-blend-mode:multiply;}
 [data-themetog]{bottom:calc(18px + env(safe-area-inset-bottom, 0px))!important;}
 
 /* iOS dynamic viewport: pinned scenes track the visible viewport (URL bar) */
 @supports (height: 100dvh){
   [data-z="stick"]{height:100dvh!important;}
   #s-noise > div{height:100dvh!important;}
-  #s-film > div{height:100dvh!important;}
   #s-disc > div{height:100dvh!important;}
 }
 /* fixed controls clear the home indicator */
@@ -102,20 +123,6 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
 ::-webkit-scrollbar-thumb{background:rgba(148,180,230,.22);border-radius:6px;border:2px solid #04070f;}
 ::-webkit-scrollbar-thumb:hover{background:rgba(148,180,230,.4);}
 
-/* holographic credential — iridescent foil + pointer-tracked glare (ice) */
-.cred-foil{position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background-image:
-    repeating-linear-gradient(115deg,
-      rgba(94,225,255,.42) 0 12px,
-      rgba(79,128,255,.36) 12px 24px,
-      rgba(233,246,255,.3) 24px 36px,
-      rgba(42,212,238,.38) 36px 48px),
-    radial-gradient(130% 100% at var(--px,50%) var(--py,50%),rgba(255,255,255,.5),transparent 55%);
-  background-position:var(--px,50%) var(--py,50%),0 0;
-  mix-blend-mode:overlay;opacity:.26;filter:saturate(1.35);}
-.cred-glare{position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background:radial-gradient(170px circle at var(--px,50%) var(--py,50%),rgba(255,255,255,.42),transparent 60%);
-  mix-blend-mode:soft-light;opacity:var(--glareo,0);transition:opacity .35s;}
 
 /* hover states (the prototype used style-hover attributes) */
 .hv-ink:hover{color:var(--ink)!important;}
@@ -145,11 +152,6 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
   #footgrid{grid-template-columns:1fr!important;gap:28px!important;}
 }
 @media (max-width:640px){
-  .fui-qa{left:4%!important;top:16%!important;max-width:58vw!important;}
-  .fui-qb{right:4%!important;top:34%!important;max-width:58vw!important;}
-  .fui-m{left:4%!important;bottom:24%!important;}
-  .fui-r{right:4%!important;bottom:23%!important;}
-  .fui-p{bottom:5vh!important;}
   #navlinks{display:none!important;}
   .disccard{width:80vw!important;}
   #valcount{grid-template-columns:1fr!important;gap:34px!important;}
@@ -209,6 +211,5 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;}
-  [data-fui]{opacity:1!important;transform:none!important;filter:none!important;}
-  .fui-p{transform:translateX(-50%)!important;}
+  [data-rise]{clip-path:none!important;transform:none!important;}
 }
