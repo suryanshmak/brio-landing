@@ -13,7 +13,7 @@ export default function SceneApp() {
       id="s-app"
       data-vis="app"
       data-screen-label="01 The App Journey"
-      style={{ position: 'relative', height: '820vh', background: 'var(--bgA)' }}
+      style={{ position: 'relative', height: '780vh', background: 'var(--bgA)' }}
     >
       <div data-z="stick" style={{ position: 'sticky', top: '0', height: '100vh', overflow: 'clip' }}>
         <SceneAppWorld />

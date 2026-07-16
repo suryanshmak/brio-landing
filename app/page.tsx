@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <div
       id="sigroot"
-      data-theme="dark"
+      data-theme="light"
       data-palette="ice"
       data-type="grotesk"
       data-motion="full"

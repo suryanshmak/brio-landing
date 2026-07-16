@@ -75,7 +75,7 @@ export default function SceneDisc() {
               </div>
             </div>
             <a className="disccard" data-disc="card" href="#s-end" style={{ width: '400px', borderRadius: '24px', padding: '32px', background: 'var(--acc)', color: 'var(--acc-ink)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '20px', textDecoration: 'none', boxShadow: '0 40px 110px -44px var(--acc)', willChange: 'transform' }}>
-              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.24em', opacity: '.75' }}>RECRUITER ACCESS</div>
+              <div style={{ fontFamily: 'var(--f-mono)', fontSize: '9.5px', letterSpacing: '.24em' }}>RECRUITER ACCESS</div>
               <div data-disp="" style={{ fontFamily: 'var(--f-disp)', fontWeight: '800', fontStretch: '110%', fontSize: '38px', lineHeight: '1', letterSpacing: '-.025em' }}>Your shortlist starts here.</div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontFamily: 'var(--f-mono)', fontSize: '11px', letterSpacing: '.16em', fontWeight: '700' }}><span>OPEN DISCOVERY</span><span style={{ fontSize: '24px' }}>→</span></div>
             </a>

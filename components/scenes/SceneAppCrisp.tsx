@@ -35,16 +35,16 @@ export default function SceneAppCrisp() {
           <div style={{ position: 'absolute', left: '50%', bottom: '-6%', width: '74%', height: '12%', transform: 'translateX(-50%)', borderRadius: '50%', background: 'radial-gradient(ellipse,rgba(79,128,255,.16),transparent 70%)' }}></div>
         </div>
         <canvas data-orb="hero" aria-hidden="true" data-cols="z" data-rb=".3" data-fade=".44,.62" style={{ position: 'absolute', left: '50%', top: '46%', transform: 'translate(-50%,-50%)', width: 'min(74vh,94vw)', height: 'min(74vh,94vw)', opacity: '.95' }}></canvas>
-        <div id="zcam" style={{ position: 'absolute', right: '4vw', bottom: '7vh', width: '180px', borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.14)', background: '#070b18', boxShadow: '0 24px 60px -24px rgba(0,0,0,.7)', zIndex: '4' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 10px', background: 'rgba(255,255,255,.04)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.18em', color: '#93a5d6' }}>YOU · CAMERA ON</span>
+        <div id="zcam" style={{ position: 'absolute', right: '4vw', bottom: '7vh', width: '180px', borderRadius: '14px', overflow: 'hidden', border: '1px solid var(--zline2)', background: 'var(--zsurf3)', boxShadow: '0 24px 60px -24px rgba(30,45,90,.35)', zIndex: '4' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 10px', background: 'var(--zwash)', borderBottom: '1px solid var(--zline)' }}>
+            <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.18em', color: 'var(--zink3)' }}>YOU · CAMERA ON</span>
             <span data-loop="dotp" data-dur="1.4" style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#ff5470', display: 'inline-block' }}></span>
           </div>
-          <div style={{ position: 'relative', height: '104px', background: 'radial-gradient(90px 60px at 50% 88%,rgba(79,128,255,.28),transparent 70%),linear-gradient(180deg,#0a1226,#060a18)' }}>
-            <div aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '30%', width: '42px', height: '42px', borderRadius: '50%', transform: 'translateX(-50%)', background: 'radial-gradient(circle at 50% 40%,#2b446f,#101c3a 72%)' }}></div>
-            <div aria-hidden="true" style={{ position: 'absolute', left: '50%', bottom: '-14px', width: '104px', height: '54px', borderRadius: '50px 50px 0 0', transform: 'translateX(-50%)', background: 'linear-gradient(180deg,#1d3057,#0c1630)' }}></div>
+          <div style={{ position: 'relative', height: '104px', background: 'radial-gradient(90px 60px at 50% 88%,rgba(23,144,201,.2),transparent 70%),linear-gradient(180deg,#e9eff8,#dce5f2)' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '30%', width: '42px', height: '42px', borderRadius: '50%', transform: 'translateX(-50%)', background: 'radial-gradient(circle at 50% 40%,#b9c9de,#94a7c4 72%)' }}></div>
+            <div aria-hidden="true" style={{ position: 'absolute', left: '50%', bottom: '-14px', width: '104px', height: '54px', borderRadius: '50px 50px 0 0', transform: 'translateX(-50%)', background: 'linear-gradient(180deg,#c9d5e8,#a9b9d2)' }}></div>
             <span data-zmic="" style={{ position: 'absolute', left: '8px', bottom: '8px', display: 'inline-flex', alignItems: 'flex-end', gap: '2px', height: '14px' }}><span data-loop="eq" data-dur="1.1" data-ph="0" style={{ width: '2.5px', height: '45%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span><span data-loop="eq" data-dur="1.1" data-ph=".18" style={{ width: '2.5px', height: '85%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span><span data-loop="eq" data-dur="1.1" data-ph=".36" style={{ width: '2.5px', height: '60%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span><span data-loop="eq" data-dur="1.1" data-ph=".5" style={{ width: '2.5px', height: '75%', background: 'var(--zacc)', borderRadius: '2px', transformOrigin: 'bottom' }}></span></span>
-            <span data-zlisten="" style={{ position: 'absolute', right: '8px', bottom: '8px', fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.14em', color: '#7d8bb8' }}>LISTENING…</span>
+            <span data-zlisten="" style={{ position: 'absolute', right: '8px', bottom: '8px', fontFamily: 'var(--f-mono)', fontSize: '7.5px', letterSpacing: '.14em', color: 'var(--zacc)' }}>LISTENING…</span>
           </div>
         </div>
         <div style={{ position: 'absolute', left: '0', right: '0', bottom: '6vh', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '13px', padding: '0 6vw', textAlign: 'center' }}>
@@ -59,9 +59,9 @@ export default function SceneAppCrisp() {
             SCROLL · ANSWER OUT LOUD
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', minHeight: '26px', flexWrap: 'wrap' }}>
-            <span data-ztag="0" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#f5a524', border: '1px solid rgba(245,165,36,.4)', background: 'rgba(245,165,36,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ OWNERSHIP</span>
-            <span data-ztag="1" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#8b5cf6', border: '1px solid rgba(139,92,246,.4)', background: 'rgba(139,92,246,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ METHOD</span>
-            <span data-ztag="2" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: '#2ad4ee', border: '1px solid rgba(42,212,238,.4)', background: 'rgba(42,212,238,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ ACCOUNTABILITY</span>
+            <span data-ztag="0" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: 'var(--tagA)', border: '1px solid var(--tagAb)', background: 'rgba(245,165,36,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ OWNERSHIP</span>
+            <span data-ztag="1" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: 'var(--tagV)', border: '1px solid var(--tagVb)', background: 'rgba(139,92,246,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ METHOD</span>
+            <span data-ztag="2" style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.14em', color: 'var(--tagC)', border: '1px solid var(--tagCb)', background: 'rgba(42,212,238,.08)', borderRadius: '999px', padding: '4px 10px', opacity: '0', transform: 'scale(.6)', willChange: 'transform' }}>◆ ACCOUNTABILITY</span>
           </div>
           <div data-z="tr" style={{ fontFamily: 'var(--f-mono)', fontSize: 'clamp(11px,1.2vw,13.5px)', letterSpacing: '.04em', color: 'var(--zink3)', maxWidth: '74ch', minHeight: '1.5em', opacity: '0' }}>YOU · “I’d cap the blast radius first: freeze writes, bisect the deploy, then own the postmortem.”</div>
         </div>
@@ -127,11 +127,11 @@ export default function SceneAppCrisp() {
               <div style={{ fontFamily: 'var(--f-mono)', fontSize: '8.5px', letterSpacing: '.2em', color: 'var(--zacc)', marginBottom: '8px' }}>↳ WHAT IT HEARD · PINNED FROM YOUR ANSWER</div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                 <span style={{ flexShrink: '0', marginTop: '6px', width: '6px', height: '6px', borderRadius: '50%', background: '#f5a524' }}></span>
-                <span style={{ fontSize: '12.5px', color: 'var(--zink2)', lineHeight: '1.5' }}>“cap the blast radius first” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: '#f5a524' }}>OWNERSHIP · 00:08:04</span></span>
+                <span style={{ fontSize: '12.5px', color: 'var(--zink2)', lineHeight: '1.5' }}>“cap the blast radius first” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: 'var(--tagA)' }}>OWNERSHIP · 00:08:04</span></span>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '6px' }}>
                 <span style={{ flexShrink: '0', marginTop: '6px', width: '6px', height: '6px', borderRadius: '50%', background: '#8b5cf6' }}></span>
-                <span style={{ fontSize: '12.5px', color: 'var(--zink2)', lineHeight: '1.5' }}>“bisect the deploy” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: '#8b5cf6' }}>METHOD · 00:08:11</span></span>
+                <span style={{ fontSize: '12.5px', color: 'var(--zink2)', lineHeight: '1.5' }}>“bisect the deploy” <span style={{ fontFamily: 'var(--f-mono)', fontSize: '8px', letterSpacing: '.1em', color: 'var(--tagV)' }}>METHOD · 00:08:11</span></span>
               </div>
               <div style={{ marginTop: '9px', borderTop: '1px solid var(--zline)', paddingTop: '8px', fontSize: '12px', color: 'var(--zink3)', lineHeight: '1.5' }}><b style={{ color: 'var(--zink)' }}>Fix next:</b> state your constraints before the plan. You led with action twice.</div>
               <div style={{ marginTop: '9px', borderTop: '1px solid var(--zline)', paddingTop: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
@@ -231,7 +231,7 @@ export default function SceneAppCrisp() {
             <span style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'var(--zink4)' }}>ONE LINK · YOU CONTROL WHO SEES IT</span>
           </div>
           <div data-pr="3" style={{ textAlign: 'center', marginTop: '16px' }}>
-            <a href="#s-end" className="hv-white" style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: 'var(--zink3)', textDecoration: 'none', borderBottom: '1px solid rgba(159,176,218,.35)', paddingBottom: '3px' }}>THIS COULD BE YOU IN 10 MINUTES · START FREE ↓</a>
+            <a href="#s-end" className="hv-white" style={{ fontFamily: 'var(--f-mono)', fontSize: '10px', letterSpacing: '.2em', color: 'var(--zacc)', textDecoration: 'none', borderBottom: '1px solid var(--zline3)', paddingBottom: '3px' }}>THIS COULD BE YOU · START FREE ↓</a>
           </div>
         </div>
       </div>

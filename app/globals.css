@@ -10,7 +10,7 @@
 
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
-body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.5;overflow-x:clip;}
+body{background:#f2f5fb;color:#0e1424;font-family:var(--font-archivo),"Archivo",-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.5;overflow-x:clip;}
 #sigroot{
   --ink:#eef3ff;--ink2:#b9c3de;--ink3:#8791b3;--ink4:#7580a3;
   --line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.17);--wash:rgba(255,255,255,.04);--wash2:rgba(255,255,255,.08);
@@ -30,18 +30,18 @@ body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",
 #sigroot[data-palette="lime"]{--acc:#c9f24d;--acc-hl:#c9f24d;--acc-ink:#161c04;--acc-dim:#a4c93e;--acc-brd:rgba(201,242,77,.34);--acc-bg:rgba(201,242,77,.08);--vio:#9b7bf8;--g1:rgba(124,58,237,.30);--g2:rgba(42,212,238,.12);--zacc:#c9f24d;--zvio:#9b7bf8;--zacc-ink:#161c04;--bgA:#06050d;--bgB:#170e38;--bgC:#07060f;--bgD:#050410;--card1:#1b1240;--card2:#0d0a20;--cardbrd:rgba(155,123,248,.38);--cardline:rgba(155,123,248,.2);--cardglow:rgba(90,50,200,.6);--panel1:rgba(24,17,48,.72);--panel2:rgba(10,8,20,.85);--panelbrd:rgba(155,123,248,.22);--tint:rgba(124,58,237,.2);--tintbrd:rgba(124,58,237,.4);--tinttxt:#c4b5fd;--tint2:rgba(124,58,237,.13);--tint2brd:rgba(124,58,237,.3);--av1:#7c3aed;--av2:#3f1d80;--logo1:#e6ddff;--logo2:#7c3aed;--logo3:#3f1d80;}
 #sigroot[data-palette="violet"]{--acc:#9b7bf8;--acc-hl:#9b7bf8;--acc-ink:#130b38;--acc-dim:#8a71dd;--acc-brd:rgba(155,123,248,.4);--acc-bg:rgba(155,123,248,.1);--vio:#9b7bf8;--g1:rgba(124,58,237,.42);--g2:rgba(155,123,248,.14);--zacc:#9b7bf8;--zvio:#c9b3ff;--zacc-ink:#130b38;--bgA:#06050d;--bgB:#170e38;--bgC:#07060f;--bgD:#050410;--card1:#1b1240;--card2:#0d0a20;--cardbrd:rgba(155,123,248,.38);--cardline:rgba(155,123,248,.2);--cardglow:rgba(90,50,200,.6);--panel1:rgba(24,17,48,.72);--panel2:rgba(10,8,20,.85);--panelbrd:rgba(155,123,248,.22);--tint:rgba(124,58,237,.2);--tintbrd:rgba(124,58,237,.4);--tinttxt:#c4b5fd;--tint2:rgba(124,58,237,.13);--tint2brd:rgba(124,58,237,.3);--av1:#7c3aed;--av2:#3f1d80;--logo1:#e6ddff;--logo2:#7c3aed;--logo3:#3f1d80;}
 #sigroot[data-theme="light"]{
-  --ink:#0e1424;--ink2:#3c465f;--ink3:#5f6b89;--ink4:#7a86a6;
+  --ink:#0e1424;--ink2:#2f3b59;--ink3:#3f4c6b;--ink4:#556180;
   --line:rgba(14,20,36,.1);--line2:rgba(14,20,36,.18);--wash:rgba(14,20,36,.035);--wash2:rgba(14,20,36,.07);
-  --ghost:#c3cbde;--mark:rgba(14,20,36,.35);--glass:rgba(255,255,255,.65);--shadow1:rgba(30,45,90,.22);
+  --ghost:#9aa6c2;--mark:rgba(14,20,36,.35);--glass:rgba(255,255,255,.65);--shadow1:rgba(30,45,90,.22);
   --vig:rgba(175,190,220,.22);--vigF:rgba(214,224,244,.5);--grain-op:.03;
   --nav0:linear-gradient(180deg,rgba(242,245,251,.7),rgba(242,245,251,0));--navS:linear-gradient(180deg,rgba(242,245,251,.94),rgba(242,245,251,.6));
   --bgA:#f2f5fb;--bgB:#d8e6ff;--bgC:#eaeff8;--bgD:#f6f8fd;
   --card1:#ffffff;--card2:#e7edf8;--cardbrd:rgba(38,80,200,.3);--cardline:rgba(14,20,36,.14);--cardglow:rgba(58,99,232,.32);
   --panel1:#ffffff;--panel2:#f2f5fd;--panelbrd:rgba(14,20,36,.09);
-  --tint:rgba(58,99,232,.1);--tintbrd:rgba(58,99,232,.35);--tinttxt:#28418f;--tint2:rgba(58,99,232,.08);--tint2brd:rgba(58,99,232,.25);
-  --logo1:#eaf5ff;
+  --tint:rgba(20,130,190,.1);--tintbrd:rgba(20,130,190,.38);--tinttxt:#0a5e88;--tint2:rgba(20,130,190,.08);--tint2brd:rgba(20,130,190,.28);
+  --logo1:#eaf9ff;--logo2:#1e9ade;--logo3:#0a4f7d;--av1:#1793c9;--av2:#0b5a80;--vio:#0e86ba;
 }
-#sigroot[data-theme="light"][data-palette="ice"]{--acc:#0fb5e8;--acc-hl:#0891c9;--acc-ink:#03222c;--acc-dim:#0879a8;--acc-brd:rgba(8,145,196,.4);--acc-bg:rgba(10,170,220,.09);--vio:#3a63e8;--cyn:#0aa6cf;--g1:rgba(58,99,232,.22);--g2:rgba(10,166,207,.17);}
+#sigroot[data-theme="light"][data-palette="ice"]{--acc:#0d7bb0;--acc-hl:#0d98cb;--acc-ink:#ffffff;--acc-dim:#0c76a9;--acc-brd:rgba(13,152,203,.5);--acc-bg:rgba(13,152,203,.1);--vio:#0e86ba;--cyn:#6fd6f8;--g1:rgba(58,99,232,.16);--g2:rgba(111,214,248,.22);}
 #sigroot[data-theme="light"][data-palette="lime"]{--acc:#b8e332;--acc-hl:#5c8a0a;--acc-ink:#1a2205;--acc-dim:#5c8a0a;--acc-brd:rgba(120,165,20,.45);--acc-bg:rgba(150,200,30,.12);--vio:#7c3aed;--g1:rgba(124,58,237,.14);--g2:rgba(42,180,220,.1);}
 #sigroot[data-theme="light"][data-palette="violet"]{--acc:#7c3aed;--acc-hl:#6d31d8;--acc-ink:#ffffff;--acc-dim:#6d31d8;--acc-brd:rgba(124,58,237,.4);--acc-bg:rgba(124,58,237,.09);--vio:#7c3aed;--g1:rgba(124,58,237,.16);--g2:rgba(155,123,248,.12);}
 #sigroot[data-type="serif"] [data-disp]{font-family:var(--font-serif),"Instrument Serif",Georgia,serif!important;font-weight:400!important;font-stretch:100%!important;letter-spacing:-.012em!important;}
@@ -57,37 +57,36 @@ body{background:#04070f;color:#eef3ff;font-family:var(--font-archivo),"Archivo",
 
 
 /* in-app world (laptop screen + dive stages) — flips with the theme */
-#sigroot{--cink:#ffffff;--cink2:#9fb0da;--cink3:#7d8bb8;--csheen:rgba(255,255,255,.13);--zbg:#05070f;--zglass:rgba(5,7,15,.55);--zglass2:rgba(5,7,15,.72);--zvig:rgba(2,4,10,.7);
+#sigroot{--tagA:#f5a524;--tagAb:rgba(245,165,36,.4);--tagV:#8b5cf6;--tagVb:rgba(139,92,246,.4);--tagC:#2ad4ee;--tagCb:rgba(42,212,238,.4);--tsep:none;--cink:#ffffff;--cink2:#9fb0da;--cink3:#7d8bb8;--csheen:rgba(255,255,255,.13);--zbg:#05070f;--zglass:rgba(5,7,15,.55);--zglass2:rgba(5,7,15,.72);--zvig:rgba(2,4,10,.7);
   --zink:#f2f5ff;--zink2:#dfe6ff;--zink3:#9fb0da;--zink4:#7d8bb8;--zink5:#3a4668;
   --zwash:rgba(255,255,255,.04);--zline:rgba(255,255,255,.08);--zline2:rgba(255,255,255,.15);--zline3:rgba(255,255,255,.25);--zmark:rgba(255,255,255,.4);
   --zsurf:#070c1d;--zsurf2:#1c2748;--zsurf3:#0d1530;
-  --lap1:#2a3350;--lap2:#131a2e;--lap3:#0b1020;--lapline:rgba(255,255,255,.14);
+  --lap1:#2a3350;--lap2:#131a2e;--lap3:#0b1020;--lapline:rgba(255,255,255,.14);--lapsh:0 60px 120px -40px rgba(0,0,0,.75),0 4px 18px -6px rgba(0,0,0,.5);--lapscr:rgba(0,0,0,.6);
   --lapb1:#0e1426;--lapb2:#070b16;--lapb3:#131a2e;--lapb4:#0a0f1e;}
-#sigroot[data-theme="light"]{--cink:#101828;--cink2:#3f4f78;--cink3:#5d6a8e;--csheen:rgba(30,50,110,.1);--zbg:#eef2f9;--zglass:rgba(244,247,252,.66);--zglass2:rgba(244,247,252,.86);--zvig:rgba(203,215,235,.55);
-  --zink:#101828;--zink2:#2b3a5c;--zink3:#46557b;--zink4:#5d6a8e;--zink5:#93a0bd;
+#sigroot[data-theme="light"]{--tagA:#b45309;--tagAb:rgba(180,83,9,.5);--tagV:#6d28d9;--tagVb:rgba(109,40,217,.5);--tagC:#0e7490;--tagCb:rgba(14,116,144,.5);--tsep:0 1px 14px rgba(242,245,251,.95),0 0 26px rgba(242,245,251,.75);--cink:#101828;--cink2:#3f4f78;--cink3:#5d6a8e;--csheen:rgba(30,50,110,.1);--zbg:#eef2f9;--zglass:rgba(244,247,252,.66);--zglass2:rgba(244,247,252,.86);--zvig:rgba(203,215,235,.55);
+  --zink:#101828;--zink2:#26334f;--zink3:#37446a;--zink4:#46536f;--zink5:#8894b3;
   --zwash:rgba(14,20,36,.05);--zline:rgba(14,20,36,.1);--zline2:rgba(14,20,36,.18);--zline3:rgba(14,20,36,.3);--zmark:rgba(14,20,36,.4);
   --zsurf:#e3e9f4;--zsurf2:#d3dcec;--zsurf3:#dde5f2;
-  --lap1:#e2e7f0;--lap2:#c5cddb;--lap3:#aab4c8;--lapline:rgba(14,20,36,.18);
+  --lap1:#e2e7f0;--lap2:#c5cddb;--lap3:#aab4c8;--lapline:rgba(14,20,36,.14);--lapsh:0 44px 96px -44px rgba(30,45,90,.38),0 2px 10px -5px rgba(30,45,90,.16);--lapscr:rgba(14,20,36,.18);
   --lapb1:#c9d1df;--lapb2:#aeb8c9;--lapb3:#d4dbe8;--lapb4:#b3bdce;
-  --zacc:#0891c9;--zvio:#3a63e8;--zacc-ink:#ffffff;}
+  --zacc:#0d7bb0;--zvio:#15a0d6;--zacc-ink:#ffffff;}
 
 /* cinematic scrim tokens (CinemaBackdrop legibility layer) */
 #sigroot{--scrimA:rgba(4,7,15,.55);--scrimB:rgba(4,7,15,.7);}
-#sigroot[data-theme="light"]{--scrimA:rgba(242,245,251,.5);--scrimB:rgba(242,245,251,.72);}
+#sigroot[data-theme="light"]{--scrimA:rgba(236,244,252,.72);--scrimB:rgba(236,244,252,.88);}
 
 /* ---- LIGHT GRADE ---- same film, developed as a DAY plate.
    Screen-blending night footage onto paper made fog; inverting it makes
    daylight: bright room, ink ripples, the cone reads as a shaft of shade.
    Stars stay, drawn by the engine as ink motes. */
 #sigroot[data-theme="light"] [data-cine] video,
-#sigroot[data-theme="light"] [data-cine]>div{filter:invert(1) hue-rotate(180deg) saturate(1.25) brightness(1.04);opacity:.85!important;mix-blend-mode:normal;}
+#sigroot[data-theme="light"] [data-cine]>div{filter:invert(1) hue-rotate(180deg) saturate(1.3) brightness(1.12) contrast(.88);opacity:.6!important;mix-blend-mode:normal;}
 #sigroot[data-theme="light"] #s-app{background:linear-gradient(180deg,#fbfdff,#eef3fb 42%,#e4ebf7)!important;}
 #sigroot[data-theme="light"] [data-z="crisp"]{background:linear-gradient(180deg,#f4f7fc,#e7edf8)!important;}
 #sigroot[data-theme="light"] #s-end{background:radial-gradient(1100px 800px at 50% 110%,#c7dbff,#f2f5fb 72%)!important;}
 #sigroot[data-theme="light"] #s-noise{background:linear-gradient(180deg,#eef2f9,#e8eef8)!important;}
 #sigroot[data-theme="light"] #zlap > div[aria-hidden="true"]:last-child{opacity:.95;}
 #sigroot[data-theme="light"] #grain{mix-blend-mode:multiply;}
-[data-themetog]{bottom:calc(18px + env(safe-area-inset-bottom, 0px))!important;}
 
 /* iOS dynamic viewport: pinned scenes track the visible viewport (URL bar) */
 @supports (height: 100dvh){
@@ -113,6 +112,11 @@ button{cursor:pointer;}
 /* skip link: hidden until keyboard focus */
 .skip-link{position:fixed;top:10px;left:10px;z-index:200;transform:translateY(-260%);background:var(--acc);color:var(--acc-ink);font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;font-weight:700;border-radius:999px;padding:11px 18px;text-decoration:none;transition:transform .2s;}
 .skip-link:focus-visible{transform:translateY(0);}
+
+/* light CTAs wear the logo's own gradient */
+#sigroot[data-theme="light"] .hv-glow-1,#sigroot[data-theme="light"] .hv-glow-2,
+#sigroot[data-theme="light"] .hv-glow-3,#sigroot[data-theme="light"] .hv-glow-4{
+  background:linear-gradient(140deg,#67d3fa,#146fb4)!important;color:#fff!important;}
 
 /* craft states — selection, keyboard focus, scrollbar */
 ::selection{background:var(--acc);color:var(--acc-ink);}
@@ -170,6 +174,11 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
   #stgclips{grid-template-columns:repeat(3,1fr)!important;max-width:none!important;gap:7px!important;}
   [data-rctoast]{white-space:normal!important;max-width:86vw;text-align:center;}
 }
+/* tablets: same vertical fix as phones for the 601-980 band */
+@media (min-width:601px) and (max-width:980px){
+  #zhead{top:max(88px,7vh)!important;}
+  #zlap{top:65%!important;}
+}
 /* portrait phones: reposition hero head + laptop so the CTA never collides
    with the laptop (the 980 block resizes but never moves them vertically).
    top:max(66px,…) keeps the eyebrow clear of the ~60px nav. */
@@ -188,14 +197,14 @@ html{scrollbar-color:rgba(94,225,255,.28) #04070f;}
    height (base geometry only resolves collision-free above ~1400px tall) */
 @media (min-width:981px) and (min-height:1121px) and (max-height:1400px){
   #zhead{top:9vh!important;}
-  #zlap{top:62%!important;width:min(800px,64vw,72vh)!important;}
+  #zlap{top:64%!important;width:min(800px,64vw,72vh)!important;}
   #zstat{top:19vh!important;right:5vw!important;}
 }
 @media (min-width:981px) and (max-height:1120px){
-  #zhead{top:8vh!important;}
+  #zhead{top:max(88px,8vh)!important;}
   #zhead .ld{margin-bottom:12px!important;}
   #zhead h1{font-size:clamp(30px,4.2vw,50px)!important;}
-  #zlap{top:69%!important;width:min(720px,60vw,76vh)!important;}
+  #zlap{top:72%!important;width:min(720px,60vw,76vh)!important;}
   #zstat{top:17vh!important;right:5vw!important;}
 }
 @media (max-height:720px) and (min-width:981px){

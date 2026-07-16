@@ -250,28 +250,6 @@ class SigRuntime {
       }
       return { el, len, k: -1 };
     });
-    // light/dark grade toggle — the same film, two grades
-    const tBtn = this.q("[data-themetog]");
-    if (tBtn) {
-      let saved: string | null = null;
-      try { saved = localStorage.getItem("brio-theme"); } catch (e) {}
-      if (saved === "light" || saved === "dark") this.root.setAttribute("data-theme", saved);
-      const syncT = () => {
-        this.isLight = this.root.getAttribute("data-theme") === "light";
-        this.orbColors = this.readColors();
-        const tx = this.q("[data-themetog-tx]");
-        if (tx) tx.textContent = this.isLight ? "LIGHT" : "DARK";
-      };
-      syncT();
-      this._ttH = () => {
-        this.root.setAttribute("data-theme", this.isLight ? "dark" : "light");
-        try { localStorage.setItem("brio-theme", this.isLight ? "dark" : "light"); } catch (e) {}
-        syncT();
-        if (this.au) this.au.tick(760);
-      };
-      tBtn.addEventListener("click", this._ttH);
-      this._ttBtn = tBtn;
-    }
     if (this.reduced) {
       this._ldDone = true;
       this.scrs.forEach((s) => { s.done = true; });
@@ -365,7 +343,7 @@ class SigRuntime {
       sndBtn.addEventListener("click", this._sndH);
       let pref: string | null = null;
       try { pref = localStorage.getItem("brio-sound"); } catch (e) {}
-      if (pref === "1") {
+      if (pref !== "0") {
         this._sndOnce = () => {
           removeEventListener("pointerdown", this._sndOnce!);
           removeEventListener("keydown", this._sndOnce!);
@@ -413,7 +391,6 @@ class SigRuntime {
     if (this.tilts) this.tilts.forEach((s) => { s.w.removeEventListener("mousemove", s.move); s.w.removeEventListener("mouseleave", s.leave); });
     if (this.dotHandlers) this.dotHandlers.forEach((o) => o.d.removeEventListener("click", o.h));
     if (this.el && this.el.copyBtn && this._copyH) this.el.copyBtn.removeEventListener("click", this._copyH);
-    if (this._ttBtn && this._ttH) this._ttBtn.removeEventListener("click", this._ttH);
     const sb = this.q && this.q("[data-snd]");
     if (sb && this._sndH) sb.removeEventListener("click", this._sndH);
     if (this._sndOnce) { removeEventListener("pointerdown", this._sndOnce); removeEventListener("keydown", this._sndOnce); }
@@ -549,15 +526,8 @@ class SigRuntime {
   /* ========== SCENE 01 · THE APP ========== */
   appFrame(y: number, now: number) {
     if (!this.zg) return;
-    const pRaw = this.prog("app", y);
+    const p = this.prog("app", y);
     const E = this.E;
-    // ACT I — the void. The first 11.5% of the pin is UI-free: film + two
-    // spoken lines, then the room assembles around the entity. Everything
-    // downstream runs on the remapped progress so the dive keeps its timing.
-    const INTRO = 0.06;
-    const ip = this.clamp(pRaw / INTRO, 0, 1);
-    const p = this.clamp((pRaw - INTRO) / (1 - INTRO), 0, 1);
-    const asm = E.expOut(this.clamp((ip - 0.25) / 0.75, 0, 1));
     // dolly through the glass over the first 22%
     const e = E.quartIO(this.clamp(p / 0.22, 0, 1));
     this._zE = e;
@@ -586,29 +556,10 @@ class SigRuntime {
       }
     }
     const fadeEarly = this.clamp(e * 2.4, 0, 1);
-    if (this.el.zhead) {
-      this.el.zhead.style.opacity = ((1 - fadeEarly) * asm).toFixed(3);
-      this.el.zhead.style.pointerEvents = fadeEarly > 0.4 || asm < 0.4 ? "none" : "auto";
-      if (asm < 0.999) this.el.zhead.style.transform = "translate3d(0," + ((1 - asm) * 26).toFixed(1) + "px,0)";
-      else if (this._hAsm) this.el.zhead.style.transform = "";
-    }
-    if (this.el.zstat) {
-      this.el.zstat.style.opacity = ((1 - this.clamp(e * 3, 0, 1)) * asm).toFixed(3);
-      if (asm < 0.999) this.el.zstat.style.transform = "translate3d(" + ((1 - asm) * 42).toFixed(1) + "px,0,0)";
-      else if (this._hAsm) this.el.zstat.style.transform = "";
-    }
-    this._hAsm = asm < 0.999;
-    if (this.el.zmarq) this.el.zmarq.style.opacity = ((1 - this.clamp(e * 3, 0, 1)) * asm).toFixed(3);
-    if (this.el.zcue) this.el.zcue.style.opacity = ((1 - this.clamp(e * 4, 0, 1)) * asm).toFixed(3);
-    // laptop materializes out of the film
-    if (this.el.zlap) {
-      this.el.zlap.style.opacity = asm.toFixed(3);
-      const lb = (1 - asm) * 12;
-      const lf = lb > 0.2 ? "blur(" + lb.toFixed(1) + "px)" : "none";
-      if (lf !== this._lapF) { this._lapF = lf; this.el.zlap.style.filter = lf; }
-    }
-    // the film carries the void, then settles into ambience as the room forms
-    if (this.el.cineHeroVid) this.el.cineHeroVid.style.opacity = (0.55 + (1 - asm) * 0.33).toFixed(3);
+    if (this.el.zhead) { this.el.zhead.style.opacity = (1 - fadeEarly).toFixed(3); this.el.zhead.style.pointerEvents = fadeEarly > 0.4 ? "none" : "auto"; }
+    if (this.el.zstat) this.el.zstat.style.opacity = (1 - this.clamp(e * 3, 0, 1)).toFixed(3);
+    if (this.el.zmarq) this.el.zmarq.style.opacity = (1 - this.clamp(e * 3, 0, 1)).toFixed(3);
+    if (this.el.zcue) this.el.zcue.style.opacity = (1 - this.clamp(e * 4, 0, 1)).toFixed(3);
     if (this.el.zlights) this.el.zlights.style.opacity = (1 - this.clamp((e - 0.1) * 1.6, 0, 1) * 0.8).toFixed(3);
     if (this.el.zglare) this.el.zglare.style.opacity = (1 - this.clamp((e - 0.45) / 0.3, 0, 1)).toFixed(3);
     if (this.el.zflash) {
@@ -651,11 +602,8 @@ class SigRuntime {
       this._crx = (this._crx || 0) + (tgx - this._crx) * 0.06;
       this._cry = (this._cry || 0) + (tgy - this._cry) * 0.06;
       const live = Math.abs(this._crx) + Math.abs(this._cry) > 0.03;
-      const mat = asm < 0.999 ? "translateY(" + ((1 - asm) * 34).toFixed(1) + "px) scale(" + (0.93 + asm * 0.07).toFixed(4) + ") " : "";
-      if (live || this._crz || mat || this._mat)
-        this.el.chassis.style.transform = mat + (live ? "rotateX(" + this._crx.toFixed(2) + "deg) rotateY(" + this._cry.toFixed(2) + "deg)" : "");
+      if (live || this._crz) this.el.chassis.style.transform = live ? "rotateX(" + this._crx.toFixed(2) + "deg) rotateY(" + this._cry.toFixed(2) + "deg)" : "";
       this._crz = live;
-      this._mat = !!mat;
     }
     // room lights drift opposite the cursor (depth)
     if (this.el.zlights) {
@@ -859,7 +807,7 @@ class SigRuntime {
     this.el.rcs.forEach((el: HTMLElement, i: number) => {
       const k = E.expOut(this.clamp((t - 0.04 - i * 0.05) / 0.26, 0, 1));
       const dim = el.getAttribute("data-dim");
-      el.style.opacity = (dim ? k * +dim : k).toFixed(3);
+      el.style.opacity = (dim ? k * (this.isLight ? Math.max(+dim, 0.5) : +dim) : k).toFixed(3);
       el.style.transform = "translate3d(0," + ((1 - k) * 34).toFixed(1) + "px,0)";
     });
     if (this.el.rcFit) {
@@ -1213,7 +1161,7 @@ class SigRuntime {
     (el as any)._asmZ = done;
     const inv = 1 - k;
     const tgt = +(el.getAttribute("data-asm-o") || 1);
-    el.style.opacity = (k * tgt).toFixed(3);
+    el.style.opacity = (tgt * (0.25 + 0.75 * k)).toFixed(3);
     el.style.transform = done ? "" : "translate3d(0," + (inv * 18).toFixed(1) + "px,0)";
   }
 
@@ -1390,7 +1338,7 @@ class SigRuntime {
       "float alpha=clamp(m,0.,1.);\n" +
       "vec3 rgb=col*(.5+.68*min(m,1.25));\n" +
       "if(uL>.5){\n" +
-      "vec3 lc=mix(vec3(.07,.36,.55),vec3(.15,.28,.68),clamp(.25+.6*inner,0.,1.));\n" +
+      "vec3 lc=mix(vec3(.03,.46,.68),vec3(.09,.60,.80),clamp(.25+.6*inner,0.,1.));\n" +
       "rgb=lc;\n" +
       "alpha=clamp((rim*1.05+body*(.16+.22*caust*depth)+sss*.25)*fade,0.,.92);\n" +
       "}\n" +
